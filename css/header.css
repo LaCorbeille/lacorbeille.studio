@@ -60,6 +60,16 @@ header>a>img {
     flex-direction: column;
     padding: 20px;
     width: 200px;
+    animation: accountDropdown 0.2s ease-in-out forwards;
+}
+
+@keyframes accountDropdown {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }    
 }
 
 #accountDropdown>* {

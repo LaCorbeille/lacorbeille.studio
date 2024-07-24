@@ -8,6 +8,14 @@ document.getElementById('account').addEventListener('click', function () {
         accountDropdown.classList.add('active');
     }
 });
+document.getElementsByTagName('main')[0].addEventListener('click', function () {
+    // Disable the account Dropdown when clicking outside of it
+    var accountDropdown = document.getElementById('accountDropdown');
+    if (accountDropdown.classList.contains('active')) {
+        accountDropdown.classList.remove('active');
+    }
+});
+
 
 // On mobile
 document.getElementById('burgerMenu').addEventListener('click', function () {
