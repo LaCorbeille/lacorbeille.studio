@@ -2,9 +2,8 @@
     #menu {
         background: rebeccapurple;
         position: absolute;
-        top: 0;
+        top: 95px;
         left: 0;
-        margin-top: 95px;
         width: 100vw;
         height: 100vh;
         flex-direction: column;
@@ -17,6 +16,7 @@
     }
 
     #burgerMenu {
-        display: block;
+        display: flex;
+        align-items: center;
     }
 }

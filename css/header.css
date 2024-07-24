@@ -22,13 +22,13 @@ header>a>img {
     color: white;
 }
 
-#menu>a#signin {
+#menu>a:last-of-type {
     border: solid 2px white;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
-#menu>a#signin:hover {
+#menu>a:last-of-type:hover {
     border: solid 2px var(--Fuchsia);
     color: var(--Fuchsia);
 }
@@ -42,4 +42,26 @@ header>a>img {
 #burgerMenu>img {
     height: 35px;
     width: 35px;
+}
+
+/* Account Dropdown */
+#accountDropdown {
+    display: none;
+    position: absolute;
+    top: 95px;
+    right: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+#accountDropdown.active {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 200px;
+}
+
+#accountDropdown>* {
+    width: 100%;
 }
