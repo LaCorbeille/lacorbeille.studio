@@ -8,7 +8,8 @@ footer>div {
     display: flex;
 }
 
-footer>div:first-of-type {
+/* Top */
+#footerTop {
     background-color: var(--RaisinBlack);
     border-radius: 0 0 15px 15px;
     flex-direction: column;
@@ -16,10 +17,64 @@ footer>div:first-of-type {
     color: var(--DarkGray);
 }
 
-footer>div:first-of-type>img {
+#footerTop>img {
     width: 30%;
+    max-width: 300px;
 }
 
-footer>div:last-of-type {
+#footerTop #socialWrap {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+}
+
+#footerTop #socialWrap>* {
+    margin: 0 7px;
+}
+
+#footerTop #socialWrap img {
+    width: 3vw;
+    max-width: 25px;
+}
+
+#footerTop #copyright {
+    margin: 25px 0;
+    color: var(--DarkGray);
+}
+
+/* Bottom */
+#footerBottom {
     background-color: var(--LightSilver);
+    padding: 10px;
+    display: flex;
+}
+
+#footerBottom>* a {
+    color: black;
+    margin: 0 3px;
+    font-size: 0.8rem;
+}
+
+#footerBottom>*:nth-child(1) {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#footerBottom>*:nth-child(2) {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+#footerBottom>*:nth-child(3) {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#footerBottom #langSelect {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
