@@ -1,0 +1,30 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background-color: white;
+    border-radius: 5px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+form>input {
+    width: 80%;
+    margin: 10px 0;
+}
+
+#stayConnected {
+    width: 90%;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 50px;
+}
