@@ -13,53 +13,63 @@
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/responsive/header.css">
     <link rel="stylesheet" href="css/index.css">
     <!-- JS -->
     <script src="js/dynamicTitle.js" defer></script>
+    <script src="js/header.js" defer></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- <header>
-        <img src="assets/img/branding/logoSmall.svg" alt="LaCorbeille STUDIO">
+    <header>
+        <a href="index.html"><img src="assets/img/branding/logoSmall.svg" alt="LaCorbeille STUDIO"></a>
         <div id="menu">
             <a href="#">Games</a>
             <a href="#">News</a>
             <a href="#">Support</a>
-            <a href="#">Se connecter</a>
+            <a id="signin" href="signin.html">Se connecter</a>
         </div>
-    </header> -->
+        <a id="burgerMenu"><img src="assets/img/icons/menu.svg" alt="Menu"></a>
+    </header>
     <main>
         <img id="maintenanceImg" src="assets/img/branding/logoFull.svg" alt="LaCorbeille STUDIO">
     </main>
-    <!-- <footer>
-        <div>
-            <div>
-                <a href="#"><img src="assets/img/social/LinkedIn.svg" alt="LinkedIn"></a>
-                <a href="#"><img src="assets/img/social/Instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="assets/img/social/X.svg" alt="X"></a>
-                <a href="#"><img src="assets/img/social/Facebook.svg" alt="Facebook"></a>
-                <a href="#"><img src="assets/img/social/Discord.svg" alt="Discord"></a>
+    <footer>
+        <div id="footerTop">
+            <div id="socialWrap">
+                <a href="#" target="_blank"><img src="assets/img/social/LinkedIn.svg" alt="LinkedIn"></a>
+                <a href="https://www.instagram.com/lacorbeille.studio" target="_blank"><img src="assets/img/social/Instagram.svg" alt="Instagram"></a>
+                <a href="#" target="_blank"><img src="assets/img/social/X.svg" alt="X"></a>
+                <a href="#" target="_blank"><img src="assets/img/social/Facebook.svg" alt="Facebook"></a>
+                <a href="https://discord.gg/hmPzS4k" target="_blank"><img src="assets/img/social/Discord.svg" alt="Discord"></a>
             </div>
             <img src="assets/img/branding/logoFullWhite.svg" alt="LaCorbeille STUDIO">
-            <a>© LaCorbeille STUDIO 2024</a>
+            <a id="copyright">© LaCorbeille STUDIO 2024</a>
         </div>
-        <div>
-            <img src="assets/img/icon/contrast.svg" alt="Contrast">
+        <div id="footerBottom">
             <div>
-                <a>Legal Notice</a>
-                <a>Privacy Policy</a>
-                <a>Sitemap</a>
+                <a href="https://www.noasecond.com" target="_blank">Created by Noa Second</a>
             </div>
-            <select id="langSelect">
-                <option value="fr"><img src="assets/img/flags/fr.svg" alt="fr"></option>
-                <option value="en"><img src="assets/img/flags/en.svg" alt="en"></option>
-            </select>
+            <div>
+                <a href="#">Legal Notice</a>
+                <a>|</a>
+                <a href="#">Privacy Policy</a>
+                <a>|</a>
+                <a href="#">Sitemap</a>
+            </div>
+            <div>
+                <select id="langSelect">
+                    <option value="fr">🇫🇷</option>
+                    <option value="en">🇬🇧</option>
+                </select>
+            </div>
         </div>
-    </footer> -->
+    </footer>
 </body>
 
 </html>

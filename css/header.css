@@ -6,10 +6,15 @@ header {
     padding: 10px 20px;
 }
 
-header>img {
+header>a {
     height: 80%;
 }
 
+header>a>img {
+    height: 100%;
+}
+
+/* Menu */
 #menu>a {
     font-size: 1em;
     margin: 0 25px;
@@ -17,13 +22,24 @@ header>img {
     color: white;
 }
 
-#menu>a:last-of-type {
+#menu>a#signin {
     border: solid 2px white;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
-#menu>a:last-of-type:hover {
+#menu>a#signin:hover {
     border: solid 2px var(--Fuchsia);
     color: var(--Fuchsia);
+}
+
+/* Menu Mobile */
+#burgerMenu {
+    display: none;
+    cursor: pointer;
+}
+
+#burgerMenu>img {
+    height: 35px;
+    width: 35px;
 }
