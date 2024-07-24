@@ -67,11 +67,19 @@ header>a>img {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
-    }    
+    }
 }
 
 #accountDropdown>* {
     width: 100%;
+}
+
+#accountDropdown>a {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
 }
