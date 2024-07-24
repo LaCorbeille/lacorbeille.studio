@@ -15,6 +15,7 @@
             <input type="password" name="password" placeholder="Password" required>
             <label id="stayConnected"><input type="checkbox" name="remember" value="true"> Rester connecté</label>
             <button type="submit">Se connecter</button>
+            <a href="signup.php" id="createAccount">Créer un compte</a>
         </form>
     </main>
     <?php include 'components/footer.php'; ?>
