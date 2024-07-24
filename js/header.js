@@ -1,6 +1,12 @@
-// On desktop
+// Copy the user ID to the clipboard
+document.getElementById('userId').addEventListener('click', function () {
+    var userId = document.getElementById('userId');
+    navigator.clipboard.writeText(userId.innerHTML);
+    alert("Copied " + userId.innerHTML);
+});
+
+// Toggle Dropdown on desktop
 document.getElementById('account').addEventListener('click', function () {
-    // Toggle the 'active' class on the account Dropdown
     var accountDropdown = document.getElementById('accountDropdown');
     if (accountDropdown.classList.contains('active')) {
         accountDropdown.classList.remove('active');
@@ -17,16 +23,16 @@ document.getElementsByTagName('main')[0].addEventListener('click', function () {
 });
 
 
-// On mobile
+// Toggle Dropdown and menu on mobile
 document.getElementById('burgerMenu').addEventListener('click', function () {
-    // Toggle the 'active' class on the menu
+    // Menu
     var menu = document.getElementById('menu');
     if (menu.classList.contains('active')) {
         menu.classList.remove('active');
     } else {
         menu.classList.add('active');
     }
-    // Toggle the 'active' class on the account Dropdown
+    // Dropdown
     var accountDropdown = document.getElementById('accountDropdown');
     if (accountDropdown.classList.contains('active')) {
         accountDropdown.classList.remove('active');

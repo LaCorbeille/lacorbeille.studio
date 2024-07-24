@@ -19,9 +19,9 @@
     </div>
     <a id="burgerMenu"><img src="assets/img/icons/menu.svg" alt="Menu"></a>
     <div id="accountDropdown">
-        <a>Username#00000</a>
+        <a id="userId">Username#00000<img src="assets/img/icons/content_copy.svg" alt="Settings"></a>
         <hr>
-        <a>Paramètres</a>
-        <a>Se déconnecter</a>
+        <a>Paramètres<img src="assets/img/icons/manage_account.svg" alt="Settings"></a>
+        <a href="/scripts/logout.php">Se déconnecter<img src="assets/img/icons/logout.svg" alt="Settings"></a>
     </div>
 </header>
