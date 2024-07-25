@@ -4,20 +4,20 @@ ini_set('display_errors', 'On');
 
 include_once __DIR__ . '/scripts/register.php';
 
-$alert = "";
+$error = "";
+$success = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])) {
         try {
             $result = registerUser($_POST['email'], $_POST['username'], $_POST['password']);
         } catch (Exception $e) {
-            $alert = "An error occurred: " . $e->getMessage();
+            $error = "An error occurred: " . $e->getMessage();
         }
         if ($result === true) {
-            header("Location: signin.php");
-            exit;
+            $success = "Un email de confirmation vous a été envoyé.\nVeuillez vérifier votre compte.";
         } else {
-            $alert = $result;
+            $error = $result;
         }
     }
 }
@@ -37,8 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main>
         <form method="POST">
             <h2>Inscription</h2>
-            <?php if (!empty(trim($alert))) : ?>
-                <a id="alert"><?php echo $alert; ?></a>
+            <?php if (!empty(trim($error))) : ?>
+                <a class="alert error"><?php echo $error; ?></a>
+            <?php endif; ?>
+            <?php if (!empty(trim($success))) : ?>
+                <a class="alert error"><?php echo $success; ?></a>
             <?php endif; ?>
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="username" placeholder="Username" required>

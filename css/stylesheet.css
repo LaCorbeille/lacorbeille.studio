@@ -9,6 +9,8 @@
     --LightSilver: #D9D9D9;
     --BrightGray: #E8EAED;
     --PastelRed: #FF6767;
+    --PastelYellow: #FFD167;
+    --PastelGreen: #6BFF6B;
 }
 
 /*----- SCROLLBAR -----*/
@@ -82,11 +84,22 @@ h2 {
     color: var(--RichBlack);
 }
 
-#alert {
-    background-color: var(--PastelRed);
+.alert {
     border-radius: 5px;
     padding: 10px;
     color: white !important;
+}
+
+.alert.error {
+    background-color: var(--PastelRed);
+}
+
+.alert.warning {
+    background-color: var(--PastelYellow);
+}
+
+.alert.success {
+    background-color: var(--PastelGreen);
 }
 
 input {

@@ -4,20 +4,20 @@ ini_set('display_errors', 'On');
 
 include_once __DIR__ . '/scripts/login.php';
 
-$alert = "";
+$error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['email']) && isset($_POST['password'])) {
         try {
             $result = loginUser($_POST['email'], $_POST['password']);
         } catch (Exception $e) {
-            $alert = "An error occurred: " . $e->getMessage();
+            $error = "An error occurred: " . $e->getMessage();
         }
         if ($result === true) {
             header("Location: index.php");
             exit;
         } else {
-            $alert = $result;
+            $error = $result;
         }
     }
 }
@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main>
         <form method="POST">
             <h2>Connexion</h2>
-            <?php if (!empty(trim($alert))) : ?>
-                <a id="alert"><?php echo $alert; ?></a>
+            <?php if (!empty(trim($error))) : ?>
+                <a class="alert error"><?php echo $error; ?></a>
             <?php endif; ?>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
