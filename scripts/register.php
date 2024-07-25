@@ -16,6 +16,16 @@ initEnvironmentVars();
  * @return bool|string Returns true if the user was successfully registered, or an error message if the registration failed.
  */
 function registerUser($email, $username, $password) {
+    // Check if the email, username, and password are set
+    if (empty($email) || empty($username) || empty($password)) {
+        return "Email, username, and password are required";
+    }
+
+    // Check email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return "Invalid email format";
+    }
+
     //Encrypt the password and email
     $encryptedPassword = encrypt($password);
     $encryptedEmail = encrypt($email);
