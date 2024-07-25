@@ -82,6 +82,13 @@ h2 {
     color: var(--RichBlack);
 }
 
+#alert {
+    background-color: var(--PastelRed);
+    border-radius: 5px;
+    padding: 10px;
+    color: white !important;
+}
+
 input {
     background-color: var(--BrightGray);
     border-radius: 5px;

@@ -1,3 +1,29 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
+include_once __DIR__ . '/scripts/register.php';
+
+$alert = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $alert = "post";
+    if (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])) {
+        try {
+            $result = registerUser($_POST['email'], $_POST['username'], $_POST['password']);
+        } catch (Exception $e) {
+            $alert = "An error occurred: " . $e->getMessage();
+        }
+        if ($result === true) {
+            header("Location: signin.php");
+            exit;
+        } else {
+            $alert = $result;
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,12 +36,15 @@
 <body>
     <?php include 'components/header.php'; ?>
     <main>
-        <form action="./scripts/login.php">
+        <form method="POST">
             <h2>Connexion</h2>
+            <a id="alert" style="color: red;">
+                <?php if (!empty($alert)) echo $alert; ?>
+            </a>
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
-            <label id="stayConnected"><input type="checkbox" name="remember" value="true"> Accepter les&nbsp;<a id="openPopUp">conditions générales</a></label>
+            <label id="stayConnected"><input type="checkbox" name="remember" value="true" required> Accepter les&nbsp;<a id="openPopUp">conditions générales</a></label>
             <button type="submit">Créer le compte</button>
             <a href="signin.php" id="bottomText">Se connecter</a>
         </form>

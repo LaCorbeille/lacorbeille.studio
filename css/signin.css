@@ -21,18 +21,22 @@ form>input {
     margin: 10px 0;
 }
 
-#stayConnected {
-    width: 90%;
-    display: flex;
+form>input:first-of-type {
+    margin-top: 25px;
 }
 
 h2 {
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 button {
     margin-top: 45px;
+}
+
+#stayConnected {
+    width: 90%;
+    display: flex;
 }
 
 #bottomText {
