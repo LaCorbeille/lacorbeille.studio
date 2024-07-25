@@ -12,10 +12,11 @@
         <form action="./scripts/login.php">
             <h2>Connexion</h2>
             <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
-            <label id="stayConnected"><input type="checkbox" name="remember" value="true"> Rester connecté</label>
-            <button type="submit">Se connecter</button>
-            <a href="signup.php" id="bottomText">Créer un compte</a>
+            <label id="stayConnected"><input type="checkbox" name="remember" value="true"> Accepter les conditions générales</label>
+            <button type="submit">Créer le compte</button>
+            <a href="signin.php" id="bottomText">Se connecter</a>
         </form>
     </main>
     <?php include 'components/footer.php'; ?>
