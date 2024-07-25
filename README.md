@@ -1,15 +1,14 @@
 # lacorbeille.studio
-LaCorbeille Studio website
 
-<a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,php,mysql,js,svg,git,github,githubactions,vscode"/>
-</a>
+<img src="https://skillicons.dev/icons?i=html,css,php,mysql,js,svg,git,github,githubactions,vscode"/>
 
-This repository contains the source code for the blueberrypictures.fr website.
+This repository contains the source code for [LaCorbeille STUDIO](https://www.lacorbeille.sutdio) website.
 
-Uses [AutoSitemapUpdater-v1.0](https://github.com/YoruKiwi/AutoSitemapUpdater)
+Uses [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
-Uses [AutoDeployToFTP-v1.0](https://github.com/YoruKiwi/AutoDeployToFTP)
+Uses [AutoSitemapUpdater](https://github.com/NoaSecond/AutoSitemapUpdater)
+
+Uses [AutoDeployToFTP](https://github.com/NoaSecond/AutoDeployToFTP)
 
 ## Contributing
 
