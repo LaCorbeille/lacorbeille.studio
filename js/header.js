@@ -1,8 +1,8 @@
 // Copy the user ID to the clipboard
 document.getElementById('userId').addEventListener('click', function () {
     var userId = document.getElementById('userId');
-    navigator.clipboard.writeText(userId.innerHTML);
-    alert("Copied " + userId.innerHTML);
+    navigator.clipboard.writeText(userId.textContent);
+    alert("Copied " + userId.textContent);
 });
 
 // Toggle Dropdown on desktop
