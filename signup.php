@@ -7,7 +7,6 @@ include_once __DIR__ . '/scripts/register.php';
 $alert = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $alert = "post";
     if (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])) {
         try {
             $result = registerUser($_POST['email'], $_POST['username'], $_POST['password']);
@@ -29,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <head>
     <?php include 'components/head.php'; ?>
-    <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/signup.css">
     <script src="js/popUp.js" defer></script>
 </head>
 
@@ -37,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include 'components/header.php'; ?>
     <main>
         <form method="POST">
-            <h2>Connexion</h2>
-            <a id="alert" style="color: red;">
-                <?php if (!empty($alert)) echo $alert; ?>
-            </a>
+            <h2>Inscription</h2>
+            <?php if (!empty(trim($alert))) : ?>
+                <a id="alert"><?php echo $alert; ?></a>
+            <?php endif; ?>
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>

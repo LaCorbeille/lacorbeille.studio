@@ -34,15 +34,53 @@ button {
     margin-top: 45px;
 }
 
-#stayConnected {
-    width: 90%;
-    display: flex;
-}
-
 #bottomText {
     margin: 0;
     margin-top: 45px;
     margin-bottom: -30px;
     font-size: 0.8rem;
     color: var(--DarkGray);
+}
+
+#openPopUp {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#openPopUp:hover {
+    color: var(--Fuchsia);
+}
+
+#popUp {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    max-width: 400px;
+    height: 70%;
+    background: white;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+#popUp.active {
+    display: flex;
+    animation: showPopUp 0.2s ease-in-out forwards;
+}
+
+@keyframes showPopUp {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#popUp>p {
+    flex: 2;
+    overflow-y: scroll;
 }
