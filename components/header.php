@@ -9,9 +9,9 @@
 <header>
     <a href="/"><img src="assets/img/branding/logoSmall.svg" alt="LaCorbeille STUDIO"></a>
     <div id="menu">
-        <a href="#">Jeux</a>
-        <a href="#">Actus</a>
-        <a href="#">Support</a>
+        <a href="games.php">Jeux</a>
+        <a href="news.php">Actus</a>
+        <a href="support.php">Support</a>
         <?php if (isset($username)) { ?>
             <a id="account"><?php echo $username; ?></a>
         <?php } else { ?>
