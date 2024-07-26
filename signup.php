@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
-            <label id="stayConnected"><input type="checkbox" name="remember" value="true" required> Accepter les&nbsp;<a id="openPopUp">conditions générales</a></label>
+            <label id="terms"><input type="checkbox" name="remember" value="true" required> Accepter les&nbsp;<a id="openPopUp">conditions générales</a></label>
             <button type="submit">Créer le compte</button>
             <a href="signin.php" id="bottomText">Se connecter</a>
         </form>
