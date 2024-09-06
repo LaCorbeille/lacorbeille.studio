@@ -13,7 +13,10 @@ if (session_status() === PHP_SESSION_NONE) {
 </head>
 
 <body>
-    <?php include 'components/header.php'; ?>
+    <?php
+    $active = basename($_SERVER['PHP_SELF']);
+    include 'components/header.php';
+    ?>
     <main>
         <div id="gamesWrapper">
             <?php

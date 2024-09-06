@@ -7,7 +7,10 @@
 </head>
 
 <body>
-    <?php include 'components/header.php'; ?>
+    <?php
+    $active = basename($_SERVER['PHP_SELF']);
+    include 'components/header.php';
+    ?>
     <main>
         <img id="maintenanceImg" src="assets/img/branding/logoFull.svg" alt="LaCorbeille STUDIO">
     </main>

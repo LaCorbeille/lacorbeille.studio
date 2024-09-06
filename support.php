@@ -1,7 +1,7 @@
 <?php
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,10 @@
 </head>
 
 <body>
-    <?php include 'components/header.php'; ?>
+    <?php
+    $active = basename($_SERVER['PHP_SELF']);
+    include 'components/header.php';
+    ?>
     <main>
         <img id="maintenanceImg" src="assets/img/branding/logoFull.svg" alt="LaCorbeille STUDIO">
     </main>
