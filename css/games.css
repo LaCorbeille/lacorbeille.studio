@@ -4,10 +4,21 @@ main {
     justify-content: center;
 }
 
+#gamesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3vw;
+    margin: 50px 0;
+}
+
 .game {
-    width: 400px;
-    height: 600px;
-    margin: 0 15px;
+    min-width: 382px;
+    min-height: 573px;
+    width: 25vw;
+    height: 37.5vw;
+    max-width: 400px;
+    max-height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,10 +26,20 @@ main {
     cursor: pointer;
 }
 
+.game:hover {
+    transform: scale(1.05);
+}
+
 .game>img {
     object-fit: cover;
     position: absolute;
     border-radius: 5px;
+    min-width: 382px;
+    min-height: 573px;
+    width: 25vw;
+    height: 37.5vw;
+    max-width: 400px;
+    max-height: 600px;
 }
 
 .platforms {
@@ -28,7 +49,7 @@ main {
     justify-content: space-evenly;
     width: fit-content;
     border-radius: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     padding: 10px;
     background: #00000050;
 }

@@ -58,7 +58,7 @@ main {
     min-height: 100vh;
     width: 100vw;
     background-color: var(--Jet);
-    margin-top: -75px; /* Height of the header */
+    /* margin-top: -75px; Height of the header */
 }
 
 a, p, h1, h2, h3, h4, h5, h6 {
