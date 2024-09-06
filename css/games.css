@@ -1,0 +1,40 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game {
+    width: 400px;
+    height: 600px;
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.game>img {
+    object-fit: cover;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.platforms {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: fit-content;
+    border-radius: 100px;
+    margin-bottom: 50px;
+    padding: 10px;
+    background: #00000050;
+}
+
+.platforms>img {
+    width: 15px;
+    height: auto;
+    margin: 0 2.5px;
+}

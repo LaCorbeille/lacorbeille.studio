@@ -9,7 +9,7 @@
 ?>
 
 <header>
-    <a href="/"><img src="assets/img/branding/logoSmall.svg" alt="LaCorbeille STUDIO"></a>
+    <a href="/"><img src="assets/img/branding/logoSmallWhite.svg" alt="LaCorbeille STUDIO"></a>
     <div id="menu">
         <a href="games.php">Jeux</a>
         <a href="news.php">Actus</a>
