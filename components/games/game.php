@@ -1,4 +1,5 @@
 <div class="game">
+    <div class="status <?php echo $status; ?>"><?php echo $status; ?></div>
     <div class="platforms">
         <img src="assets/img/icons/platforms/Windows.svg" alt="Windows"
             style="<?php echo in_array('Windows', $platforms) ? '' : 'display:none;'; ?>">
