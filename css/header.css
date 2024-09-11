@@ -38,6 +38,10 @@ header>a>img {
     color: var(--Fuchsia);
 }
 
+#menu>a:hover ~ a#active{
+    color: white !important;
+}
+
 /* Menu Mobile */
 #burgerMenu {
     display: none;
