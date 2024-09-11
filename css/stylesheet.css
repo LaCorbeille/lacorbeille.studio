@@ -54,15 +54,34 @@ body {
     min-height: 100vh;
 }
 
+
 main {
     min-height: 100vh;
     /* width: 100vw; */
     background-color: var(--RichBlack);
     margin-top: -75px; /* Height of the header */
     padding: 0px 15vw;
+    animation: fadeIn 1s ease-in-out;
 }
 
-a, p, h1, h2, h3, h4, h5, h6 {
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--RichBlack);
 }
 

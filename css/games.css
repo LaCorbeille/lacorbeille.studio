@@ -41,9 +41,21 @@ main {
 #showcase>a#showcaseLogo {
     position: absolute;
     height: 75vh; /* Same height as the showcase video */
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--RichBlack);
+    animation: backgroundFade 1s ease-in-out forwards;
+}
+
+@keyframes backgroundFade {
+    0% {
+        background-color: var(--RichBlack);
+    }
+    100% {
+        background-color: transparent;
+    }
 }
 
 #showcase>a#showcaseLogo>img {

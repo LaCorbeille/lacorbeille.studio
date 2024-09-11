@@ -8,3 +8,120 @@ main>img {
     width: 80%;
     height: auto;
 }
+
+/* Animations */
+header {
+    animation: headerFadeIn 2s ease-in-out forwards;
+}
+
+@keyframes headerFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main>*:not(.loadingContainer) {
+    animation: mainFadeIn 2s ease-in-out forwards;
+}
+
+@keyframes mainFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.loadingContainer {
+    position: absolute;
+    animation: loadingFadeIn 1s ease-in-out forwards;
+}
+
+@keyframes loadingFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* Loading SVG */
+.loadingSVGContainer {
+    --uib-size: 3.5rem;
+    --uib-color: var(--Fuchsia);
+    --uib-speed: 2s;
+    --uib-bg-opacity: 0;
+    height: var(--uib-size);
+    width: var(--uib-size);
+    transform-origin: center;
+    animation: rotate var(--uib-speed) linear infinite;
+    will-change: transform;
+    overflow: visible;
+}
+
+.car {
+    fill: none;
+    stroke: var(--uib-color);
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
+    will-change: stroke-dasharray, stroke-dashoffset;
+    transition: stroke 0.5s ease;
+}
+
+.track {
+    fill: none;
+    stroke: var(--uib-color);
+    opacity: var(--uib-bg-opacity);
+    transition: stroke 0.5s ease;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes stretch {
+    0% {
+        stroke-dasharray: 0, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 75, 150;
+        stroke-dashoffset: -25;
+    }
+
+    100% {
+        stroke-dashoffset: -100;
+    }
+}

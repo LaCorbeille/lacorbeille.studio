@@ -1,4 +1,6 @@
 header {
+    z-index: 99;
+    position: relative;
     height: 75px;
     display: flex;
     justify-content: space-between;
