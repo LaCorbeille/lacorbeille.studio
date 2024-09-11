@@ -24,6 +24,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 Your browser does not support the video tag
             </video>
             <a href="#gamesWrapper" id="seeMoreGames">Voir plus</a>
+            <a id="showcaseLogo"><img src="assets/img/branding/logoFullWhite.svg" alt="Logo Full White"></a>
         </div>
         <div id="gamesWrapper">
             <?php

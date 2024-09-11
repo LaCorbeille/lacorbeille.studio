@@ -23,19 +23,32 @@ main {
     margin: 0;
 }
 
-#showcase>a {
+#showcase>a#seeMoreGames {
+    position: absolute;
     border: solid 2px white;
     padding: 5px 10px;
     border-radius: 5px;
-    position: absolute;
     margin-bottom: 50px;
     cursor: pointer;
     color: white;
 }
 
-#showcase>a:hover {
+#showcase>a#seeMoreGames:hover {
     border: solid 2px var(--Fuchsia);
     color: var(--Fuchsia);
+}
+
+#showcase>a#showcaseLogo {
+    position: absolute;
+    height: 75vh; /* Same height as the showcase video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#showcase>a#showcaseLogo>img {
+    width: 50vw;
+    height: auto;
 }
 
 /* Games grid */
