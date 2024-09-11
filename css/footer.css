@@ -89,3 +89,7 @@ footer>div {
     align-items: center;
     margin-right: 10px;
 }
+
+#footerBottom>*:nth-child(3) button>img {
+    height: 20px;
+}
