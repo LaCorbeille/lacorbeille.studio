@@ -34,11 +34,12 @@ header>a>img {
     color: var(--Fuchsia);
 }
 
-#menu>a#active, #menu>a:hover {
+#menu>a#active,
+#menu>a:hover {
     color: var(--Fuchsia);
 }
 
-#menu>a:hover ~ a#active{
+#menu>a:hover~a#active {
     color: white !important;
 }
 

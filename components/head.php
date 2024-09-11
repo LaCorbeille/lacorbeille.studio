@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/responsive/header.css">
 <!-- JS -->
 <script src="js/dynamicTitle.js" defer></script>
+<script src="js/themeSwitcher.js" defer></script>
 <script src="js/header.js" defer></script>
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
