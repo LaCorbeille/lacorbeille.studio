@@ -1,9 +1,44 @@
 main {
     display: flex;
-    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* Showcase video */
+
+#showcase {
+    width: 100vw;
+    height: auto;
+    margin: 0px -15vw;
+    display: flex;
     justify-content: center;
+    align-items: flex-end;
+}
+
+#showcase>video {
+    width: 100vw;
+    height: 75vh;
+    object-fit: cover;
     margin: 0;
 }
+
+#showcase>a {
+    border: solid 2px white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    margin-bottom: 50px;
+    cursor: pointer;
+    color: white;
+}
+
+#showcase>a:hover {
+    border: solid 2px var(--Fuchsia);
+    color: var(--Fuchsia);
+}
+
+/* Games grid */
 
 #gamesWrapper {
     display: flex;

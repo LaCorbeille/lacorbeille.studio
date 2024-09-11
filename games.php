@@ -19,7 +19,11 @@ if (session_status() === PHP_SESSION_NONE) {
     ?>
     <main>
         <div id="showcase">
-
+            <video autoplay loop muted>
+                <source src="assets/video/showcaseGames.mp4" type="video/mp4">
+                Your browser does not support the video tag
+            </video>
+            <a href="#gamesWrapper" id="seeMoreGames">Voir plus</a>
         </div>
         <div id="gamesWrapper">
             <?php
