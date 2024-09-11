@@ -3,3 +3,8 @@ main {
     align-items: center;
     justify-content: center;
 }
+
+main>img {
+    width: 80%;
+    height: auto;
+}
