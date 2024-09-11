@@ -76,18 +76,20 @@ main {
 
 a,
 p,
+b,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+    font-family: "Open Sans", sans-serif;
     color: var(--RichBlack);
 }
 
 h1 {
     color: var(--Fuchsia);
-    font-size: 2em;
+    font-size: 4em;
     font-family: "Rubik Glitch", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -102,6 +104,12 @@ h2 {
     font-variation-settings: "wdth" 100;
     font-size: 2rem;
     color: var(--RichBlack);
+}
+
+b {
+    color: var(--Fuchsia);
+    font-family: "Rubik Glitch", system-ui;
+    font-weight: 400;
 }
 
 .alert {

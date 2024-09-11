@@ -6,6 +6,55 @@ main {
     align-items: stretch;
 }
 
+h1 {
+    font-family: "Open Sans", sans-serif !important;
+    color: white !important;
+}
+
+b {
+    animation: textBlink 1s ease-in-out forwards;
+}
+
+@keyframes textBlink {
+    0% {
+        color: white;
+    }
+
+    70% {
+        color: white;
+    }
+
+    80% {
+        color: var(--Fuchsia);
+    }
+
+    90% {
+        color: white;
+    }
+
+    100% {
+        color: var(--Fuchsia);
+    }
+}
+
+#text1 {
+    animation: fadeIn 1.75s ease-in-out forwards;
+}
+
+#text2 {
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .column>* {
     width: 100% !important;
     margin-bottom: 50px !important;
