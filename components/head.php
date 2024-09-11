@@ -13,6 +13,7 @@
 <!-- JS -->
 <script src="js/dynamicTitle.js" defer></script>
 <script src="js/themeSwitcher.js" defer></script>
+<script src="js/rightClick.js" defer></script>
 <script src="js/header.js" defer></script>
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
