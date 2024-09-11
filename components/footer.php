@@ -22,6 +22,7 @@
             <a href="#">Plan du site</a>
         </div>
         <div>
+            <button type="button" data-theme-toggle=""><img src="assets/img/icons/light-mode.svg"></button>
             <select id="langSelect">
                 <option value="fr">🇫🇷</option>
                 <option value="en">🇬🇧</option>

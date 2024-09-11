@@ -59,12 +59,14 @@ footer>div {
     flex: 1;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 #footerBottom>*:nth-child(2) {
     flex: 2;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #footerBottom>*:nth-child(3) {
@@ -77,4 +79,13 @@ footer>div {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+#footerBottom>*:nth-child(3) button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
 }
