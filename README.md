@@ -2,7 +2,7 @@
 
 <img src="https://skillicons.dev/icons?i=html,css,php,mysql,js,svg,git,github,githubactions,vscode"/>
 
-This repository contains the source code for [LaCorbeille STUDIO](https://www.lacorbeille.sutdio) website.
+This repository contains the source code for [LaCorbeille STUDIO](https://www.lacorbeille.studio) website.
 
 Uses [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
