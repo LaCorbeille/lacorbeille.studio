@@ -1,12 +1,62 @@
 main {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding-bottom: 50px;
 }
 
 main>img {
     width: 80%;
     height: auto;
+}
+
+#showcase {
+    width: 100vw;
+    height: auto;
+    margin: 0px -15vw;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#showcase>video {
+    width: 100vw;
+    height: 75vh;
+    object-fit: cover;
+    margin: 0;
+}
+
+#showcase>div {
+    position: absolute;
+    margin: 0px 15vw;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+}
+
+/* Section 1 */
+#latestProject {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+#latestProject>* {
+    width: 45%;
+}
+
+#latestProject>img {
+    border-radius: 5px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+button {
+    margin-top: 50px;
+    color: white;
 }
 
 /* Animations */
@@ -49,7 +99,14 @@ main>*:not(.loadingContainer) {
 }
 
 .loadingContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
+    top: 0;
+    left: 0;
     animation: loadingFadeIn 1s ease-in-out forwards;
 }
 
@@ -70,7 +127,6 @@ main>*:not(.loadingContainer) {
         opacity: 0;
     }
 }
-
 
 /* Loading SVG */
 .loadingSVGContainer {

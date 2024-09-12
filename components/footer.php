@@ -19,7 +19,7 @@
             <a>|</a>
             <a href="#">Politique de confidentialité</a>
             <a>|</a>
-            <a href="#">Plan du site</a>
+            <a href="sitemap.xml">Plan du site</a>
         </div>
         <div>
             <button type="button" data-theme-toggle=""><img src="assets/img/icons/dark-mode.svg"></button>

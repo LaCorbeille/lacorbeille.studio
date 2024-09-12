@@ -34,6 +34,10 @@ button {
     margin-top: 45px;
 }
 
+label {
+    cursor: pointer;
+}
+
 #stayConnected {
     width: 90%;
     display: flex;
