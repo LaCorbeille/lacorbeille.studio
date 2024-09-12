@@ -105,26 +105,30 @@ main {
 
 .status {
     z-index: 3;
-    background: #000000;
-    color: white;
-    border-left: solid 2px white;
-    border-bottom: solid 2px white;
-    align-self: flex-end;
-    padding: 7px;
-    border-radius: 0px 5px 0px 5px;
+    background: rgba(0, 0, 0, 0.75);
+    align-self: flex-start;
+    padding: 7px 15px;
+    border-radius: 5px 0px 5px 0px;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .new {
-    background: var(--Fuchsia);
+    border-right: solid 2px var(--Fuchsia);
+    border-bottom: solid 2px var(--Fuchsia);
+    color: var(--Fuchsia);
 }
 
 .development {
-    background: var(--PastelYellow);
+    border-right: solid 2px var(--PastelYellow);
+    border-bottom: solid 2px var(--PastelYellow);
+    color: var(--PastelYellow);
 }
 
 .conception {
-    background: var(--PastelRed);
+    border-right: solid 2px var(--PastelRed);
+    border-bottom: solid 2px var(--PastelRed);
+    color: var(--PastelRed);
 }
 
 .platforms {
