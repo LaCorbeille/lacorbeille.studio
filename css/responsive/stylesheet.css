@@ -1,0 +1,9 @@
+@media (max-width: 1000px) {
+    main {
+        padding: 0px 5vw;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}

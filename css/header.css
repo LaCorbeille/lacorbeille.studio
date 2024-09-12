@@ -46,6 +46,10 @@ header>a>img {
 }
 
 /* Menu Mobile */
+#menuMobile {
+    display: none;
+}
+
 #burgerMenu {
     display: none;
     cursor: pointer;

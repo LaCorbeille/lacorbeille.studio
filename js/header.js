@@ -1,8 +1,9 @@
 // Copy the user ID to the clipboard
-document.getElementById('userId').addEventListener('click', function () {
-    var userId = document.getElementById('userId');
-    navigator.clipboard.writeText(userId.textContent);
-    alert("Copied " + userId.textContent);
+document.querySelectorAll('#userId').forEach(function (element) {
+    element.addEventListener('click', function () {
+        navigator.clipboard.writeText(element.textContent);
+        alert("Copied " + element.textContent);
+    });
 });
 
 // Toggle Dropdown on desktop
@@ -22,21 +23,13 @@ document.getElementsByTagName('main')[0].addEventListener('click', function () {
     }
 });
 
-
 // Toggle Dropdown and menu on mobile
 document.getElementById('burgerMenu').addEventListener('click', function () {
     // Menu
-    var menu = document.getElementById('menu');
+    var menu = document.getElementById('menuMobile');
     if (menu.classList.contains('active')) {
         menu.classList.remove('active');
     } else {
         menu.classList.add('active');
-    }
-    // Dropdown
-    var accountDropdown = document.getElementById('accountDropdown');
-    if (accountDropdown.classList.contains('active')) {
-        accountDropdown.classList.remove('active');
-    } else {
-        accountDropdown.classList.add('active');
     }
 });

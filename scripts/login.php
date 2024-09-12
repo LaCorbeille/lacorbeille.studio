@@ -10,7 +10,7 @@ initEnvironmentVars();
 function loginUser($email, $password) {
     // Check if the email, username, and password are set
     if (empty($email) || empty($password)) {
-        return "Email, username, and password are required";
+        return "Email, and password are required";
     }
 
     // Check email format

@@ -10,6 +10,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <head>
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/responsive/index.css">
 </head>
 
 <body>

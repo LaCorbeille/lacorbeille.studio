@@ -28,8 +28,8 @@ if (!isset($_SESSION['username'])) {
                 <a>All the informations about your account</a>
             </div>
             <div>
-                <a>Username : <?php echo $_SESSION['username']; ?></a>
-                <a>Role : <?php echo $_SESSION['role']; ?></a>
+                <a>Username : <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'undefined'; ?></a>
+                <a>Role : <?php echo isset($_SESSION['role']) ? $_SESSION['role'] : 'undefined'; ?></a>
             </div>
         </section>
         <section class="accountSection">
@@ -38,9 +38,9 @@ if (!isset($_SESSION['username'])) {
                 <a>Your personnal informations</a>
             </div>
             <div>
-                <a>Firstname : <?php echo $_SESSION['firstname']; ?></a>
-                <a>Lastname : <?php echo $_SESSION['lastname']; ?></a>
-                <a>Email : <?php echo $_SESSION['email']; ?></a>
+                <a>Firstname : <?php echo isset($_SESSION['firstname']) ? $_SESSION['firstname'] : 'undefined'; ?></a>
+                <a>Lastname : <?php echo isset($_SESSION['lastname']) ? $_SESSION['lastname'] : 'undefined'; ?></a>
+                <a>Email : <?php echo isset($_SESSION['email']) ? $_SESSION['email'] : 'undefined'; ?></a>
             </div>
         </section>
         <section class="accountSection">
@@ -49,7 +49,7 @@ if (!isset($_SESSION['username'])) {
                 <a>Set your communication preferences</a>
             </div>
             <div>
-                <a>Newsletter : <?php echo $_SESSION['newsletter']; ?></a>
+                <a>Newsletter : <?php echo isset($_SESSION['newsletter']) ? $_SESSION['newsletter'] : 'undefined'; ?></a>
             </div>
         </section>
     </main>

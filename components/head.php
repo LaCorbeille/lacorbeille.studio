@@ -7,7 +7,9 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
 <!-- CSS -->
 <link rel="stylesheet" href="css/stylesheet.css">
+<link rel="stylesheet" href="css/responsive/stylesheet.css">
 <link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/responsive/footer.css">
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/responsive/header.css">
 <!-- JS -->
