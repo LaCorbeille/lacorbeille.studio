@@ -88,9 +88,9 @@ h6 {
 }
 
 h1 {
-    color: var(--Fuchsia);
+    color: white;
     font-size: 4em;
-    font-family: "Rubik Glitch", system-ui;
+    font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -110,6 +110,29 @@ b {
     color: var(--Fuchsia);
     font-family: "Rubik Glitch", system-ui;
     font-weight: 400;
+    animation: boldTextBlink 1s ease-in-out forwards;
+}
+
+@keyframes boldTextBlink {
+    0% {
+        color: white;
+    }
+
+    70% {
+        color: white;
+    }
+
+    80% {
+        color: var(--Fuchsia);
+    }
+
+    90% {
+        color: white;
+    }
+
+    100% {
+        color: var(--Fuchsia);
+    }
 }
 
 .alert {
