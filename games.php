@@ -33,6 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
             $title = 'Platformer 3D';
             $platforms = ['Windows'];
             $img = 'assets/img/games/Platformer3D.png';
+            $target = 'games/Platformer3D.php';
             include 'components/games/game.php';
             ?>
             <?php
@@ -40,6 +41,7 @@ if (session_status() === PHP_SESSION_NONE) {
             $title = 'Rice Battle';
             $platforms = ['Windows'];
             $img = 'assets/img/games/RiceBattle.png';
+            $target = 'games/RiceBattle.php';
             include 'components/games/game.php';
             ?>
             <?php
@@ -47,6 +49,7 @@ if (session_status() === PHP_SESSION_NONE) {
             $title = 'A Little Adventue';
             $platforms = ['Windows', 'Switch'];
             $img = 'https://placehold.co/400x600?text=A+Little+Adventure';
+            $target = 'games/ALittleAdventure.php';
             include 'components/games/game.php';
             ?>
             <?php
@@ -54,6 +57,7 @@ if (session_status() === PHP_SESSION_NONE) {
             $title = 'BOT A.N.I.C';
             $platforms = ['Windows', 'Linux', 'XBox', 'PlayStation'];
             $img = 'https://placehold.co/400x600?text=BOT+A.N.I.C';
+            $target = 'games/BOT-ANIC.php';
             include 'components/games/game.php';
             ?>
         </div>

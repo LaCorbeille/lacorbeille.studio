@@ -1,4 +1,4 @@
-<div class="game">
+<div class="game" onclick="window.location.href='<?php echo $target; ?>'">
     <div class="status <?php echo $status; ?>"><?php echo $status; ?></div>
     <div class="platforms">
         <img src="assets/img/icons/platforms/Windows.svg" alt="Windows"
