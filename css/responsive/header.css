@@ -14,11 +14,24 @@
         width: calc(100vw - 50px); /* Largeur ecran moins padding */
         height: 100vh;
         padding: 0 25px;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
     }
 
     #burgerMenu {
         display: flex;
         align-items: center;
+        cursor: pointer;
     }
 
     #menuMobile>* {
@@ -26,7 +39,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 15px 0;
+        margin: 20px 0;
+    }
+
+    #menuMobile>hr {
+        margin-right: 30%;
+        margin-left: 30%;
     }
 
     #menuMobile img {

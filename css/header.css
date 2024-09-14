@@ -52,7 +52,6 @@ header>a>img {
 
 #burgerMenu {
     display: none;
-    cursor: pointer;
 }
 
 #burgerMenu>img {
