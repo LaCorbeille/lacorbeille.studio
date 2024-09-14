@@ -154,7 +154,8 @@ b {
     background-color: var(--PastelGreen);
 }
 
-input {
+input, textarea {
+    all: unset;
     background-color: var(--BrightGray);
     border-radius: 5px;
     border: none;
@@ -168,6 +169,8 @@ input[type="checkbox"] {
     width: 1rem;
     height: 1rem;
     cursor: pointer;
+    padding: 5px;
+    margin-right: 10px;
 }
 
 input::placeholder {

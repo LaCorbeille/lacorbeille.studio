@@ -88,7 +88,7 @@ main {
 }
 
 .game:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
 }
 
 .game>img {

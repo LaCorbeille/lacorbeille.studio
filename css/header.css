@@ -23,6 +23,7 @@ header>a>img {
     margin: 0 25px;
     cursor: pointer;
     color: white;
+    text-transform: uppercase;
 }
 
 #menu>a:last-of-type {
