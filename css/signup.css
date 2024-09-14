@@ -30,6 +30,11 @@ h2 {
     margin-bottom: 25px;
 }
 
+form>div {
+    display: flex;
+    width: 80%;
+}
+
 button {
     margin-top: 45px;
 }
@@ -54,6 +59,7 @@ label {
 #openPopUp {
     text-decoration: underline;
     cursor: pointer;
+    color: black;
 }
 
 #openPopUp:hover {

@@ -2,6 +2,16 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+if (isset($_SESSION['username'])) {
+    header("Location: index.php");
+    exit;
+}
+?>
+
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
@@ -41,16 +51,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main>
         <form method="POST">
             <h2>Inscription</h2>
-            <?php if (!empty(trim($error))) : ?>
+            <?php if (!empty(trim($error))): ?>
                 <a class="alert error"><?php echo $error; ?></a>
             <?php endif; ?>
-            <?php if (!empty(trim($success))) : ?>
+            <?php if (!empty(trim($success))): ?>
                 <a class="alert error"><?php echo $success; ?></a>
             <?php endif; ?>
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
-            <label id="terms"><input type="checkbox" name="remember" value="true" required> Accepter les&nbsp;<a id="openPopUp">conditions générales</a></label>
+            <label id="terms"><input type="checkbox" name="remember" value="true" required> Accepter les&nbsp;<a
+                    id="openPopUp">conditions générales</a></label>
             <button type="submit">Créer le compte</button>
             <a href="signin.php" id="bottomText">Se connecter</a>
         </form>
