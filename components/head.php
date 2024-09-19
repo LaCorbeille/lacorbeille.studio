@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/responsive/header.css">
 <!-- JS -->
+<script src="js/viewportHeight.js"></script>
 <script src="js/dynamicTitle.js" defer></script>
 <script src="js/themeSwitcher.js" defer></script>
 <script src="js/rightClick.js" defer></script>

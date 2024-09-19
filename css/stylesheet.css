@@ -11,6 +11,9 @@
     --PastelRed: #FF6767;
     --PastelYellow: #FFD167;
     --PastelGreen: #6BFF6B;
+
+    /* Viewport */
+    --app-height: 100%;
 }
 
 /*----- SCROLLBAR -----*/
@@ -57,6 +60,7 @@ body {
 
 main {
     min-height: 100vh;
+    min-height: var(--app-height);
     /* width: 100vw; */
     background-color: var(--RichBlack);
     margin-top: -75px; /* Height of the header */
@@ -161,6 +165,15 @@ input, textarea {
     border: none;
     padding: 20px;
     font-weight: 600;
+}
+
+select {
+    background-color: var(--BrightGray);
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
