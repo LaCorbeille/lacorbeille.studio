@@ -42,10 +42,10 @@ if (!isset($active)) {
         <hr>
         <?php if (isset($username)) { ?>
             <a id="userId"><?= $username; ?><?= "#" . $id ?><img src="assets/img/icons/content_copy_white.svg" alt="content_copy"></a>
+            <a href="/account.php">Paramètres<img src="assets/img/icons/manage_account_white.svg" alt="Settings"></a>
+            <a id="logout" href="/scripts/logout.php">Se déconnecter<img src="assets/img/icons/logout.svg" alt="Settings"></a>
         <?php } else { ?>
             <a id="signin" href="signin.php">Se connecter</a>
         <?php } ?>
-        <a href="/account.php">Paramètres<img src="assets/img/icons/manage_account_white.svg" alt="Settings"></a>
-        <a id="logout" href="/scripts/logout.php">Se déconnecter<img src="assets/img/icons/logout.svg" alt="Settings"></a>
     </div>
 </header>

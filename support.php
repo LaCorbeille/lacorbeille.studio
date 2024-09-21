@@ -31,6 +31,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <h3>Entrer en contact</h3>
             </div>
         </div>
+        <a id="helpText">Sélectionnez une option pour continuer</a>
 
         <!-- Help -->
         <div class="help">

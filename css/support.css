@@ -51,6 +51,12 @@ main {
     text-align: center;
 }
 
+#helpText {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
 form {
     display: flex;
     flex-direction: column;

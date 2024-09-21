@@ -20,7 +20,7 @@ section>* {
 }
 
 section h3 {
-    margin: 0;
+    margin-top: 0;
 }
 
 section>div:first-child {
@@ -40,4 +40,60 @@ section>div:last-child {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+section>div:last-child>* {
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form>input {
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+#deletionPopUp {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: var(--app-height);
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#deletionPopUp>div {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+#deletionPopUp>div>* {
+    margin: 25px;
+    font-size: 1.2rem;
+    color: black;
+}
+
+#deletionPopUp.active {
+    display: flex;
+    animation: showPopUp 0.2s ease-in-out forwards;
+}
+
+@keyframes showPopUp {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

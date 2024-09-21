@@ -1,10 +1,12 @@
 // Hide forms
 const forms = document.querySelectorAll('.help, .bug, .contact');
+const helpText = document.getElementById('helpText');
 
 function hideForms() {
     forms.forEach(element => {
         element.style.display = 'none';
     });
+    helpText.style.display = 'block';
 }
 
 hideForms();
@@ -15,6 +17,7 @@ document.getElementById('help').addEventListener('click', function () {
     document.querySelectorAll('.help').forEach(element => {
         element.style.display = '';
     });
+    helpText.style.display = 'none';
 });
 
 document.getElementById('bug').addEventListener('click', function () {
@@ -22,6 +25,7 @@ document.getElementById('bug').addEventListener('click', function () {
     document.querySelectorAll('.bug').forEach(element => {
         element.style.display = '';
     });
+    helpText.style.display = 'none';
 });
 
 document.getElementById('contact').addEventListener('click', function () {
@@ -29,4 +33,5 @@ document.getElementById('contact').addEventListener('click', function () {
     document.querySelectorAll('.contact').forEach(element => {
         element.style.display = '';
     });
+    helpText.style.display = 'none';
 });
