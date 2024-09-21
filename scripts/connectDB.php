@@ -13,18 +13,25 @@ initEnvironmentVars();
  */
 function connectToDB()
 {
-    $dbHostEncrypted = getenv('DB_HOST');
-    $dbHost = decrypt($dbHostEncrypted);
-    $dbUserEncrypted = getenv('DB_USER');
-    $dbUser = decrypt($dbUserEncrypted);
-    $dbPassEncrypted = getenv('DB_PASS');
-    $dbPass = decrypt($dbPassEncrypted);
-    $dbNameEncrypted = getenv('DB_NAME');
-    $dbName = decrypt($dbNameEncrypted);
+    $dbHost = getenv('DB_HOST');
+    $dbUser = getenv('DB_USER');
+    $dbPass = getenv('DB_PASS');
+    $dbName = getenv('DB_NAME');
 
     try {
         $conn = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // If the connection is successful, check if the table accounts exists
+        $stmt = $conn->query("SELECT 1 FROM accounts LIMIT 1");
+        if ($stmt === false) {
+            // If the table does not exist, create it with initDB.sql
+            $sql = file_get_contents(__DIR__ . '/../scripts/initDB.sql');
+            $conn->exec($sql);
+        } else {
+            $stmt->closeCursor();
+        }
+
         return $conn;
     } catch (PDOException $e) {
         // echo "Connection failed: " . $e->getMessage();
