@@ -18,11 +18,11 @@ function loginUser($email, $password) {
         return "Invalid email format";
     }
 
-    //Encrypt the password and email
+    // Encrypt the password and email
     $encryptedPassword = encrypt($password);
     $encryptedEmail = encrypt($email);
 
-    //Connect to the database
+    // Connect to the database
     $conn = connectToDB();
     if ($conn === false) {
         return "Database connection failed";
