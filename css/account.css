@@ -57,6 +57,12 @@ form>input {
     margin-right: 5px;
 }
 
+input[type="submit"], button {
+    color: white;
+    border-color: white;
+}
+
+/* Deletion Pop Up */
 #deletionPopUp {
     top: 0;
     left: 0;
