@@ -10,6 +10,10 @@ Uses [AutoSitemapUpdater](https://github.com/NoaSecond/AutoSitemapUpdater)
 
 Uses [AutoDeployToFTP](https://github.com/NoaSecond/AutoDeployToFTP)
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/LaCorbeille/lacorbeille.studio/sitemap.yml?label=CI-AutoSitemapUpdater)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/LaCorbeille/lacorbeille.studio/codeql.yml?label=CI-CodeQL)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/LaCorbeille/lacorbeille.studio/deploy.yml?label=CD-AutoDeployToFTP)
+
 ## Usage
 
 Create a .env file and setup these fields <br>
