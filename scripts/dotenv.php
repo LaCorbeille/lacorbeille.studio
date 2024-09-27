@@ -45,4 +45,4 @@ function initEnvironmentVars()
             $_ENV[$name] = $value;
         }
     }
-} 
+}

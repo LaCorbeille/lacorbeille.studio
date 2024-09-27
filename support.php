@@ -1,11 +1,11 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
+if (!isset($_SESSION)) {
     session_start();
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?php echo isset($_SESSION['lang']) ? $_SESSION['lang'] : 'fr'; ?>"></html>
 
 <head>
     <?php include 'components/head.php'; ?>
@@ -19,19 +19,19 @@ if (session_status() === PHP_SESSION_NONE) {
     include 'components/header.php';
     ?>
     <main>
-        <h1 id="title">Besoin de <b>nous</b> contacter ?</h1>
+        <h1 id="title"><?php getValueFromJson('title.1'); ?><b><?php getValueFromJson('title.2'); ?></b><?php getValueFromJson('title.3'); ?></h1>
         <div id="supportGrid">
             <div id="help">
-                <h3>Demander de l'aide</h3>
+                <h3><?php getValueFromJson('buttons.1'); ?></h3>
             </div>
             <div id="bug">
-                <h3>Déclarer un bug</h3>
+                <h3><?php getValueFromJson('buttons.2'); ?></h3>
             </div>
             <div id="contact">
-                <h3>Entrer en contact</h3>
+                <h3><?php getValueFromJson('buttons.3'); ?></h3>
             </div>
         </div>
-        <a id="helpText">Sélectionnez une option pour continuer</a>
+        <a id="helpText"><?php getValueFromJson(key: 'helpText'); ?></a>
 
         <!-- Help -->
         <div class="help">

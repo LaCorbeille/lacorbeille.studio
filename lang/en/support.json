@@ -1,0 +1,13 @@
+{
+    "title": {
+        "1": "Need ",
+        "2": "support",
+        "3": " ?"
+    },
+    "buttons": {
+        "1": "Ask for help",
+        "2": "Report a bug",
+        "3": "Get in touch"
+    },
+    "helpText": "Select an option to continue"
+}

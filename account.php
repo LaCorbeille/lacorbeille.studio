@@ -1,7 +1,8 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
+if (!isset($_SESSION)) {
     session_start();
 }
+
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
     exit;
@@ -9,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?php echo isset($_SESSION['lang']) ? $_SESSION['lang'] : 'fr'; ?>"></html>
 
 <head>
     <?php include 'components/head.php'; ?>

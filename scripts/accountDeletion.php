@@ -7,7 +7,7 @@ include_once __DIR__ . '/../scripts/encryption.php';
 include_once __DIR__ . '/../scripts/dotenv.php';
 initEnvironmentVars();
 
-if (session_status() === PHP_SESSION_NONE) {
+if (!isset($_SESSION)) {
     session_start();
 }
 

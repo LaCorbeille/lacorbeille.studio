@@ -1,11 +1,11 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
+if (!isset($_SESSION)) {
     session_start();
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?php echo isset($_SESSION['lang']) ? $_SESSION['lang'] : 'fr'; ?>"></html>
 
 <head>
     <?php include 'components/head.php'; ?>
@@ -22,12 +22,12 @@ if (session_status() === PHP_SESSION_NONE) {
         <div id="showcase">
             <video autoplay loop muted>
                 <source src="assets/video/showcaseGames.mp4" type="video/mp4">
-                Your browser does not support the video tag
+                <?php getValueFromJson('showcase.error'); ?>
             </video>
             <a id="showcaseLogo"><img src="assets/img/branding/logoFullWhite.svg" alt="Logo Full White"></a>
-            <a href="#title" id="seeMoreGames">Voir plus</a>
+            <a href="#title" id="seeMoreGames"><?php getValueFromJson('showcase.button'); ?></a>
         </div>
-        <h1 id="title">Nos <b>jeux</b> vidéos</h1>
+        <h1 id="title"><?php getValueFromJson('games.title.1'); ?><b><?php getValueFromJson('games.title.2'); ?></b><?php getValueFromJson('games.title.3'); ?></h1>
         <div id="gamesWrapper">
             <?php
             $status = 'new';

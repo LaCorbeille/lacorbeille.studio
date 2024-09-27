@@ -41,7 +41,9 @@ function loginUser($email, $password) {
     }
 
     // Start the session
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
     try {
         $_SESSION['id'] = $user['id'];
         $_SESSION['username'] = $user['username'];

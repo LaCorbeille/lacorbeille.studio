@@ -12,20 +12,22 @@
     </div>
     <div id="footerBottom">
         <div>
-            <a href="https://www.noasecond.com" target="_blank">Créé par Noa Second</a>
+            <a href="https://www.noasecond.com" target="_blank"><?php getValueFromJson('createdBy'); ?></a>
         </div>
         <div>
-            <a href="#">Mentions légales</a>
+            <a href="#"><?php getValueFromJson('legalNotice'); ?></a>
             <a>|</a>
-            <a href="#">Politique de confidentialité</a>
+            <a href="#"><?php getValueFromJson('privacyPolicy'); ?></a>
             <a>|</a>
-            <a href="sitemap.xml">Plan du site</a>
+            <a href="sitemap.xml"><?php getValueFromJson('sitemap'); ?></a>
+            <a>|</a>
+            <a href="branding.zip"><?php getValueFromJson('branding'); ?></a>
         </div>
         <div>
             <button type="button" data-theme-toggle=""><img src="assets/img/icons/dark-mode.svg"></button>
             <select id="langSelect">
-                <option value="fr">🇫🇷</option>
-                <option value="en">🇬🇧</option>
+                <option value="en" <?php if ($_SESSION['lang'] == 'en') echo 'selected'; ?>>🇬🇧</option>
+                <option value="fr" <?php if ($_SESSION['lang'] == 'fr') echo 'selected'; ?>>🇫🇷</option>
             </select>
         </div>
     </div>

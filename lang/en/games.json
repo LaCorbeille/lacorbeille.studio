@@ -1,0 +1,13 @@
+{
+    "showcase" : {
+        "error": "Your browser does not support the video tag.",
+        "button": "See more"
+    },
+    "games": {
+        "title": {
+            "1": "Our ",
+            "2": "video games",
+            "3": ""
+        }
+    }
+}

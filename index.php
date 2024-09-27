@@ -1,11 +1,11 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
+if (!isset($_SESSION)) {
     session_start();
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?php echo isset($_SESSION['lang']) ? $_SESSION['lang'] : 'fr'; ?>"></html>
 
 <head>
     <?php include 'components/head.php'; ?>
@@ -28,29 +28,24 @@ if (session_status() === PHP_SESSION_NONE) {
         <div id="showcase">
             <video autoplay loop muted>
                 <source src="assets/video/showcase.mp4" type="video/mp4">
-                Your browser does not support the video tag
+                <?php getValueFromJson('showcase.error'); ?>
             </video>
             <div>
-                <h1>Bienvenue dans <b>LaCorbeille</b> STUDIO !</h1>
-                <h3>Plongez dans l'univers de notre studio de développement de jeux vidéo indépendant, où créativité
-                    et passion se rencontrent.</h3>
+                <h1><?php getValueFromJson('showcase.title.1'); ?><b><?php getValueFromJson('showcase.title.2'); ?></b><?php getValueFromJson('showcase.title.3'); ?></h1>
+                <h3><?php getValueFromJson('showcase.description'); ?></h3>
             </div>
         </div>
-        <h1>Notre dernier jeu : <b>BOT A.N.I.C</b></h1>
+        <h1><?php getValueFromJson('latestProject.title.1'); ?><b><?php getValueFromJson('latestProject.title.2'); ?></b></h1>
         <section id="latestProject">
             <img src="https://placehold.co/500x500?text=assets/img/latestProjects.png" alt="latest project">
             <div>
-                <h3>Suivez la conception de notre tout dernier jeu.</h3>
+                <h3><?php getValueFromJson('latestProject.subtitle'); ?></h3>
                 <ul>
-                    <li>Une immersion totale : Les mécaniques de jeu sont conçues pour vous faire oublier que vous êtes
-                        devant un écran, vous plongeant entièrement dans l'expérience.</li>
-                    <li>Des graphismes impressionnants : Grâce à Unreal Engine 5, nous exploitons les dernières avancées
-                        technologiques pour renforcer l'immersion visuelle et vous offrir des environnements à couper le
-                        souffle.</li>
-                    <li>Un récit interactif : Laissez-vous transporter par une histoire pleine de rebondissements, qui
-                        s'adapte à vos choix et à votre style de jeu.</li>
+                    <li><?php getValueFromJson('latestProject.paragraph.1'); ?></li>
+                    <li><?php getValueFromJson('latestProject.paragraph.2'); ?></li>
+                    <li><?php getValueFromJson('latestProject.paragraph.3'); ?></li>
                 </ul>
-                <button onclick="window.location.href='/games/BOT-ANIC.php'">En savoir plus</button>
+                <button onclick="window.location.href='/games/BOT-ANIC.php'"><?php getValueFromJson('latestProject.button'); ?></button>
             </div>
         </section>
     </main>
