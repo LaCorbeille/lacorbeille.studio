@@ -10,6 +10,7 @@ if (!isset($_SESSION)) {
 <head>
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/support.css">
+    <link rel="stylesheet" href="css/responsive/support.css">
     <script src="js/support.js" defer></script>
 </head>
 

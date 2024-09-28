@@ -15,6 +15,7 @@ if (!isset($_SESSION['username'])) {
 <head>
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/account.css">
+    <link rel="stylesheet" href="css/responsive/account.css">
     <script src="js/account.js" defer></script>
 </head>
 
