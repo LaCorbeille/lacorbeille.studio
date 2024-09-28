@@ -11,7 +11,8 @@
         gap: 10vw;
     }
 
-    .game, .game>img {
+    .game,
+    .game>img {
         width: 40vw;
         height: 60vw;
         max-width: inherit;
@@ -19,3 +20,16 @@
     }
 }
 
+@media (max-width: 500px) {
+    .status {
+        font-size: 0.65rem;
+    }
+
+    .platforms {
+        padding: 5px;
+    }
+
+    .platforms>img {
+        width: 10px;
+    }
+}
