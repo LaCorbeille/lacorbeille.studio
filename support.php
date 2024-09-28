@@ -12,6 +12,36 @@ if (!isset($_SESSION)) {
     <link rel="stylesheet" href="css/support.css">
     <link rel="stylesheet" href="css/responsive/support.css">
     <script src="js/support.js" defer></script>
+    <meta name="description" content="Besoin d'aide ? Contactez notre support." />
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+        "@type": "Question",
+        "name": "Comment contacter le support ?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vous pouvez contacter notre support via nos formulaires en ligne."
+        }
+        }
+    ]
+    }
+    </script>
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Support - LaCorbeille STUDIO" />
+    <meta property="og:description" content="Besoin d'aide avec nos jeux ou nos services ? Contactez le support de LaCorbeille STUDIO pour toute assistance." />
+    <meta property="og:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
+    <meta property="og:url" content="https://lacorbeille.studio/support.php" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Support - LaCorbeille STUDIO" />
+    <meta name="twitter:description" content="Besoin d'aide avec nos jeux ou nos services ? Contactez le support de LaCorbeille STUDIO pour toute assistance." />
+    <meta name="twitter:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
+    <meta name="twitter:site" content="@LaCorbeilleSTD" />
 </head>
 
 <body>

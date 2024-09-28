@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="css/responsive/news.css">
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script async src="//www.instagram.com/embed.js"></script>
+    <meta name="description" content="Suivez les dernières actualités de LaCorbeille STUDIO. Découvrez nos annonces, mises à jour, et événements en temps réel." />
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Actualités LaCorbeille STUDIO",
+    "url": "https://lacorbeille.studio/news.php",
+    "description": "Dernières nouvelles et mises à jour de LaCorbeille STUDIO."
+    }
+    </script>
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Actualités - LaCorbeille STUDIO" />
+    <meta property="og:description" content="Restez informé des dernières actualités de LaCorbeille STUDIO." />
+    <meta property="og:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
+    <meta property="og:url" content="https://lacorbeille.studio/news.php" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Actualités - LaCorbeille STUDIO" />
+    <meta name="twitter:description" content="Restez informé des dernières actualités de LaCorbeille STUDIO." />
+    <meta name="twitter:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
+    <meta name="twitter:site" content="@LaCorbeilleSTD" />
+
 </head>
 
 <body>

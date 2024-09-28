@@ -11,6 +11,30 @@ if (!isset($_SESSION)) {
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/responsive/index.css">
+    <meta name="description" content="LaCorbeille STUDIO, créateur de jeux vidéo indépendant. Découvrez nos projets en cours, nos jeux sortis, et les dernières actualités de notre studio." />
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LaCorbeille STUDIO",
+        "url": "https://lacorbeille.studio",
+        "logo": "https://lacorbeille.studio/assets/img/branding/LogoFull.svg",
+        "description": "Créateur de jeux vidéo innovants."
+    }
+    </script>
+    <!-- OpenGraph -->
+    <meta property="og:title" content="LaCorbeille STUDIO - Créateur de Jeux Vidéo" />
+    <meta property="og:description" content="Découvrez nos jeux vidéo et les dernières actualités de notre studio." />
+    <meta property="og:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
+    <meta property="og:url" content="https://lacorbeille.studio" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LaCorbeille STUDIO - Créateur de Jeux Vidéo" />
+    <meta name="twitter:description" content="Découvrez nos jeux vidéo et les dernières actualités de notre studio." />
+    <meta name="twitter:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
+    <meta name="twitter:site" content="@LaCorbeilleSTD" />
 </head>
 
 <body>

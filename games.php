@@ -11,6 +11,47 @@ if (!isset($_SESSION)) {
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/games.css">
     <link rel="stylesheet" href="css/responsive/games.css">
+    <meta name="description" content="Explorez les jeux vidéo créés par LaCorbeille STUDIO. Retrouvez nos jeux en cours de développement et nos dernières sorties." />
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Nos jeux",
+        "url": "https://lacorbeille.studio/games.php",
+        "description": "Découvrez les jeux développés par LaCorbeille STUDIO.",
+        "itemListElement": [
+            {
+                "@type": "VideoGame",
+                "name": "RiceBattle",
+                "url": "https://lacorbeille.studio/RiceBattle"
+            },
+            {
+                "@type": "VideoGame",
+                "name": "A Litte Adventure",
+                "url": "https://lacorbeille.studio/ALittleAdventure"
+            },
+            {
+                "@type": "VideoGame",
+                "name": "BOT A.N.I.C",
+                "url": "https://lacorbeille.studio/BOT-ANIC"
+            }
+        ]
+    }
+    </script>
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Nos Jeux - LaCorbeille STUDIO" />
+    <meta property="og:description" content="Explorez les jeux vidéo créés par LaCorbeille STUDIO." />
+    <meta property="og:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
+    <meta property="og:url" content="https://lacorbeille.studio/games.php" />
+    <meta property="og:type" content="website" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nos Jeux - LaCorbeille STUDIO" />
+    <meta name="twitter:description" content="Explorez les jeux vidéo créés par LaCorbeille STUDIO." />
+    <meta name="twitter:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
+    <meta name="twitter:site" content="@LaCorbeilleSTD" />
+
 </head>
 
 <body>

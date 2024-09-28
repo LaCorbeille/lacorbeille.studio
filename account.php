@@ -17,6 +17,8 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="css/account.css">
     <link rel="stylesheet" href="css/responsive/account.css">
     <script src="js/account.js" defer></script>
+    <!-- META TAGS -->
+    <meta name="description" content="Gérez vos informations personnelles et vos préférences dans votre compte LaCorbeille STUDIO." />
 </head>
 
 <body>

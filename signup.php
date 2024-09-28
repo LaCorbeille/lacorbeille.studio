@@ -41,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/signup.css">
     <script src="js/popUp.js" defer></script>
+    <!-- META TAGS -->
+    <meta name="description" content="Rejoignez LaCorbeille STUDIO en créant un compte. Inscrivez-vous pour accéder à des contenus exclusifs et rester informé de nos actualités." />
 </head>
 
 <body>
