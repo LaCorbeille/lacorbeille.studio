@@ -31,12 +31,12 @@ main {
     margin-bottom: 50px;
     cursor: pointer;
     color: white;
+    text-transform: uppercase;
 }
 
 #showcase>a#seeMoreGames:hover {
     border: solid 2px var(--Fuchsia);
     color: var(--Fuchsia);
-    text-transform: uppercase;
 }
 
 #showcase>a#showcaseLogo {

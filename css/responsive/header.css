@@ -39,11 +39,12 @@
     }
 
     #menuMobile>* {
-        font-size: 2rem;
+        font-size: 1.7rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 20px 0;
+        text-transform: uppercase;
     }
 
     #menuMobile>hr {

@@ -3,7 +3,8 @@ User-agent: *
 Disallow:
 
 # Empêche l'indexation des pages sensibles
-Disallow: /admin.php
+Disallow: /sitemap.xml
+Disallow: /legal.php
 
 # Indique le chemin du fichier sitemap
 Sitemap: https://lacorbeille.studio/sitemap.xml

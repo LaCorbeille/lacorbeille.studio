@@ -37,7 +37,7 @@
 
 /* -----GENERAL----- */
 * {
-    transition: ease-in-out 0.25s;
+    transition: all 0.25s ease-in-out;
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;

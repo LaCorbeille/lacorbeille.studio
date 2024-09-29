@@ -15,9 +15,9 @@
             <a href="https://www.noasecond.com" target="_blank"><?php getValueFromJson('createdBy'); ?></a>
         </div>
         <div>
-            <a href="#"><?php getValueFromJson('legalNotice'); ?></a>
+            <a href="legal.php#legalNotice"><?php getValueFromJson('legalNotice'); ?></a>
             <a>|</a>
-            <a href="#"><?php getValueFromJson('privacyPolicy'); ?></a>
+            <a href="legal.php#privacyPolicy"><?php getValueFromJson('privacyPolicy'); ?></a>
             <a>|</a>
             <a href="sitemap.xml"><?php getValueFromJson('sitemap'); ?></a>
             <a>|</a>

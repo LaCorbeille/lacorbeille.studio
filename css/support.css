@@ -133,11 +133,13 @@ button {
 }
 
 #faq h2::after {
+    transform: rotateZ(0deg);
     content: url('/assets/img/icons/arrow_drop_down.svg');
+    transition: transform 0.3s ease;
 }
 
 #faq h2.active::after {
-    transform: rotateX(180deg);
+    transform: rotateZ(180deg);
 }
 
 .faq a {

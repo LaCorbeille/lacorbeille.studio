@@ -28,7 +28,9 @@ if (!isset($active)) {
             <a id="signin" href="signin.php"><?php getValueFromJson(key: 'login'); ?></a>
         <?php } ?>
     </div>
-    <a id="burgerMenu"><img src="assets/img/icons/menu.svg" alt="Menu"></a>
+    <a id="burgerMenu">
+        <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')"><path class="line top" d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"></path><path class="line middle" d="m 70,50 h -40"></path><path class="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"></path></svg>
+    </a>
     <div id="accountDropdown">
         <a id="userId"><?= $username; ?><span><?= "#" . $id ?></span><img src="assets/img/icons/content_copy.svg" alt="content_copy"></a>
         <hr>
