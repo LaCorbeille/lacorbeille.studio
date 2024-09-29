@@ -9,5 +9,58 @@
         "2": "Report a bug",
         "3": "Get in touch"
     },
-    "helpText": "Select an option to continue"
+    "helpText": "Select an option to continue",
+    "faq" : {
+        "title": "Have a question? Check our FAQ",
+        "headers": {
+            "1": {
+                "title": "Account and login",
+                "questions": {
+                    "1": "Can I play without a LaCorbeille STUDIO account?",
+                    "2": "How do I create an account on LaCorbeille STUDIO?",
+                    "3": "I forgot my password, what should I do?"
+                },
+                "answers": {
+                    "1": "Answer: Yes, LaCorbeille accounts are only necessary for support requests and receiving newsletters.",
+                    "2": "Answer: To create a LaCorbeille account, go to the <a href='https://lacorbeille.studio/signup.php'>account creation page</a> via the 'LOG IN' button available at the top right of the header. Then, click on 'Create an account' at the bottom of the login form.",
+                    "3": "Answer: If you forget your password, go to the <a href='https://lacorbeille.studio/signin.php'>account creation page</a> and click on 'forgot password' then complete the form. An email will be sent to you."
+                }
+            },
+            "2": {
+                "title": "Games and technical issues",
+                "questions": {
+                    "1": "The game crashes or won't start, what should I do?",
+                    "2": "How do I report a bug in a game?"
+                },
+                "answers": {
+                    "1": "Answer: If you encounter a problem with one of our games, please check if your drivers are up to date. Try restarting the game or the entire system. If these steps do not resolve the issue, you can request support or report a bug.",
+                    "2": "Answer: To report a bug, go to the <a href='https://lacorbeille.studio/support.php'>support</a> section of our site and choose a type of support. An associated form will appear, just fill it out."
+                }
+            },
+            "3": {
+                "title": "Purchases and refunds",
+                "questions": {
+                    "1": "How do I buy a LaCorbeille STUDIO game?",
+                    "2": "How can I get a refund for a game?"
+                },
+                "answers": {
+                    "1": "Answer: The games are available on third-party distribution platforms indicated on each <a href='https://lacorbeille.studio/games.php'>game page</a> of our site. If the game is offered to you on a site other than the one indicated on the game page, we are not responsible for its online availability.",
+                    "2": "Answer: Refund details are available on each distribution platform where we publish our games. To find these platforms, select the game on the games page of our site."
+                }
+            },
+            "4": {
+                "title": "Other common questions",
+                "questions": {
+                    "1": "I am a content creator, can I use your games to create content on YouTube, Twitch, or other platforms?",
+                    "2": "Can I suggest ideas or improvements?",
+                    "3": "Can I apply for a job or internship?"
+                },
+                "answers": {
+                    "1": "Answer: Yes, we encourage content creators to share videos and streams of our games on platforms like YouTube and Twitch. Make sure to comply with the platform's terms of use.",
+                    "2": "Answer: We gladly accept suggestions. To do so, send an email to <a href='mailto:contact@lacorbeille.studio'>contact@lacorbeille.studio</a>.",
+                    "3": "Answer: LaCorbeille STUDIO is a small independent structure, for the moment we are not recruiting."
+                }
+            }
+        }
+    }
 }

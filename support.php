@@ -55,7 +55,7 @@ if (!isset($_SESSION)) {
         <h1 id="title">
             <?php getValueFromJson('title.1'); ?><b><?php getValueFromJson('title.2'); ?></b><?php getValueFromJson('title.3'); ?>
         </h1>
-        <section>
+        <section id="support">
             <div id="supportGrid">
                 <div id="help">
                     <h3><?php getValueFromJson('buttons.1'); ?></h3>
@@ -112,8 +112,60 @@ if (!isset($_SESSION)) {
             </form>
         </section>
         <!-- FAQ -->
-        <section>
-
+        <section id="faq">
+            <h1><?php getValueFromJson('faq.title'); ?></h1>
+            <div class="faq">
+                <h2><?php getValueFromJson('faq.headers.1.title'); ?></h2>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.1.questions.1'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.1.answers.1'); ?></p>
+                </div>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.1.questions.2'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.1.answers.2'); ?></p>
+                </div>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.1.questions.3'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.1.answers.3'); ?></p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2><?php getValueFromJson('faq.headers.2.title'); ?></h2>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.2.questions.1'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.2.answers.1'); ?></p>
+                </div>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.2.questions.2'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.2.answers.2'); ?></p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2><?php getValueFromJson('faq.headers.3.title'); ?></h2>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.3.questions.1'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.3.answers.1'); ?></p>
+                </div>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.3.questions.2'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.3.answers.2'); ?></p>
+                </div>
+            </div>
+            <div class="faq">
+                <h2><?php getValueFromJson('faq.headers.4.title'); ?></h2>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.4.questions.1'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.4.answers.1'); ?></p>
+                </div>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.4.questions.2'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.4.answers.2'); ?></p>
+                </div>
+                <div class="question">
+                    <h3><?php getValueFromJson('faq.headers.4.questions.3'); ?></h3>
+                    <p><?php getValueFromJson('faq.headers.4.answers.3'); ?></p>
+                </div>
+            </div>
         </section>
     </main>
     <?php include 'components/footer.php'; ?>

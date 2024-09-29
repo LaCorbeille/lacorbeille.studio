@@ -39,7 +39,7 @@ main {
             var(--RichBlack)),
         conic-gradient(from var(--angle),
             var(--Fuchsia) 0deg 90deg,
-           transparent 90deg 180deg,
+            transparent 90deg 180deg,
             var(--Fuchsia) 180deg 270deg,
             transparent 270deg 360deg);
     background-origin: border-box;
@@ -54,7 +54,7 @@ main {
 #helpText {
     width: 100%;
     text-align: center;
-    margin-top: 50px;
+    margin: 50px 0;
 }
 
 form {
@@ -72,7 +72,7 @@ form>* {
     margin: 10px 0px;
 }
 
-h2 {
+#support h2 {
     position: relative;
     z-index: 1;
     background-color: var(--RichBlack);
@@ -104,4 +104,44 @@ button {
     to {
         --angle: 360deg;
     }
+}
+
+/* FAQ */
+#faq {
+    margin-bottom: 50px;
+}
+
+.faq {
+    border: solid 2px var(--Fuchsia);
+    border-radius: 5px;
+    padding: 5px 25px;
+    margin: 25px 0;
+}
+
+.faq>.question {
+    display: none;
+}
+
+#faq h2 {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#faq h2::after {
+    content: url('/assets/img/icons/arrow_drop_down.svg');
+}
+
+#faq h2.active::after {
+    transform: rotateX(180deg);
+}
+
+.faq a {
+    font-weight: bold;
+}
+
+.faq a:hover {
+    color: var(--Fuchsia);
 }
