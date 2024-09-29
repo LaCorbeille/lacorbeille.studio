@@ -36,6 +36,7 @@ main {
 #showcase>a#seeMoreGames:hover {
     border: solid 2px var(--Fuchsia);
     color: var(--Fuchsia);
+    text-transform: uppercase;
 }
 
 #showcase>a#showcaseLogo {

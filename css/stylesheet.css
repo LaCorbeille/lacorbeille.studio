@@ -203,6 +203,7 @@ button {
     background-color: transparent;
     cursor: pointer;
     transition: ease-in-out 0.25s;
+    text-transform: uppercase;
 }
 
 input[type="submit"]:hover,

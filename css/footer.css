@@ -45,7 +45,7 @@ footer>div {
 /* Bottom */
 #footerBottom {
     background-color: var(--LightSilver);
-    padding: 5px 10px;
+    padding: 10px 20px;
     display: flex;
 }
 
@@ -79,6 +79,8 @@ footer>div {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 #footerBottom>*:nth-child(3) button {

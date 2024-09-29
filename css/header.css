@@ -6,7 +6,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgb(3, 6, 27, 0.5);
+    background-color: rgb(0 0 0 / 20%);
 }
 
 header>a {

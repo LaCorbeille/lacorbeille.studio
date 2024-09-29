@@ -112,8 +112,8 @@ if (!isset($_SESSION)) {
             </form>
         </section>
         <!-- FAQ -->
+        <h1><?php getValueFromJson('faq.title'); ?></h1>
         <section id="faq">
-            <h1><?php getValueFromJson('faq.title'); ?></h1>
             <div class="faq">
                 <h2><?php getValueFromJson('faq.headers.1.title'); ?></h2>
                 <div class="question">
