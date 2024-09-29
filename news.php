@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo isset($_SESSION['lang']) ? $_SESSION['lang'] : 'fr'; ?>"></html>
+<html lang="<?php echo isset($_SESSION['lang']) ? $_SESSION['lang'] : 'fr'; ?>">
 
 <head>
     <?php include 'components/head.php'; ?>
