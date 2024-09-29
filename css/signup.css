@@ -46,6 +46,7 @@ label {
 #terms {
     width: 90%;
     display: flex;
+    align-items: center;
 }
 
 #bottomText {
