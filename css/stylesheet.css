@@ -43,6 +43,7 @@
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+    -webkit-font-smoothing: antialiased;
 }
 
 html {
@@ -55,16 +56,14 @@ body {
     margin: 0;
     width: 100vw;
     min-height: 100vh;
+    background-image: url(/assets/img/noise-light.webp);
 }
-
 
 main {
     min-height: 100vh;
     min-height: var(--app-height);
-    /* width: 100vw; */
-    background-color: var(--RichBlack);
-    margin-top: -75px;
-    /* Height of the header */
+    /* background-color: var(--RichBlack); */
+    margin-top: -75px; /* Height of the header */
     padding: 0px 15vw;
     animation: fadeIn 1s ease-in-out;
 }
@@ -95,7 +94,7 @@ h6 {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 3.3em;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
