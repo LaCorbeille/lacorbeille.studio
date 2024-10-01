@@ -1,11 +1,7 @@
 {
     "showcase" : {
         "error": "Votre navigateur ne supporte pas la balise vidéo.",
-        "title": {
-            "1": "Bienvenue dans ",
-            "2": "LaCorbeille",
-            "3": " !"
-        },
+        "title": "Bienvenue dans <b>LaCorbeille</b> !",
         "description": "Plongez dans l'univers de notre studio de développement de jeux vidéo indépendant, où créativité et passion se rencontrent."
     },
     "latestProject" : {

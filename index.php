@@ -55,7 +55,7 @@ if (!isset($_SESSION)) {
                 <?php getValueFromJson('showcase.error'); ?>
             </video>
             <div>
-                <h1><?php getValueFromJson('showcase.title.1'); ?><b><?php getValueFromJson('showcase.title.2'); ?></b><?php getValueFromJson('showcase.title.3'); ?></h1>
+                <h1><?php getValueFromJson('showcase.title'); ?></h1>
                 <h3><?php getValueFromJson('showcase.description'); ?></h3>
             </div>
         </div>

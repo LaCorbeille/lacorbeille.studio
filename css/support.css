@@ -25,7 +25,6 @@ main {
     padding: 25px;
     border-radius: 5px;
     border: solid white 3px;
-    text-transform: lowercase;
     cursor: pointer;
 }
 

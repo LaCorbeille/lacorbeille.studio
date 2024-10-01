@@ -4,10 +4,6 @@
         "button": "See more"
     },
     "games": {
-        "title": {
-            "1": "Our ",
-            "2": "video games",
-            "3": ""
-        }
+        "title": "Our <b>games</b>"
     }
 }

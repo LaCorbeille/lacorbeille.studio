@@ -49,25 +49,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include 'components/header.php'; ?>
     <main>
         <form method="POST">
-            <h2>Inscription</h2>
+            <h2><?php getValueFromJson('title'); ?></h2>
             <?php if (!empty(trim($error))): ?>
                 <a class="alert error"><?php echo $error; ?></a>
             <?php endif; ?>
             <?php if (!empty(trim($success))): ?>
                 <a class="alert error"><?php echo $success; ?></a>
             <?php endif; ?>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <label id="terms"><input type="checkbox" name="remember" value="true" required> Accepter les&nbsp;<a
-                    id="openPopUp">conditions générales</a></label>
-            <button type="submit">Créer le compte</button>
-            <a href="signin.php" id="bottomText">Se connecter</a>
+            <input type="email" name="email" placeholder="<?php getValueFromJson('email'); ?>" required>
+            <input type="text" name="username" placeholder="<?php getValueFromJson('username'); ?>" required>
+            <input type="password" name="password" placeholder="<?php getValueFromJson('password'); ?>" required>
+            <label id="terms"><input type="checkbox" name="remember" value="true" required><?php getValueFromJson('accept'); ?></label>
+            <button type="submit"><?php getValueFromJson('signup'); ?></button>
+            <a href="signin.php" id="bottomText"><?php getValueFromJson('signin'); ?></a>
         </form>
         <div id="popUp">
-            <h2>Conditions générales</h2>
-            <p>En cochant cette case, vous acceptez les conditions générales d'utilisation de LaCorbeille STUDIO.</p>
-            <button id="closePopUp">Fermer</button>
+            <h2><?php getValueFromJson('popUp.title'); ?></h2>
+            <p><?php getValueFromJson('popUp.content'); ?></p>
+            <button id="closePopUp"><?php getValueFromJson('popUp.close'); ?></button>
         </div>
     </main>
     <?php include 'components/footer.php'; ?>

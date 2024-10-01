@@ -1,11 +1,7 @@
 {
     "showcase" : {
         "error": "Your browser does not support the video tag.",
-        "title": {
-            "1": "Welcome to ",
-            "2": "LaCorbeille",
-            "3": " !"
-        },
+        "title": "Welcome to <b>LaCorbeille</b> !",
         "description": "Plongez dans l'univers de notre studio de développement de jeux vidéo indépendant, où créativité et passion se rencontrent."
     },
     "latestProject" : {

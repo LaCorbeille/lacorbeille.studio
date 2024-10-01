@@ -35,6 +35,9 @@ if (!isset($active)) {
         <a id="userId"><?= $username; ?><span><?= "#" . $id ?></span><img src="assets/img/icons/content_copy.svg" alt="content_copy"></a>
         <hr>
         <a href="/account.php"><?php getValueFromJson('settings'); ?><img src="assets/img/icons/manage_account.svg" alt="settings"></a>
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') { ?>
+            <a href="/admin.php"><?php getValueFromJson('admin'); ?><img src="assets/img/icons/shield_person.svg" alt="admin_panel"></a>
+        <?php } ?>
         <a href="/scripts/logout.php"><?php getValueFromJson('logout'); ?><img src="assets/img/icons/logout.svg" alt="logout"></a>
     </div>
     <!-- Mobile Menu -->
@@ -46,6 +49,9 @@ if (!isset($active)) {
         <?php if (isset($username)) { ?>
             <a id="userId"><?= $username; ?><?= "#" . $id ?><img src="assets/img/icons/content_copy_white.svg" alt="content_copy"></a>
             <a href="/account.php"><?php getValueFromJson('settings'); ?><img src="assets/img/icons/manage_account_white.svg" alt="settings"></a>
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') { ?>
+            <a href="/admin.php"><?php getValueFromJson('admin'); ?><img src="assets/img/icons/shield_person_white.svg" alt="admin_panel"></a>
+            <?php } ?>
             <a id="logout" href="/scripts/logout.php"><?php getValueFromJson('logout'); ?><img src="assets/img/icons/logout.svg" alt="logout"></a>
         <?php } else { ?>
             <a id="signin" href="signin.php"><?php getValueFromJson('login'); ?></a>

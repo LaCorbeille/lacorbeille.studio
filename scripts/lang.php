@@ -1,9 +1,15 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $requestData = json_decode(file_get_contents('php://input'), true);
-    if ($requestData['action'] === 'changeLang') {
-        $lang = $requestData['lang'];
-        changeLang($lang);
+    if (isset($requestData['action']) && $requestData['action'] === 'changeLang') {
+        if (isset($requestData['lang'])) {
+            $lang = $requestData['lang'];
+            changeLang($lang);
+        } else {
+            echo json_encode(['error' => 'Language not specified']);
+        }
+    } else {
+        // echo json_encode(['error' => 'Invalid action']);
     }
 }
 

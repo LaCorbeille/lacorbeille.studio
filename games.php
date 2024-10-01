@@ -68,7 +68,7 @@ if (!isset($_SESSION)) {
             <a id="showcaseLogo"><img src="assets/img/branding/logoFullWhite.svg" alt="Logo Full White"></a>
             <a href="#title" id="seeMoreGames"><?php getValueFromJson('showcase.button'); ?></a>
         </div>
-        <h1 id="title"><?php getValueFromJson('games.title.1'); ?><b><?php getValueFromJson('games.title.2'); ?></b><?php getValueFromJson('games.title.3'); ?></h1>
+        <h1 id="title"><?php getValueFromJson('games.title'); ?></h1>
         <div id="gamesWrapper">
             <?php
             $status = 'new';

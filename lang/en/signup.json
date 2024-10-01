@@ -1,0 +1,14 @@
+{
+    "title": "Sign Up",
+    "email": "Email Address",
+    "username": "Username",
+    "password": "Password",
+    "accept": "Accept&nbsp;<a id='openPopUp'>Terms and Conditions</a>",
+    "signup": "Create Account",
+    "signin": "Sign In",
+    "popUp": {
+        "title": "Terms and Conditions",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "close": "Close"
+    }
+}

@@ -1,9 +1,5 @@
 {
-    "title": {
-        "1": "Besoin de ",
-        "2": "support",
-        "3": " ?"
-    },
+    "title": "Besoin de <b>support</b> ?",
     "buttons": {
         "1": "Demander de l'aide",
         "2": "Déclarer un bug",

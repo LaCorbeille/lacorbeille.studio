@@ -4,5 +4,6 @@
     "support": "Support",
     "login": "Se connecter",
     "logout": "Se déconnecter",
-    "settings": "Paramètres"
+    "settings": "Paramètres",
+    "admin": "Admin"
 }

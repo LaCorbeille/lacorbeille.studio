@@ -1,9 +1,3 @@
 {
-    "title": {
-        "1": "Our ",
-        "2": "news",
-        "3": " in",
-        "4": "real",
-        "5": "time"
-    }
+    "title": "Our <b>news</b> in <span id='text1'>real</span> <span id='text2'>time</span>"
 }

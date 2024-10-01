@@ -52,9 +52,7 @@ if (!isset($_SESSION)) {
     include 'components/header.php';
     ?>
     <main>
-        <h1 id="title">
-            <?php getValueFromJson('title.1'); ?><b><?php getValueFromJson('title.2'); ?></b><?php getValueFromJson('title.3'); ?>
-        </h1>
+        <h1 id="title"><?php getValueFromJson('title'); ?></h1>
         <section id="support">
             <div id="supportGrid">
                 <div id="help">

@@ -39,7 +39,7 @@
     include 'components/header.php';
     ?>
     <main>
-        <h1><?php getValueFromJson('title.1'); ?><b><?php getValueFromJson('title.2'); ?></b> <?php getValueFromJson('title.3'); ?> <span id="text1"><?php getValueFromJson('title.4'); ?></spantext2> <span id="text2"><?php getValueFromJson('title.5'); ?></span></h1>
+        <h1><?php getValueFromJson('title'); ?></h1>
         <div class="row"> 
             <div class="column">
                 <!-- Instagram --><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/p/C_yT9AnIydQ/embed/captioned/?cr=1&amp;v=14&amp;wp=1350&amp;rd=http%3A%2F%2Flocalhost%3A3000&amp;rp=%2Fnews.php#%7B%22ci%22%3A0%2C%22os%22%3A167.5%2C%22ls%22%3A17.299999997019768%2C%22le%22%3A116.69999999552965%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="647" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="background: white; max-width: 540px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe>

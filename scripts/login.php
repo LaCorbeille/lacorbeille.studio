@@ -7,7 +7,7 @@ include_once __DIR__ . '/../scripts/encryption.php';
 include_once __DIR__ . '/../scripts/dotenv.php';
 initEnvironmentVars();
 
-function loginUser($email, $password) {
+function loginUser($email, $password, $remember) {
     // Check if the email, username, and password are set
     if (empty($email) || empty($password)) {
         return "Email, and password are required";
@@ -44,6 +44,15 @@ function loginUser($email, $password) {
     if (!isset($_SESSION)) {
         session_start();
     }
+
+    // Set session expiration time
+    if ($remember === 'true') {
+        $_SESSION['expire'] = time() + 60 * 60 * 24 * 30; // 30 days
+    } else {
+        $_SESSION['expire'] = time() + 60 * 60 * 24; // 24 hours
+    }
+
+    // Set the session variables
     try {
         $_SESSION['id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
@@ -57,20 +66,4 @@ function loginUser($email, $password) {
     } catch (Exception $e) {
         return "An error occurred";
     }
-
-    // Start fake session
-    // session_start();
-    // try {
-    //     $_SESSION['id'] = '0';
-    //     $_SESSION['username'] = 'Brume';
-    //     $_SESSION['email'] = 'brume@lacorbeille.studio';
-    //     $_SESSION['creation_date'] = '21/09/2024';
-    //     $_SESSION['firstname'] = 'Noa';
-    //     $_SESSION['lastname'] = 'Second';
-    //     $_SESSION['newsletter'] = false;
-    //     $_SESSION['role'] = 'admin';
-    //     return true;
-    // } catch (Exception $e) {
-    //     return "An error occurred";
-    // }
 }

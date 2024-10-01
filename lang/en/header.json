@@ -4,5 +4,6 @@
     "support": "Support",
     "login": "Login",
     "logout": "Logout",
-    "settings": "Settings"
+    "settings": "Settings",
+    "admin": "Admin"
 }

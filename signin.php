@@ -17,8 +17,11 @@ $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['email']) && isset($_POST['password'])) {
+        if (!isset($_POST['remember'])) {
+            $_POST['remember'] = false;
+        }
         try {
-            $result = loginUser($_POST['email'], $_POST['password']);
+            $result = loginUser($_POST['email'], $_POST['password'], $_POST['remember']);
         } catch (Exception $e) {
             $error = "An error occurred: " . $e->getMessage();
         }
@@ -46,15 +49,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include 'components/header.php'; ?>
     <main>
         <form method="POST">
-            <h2>Connexion</h2>
+            <h2><?php getValueFromJson('title'); ?></h2>
             <?php if (!empty(trim($error))) : ?>
                 <a class="alert error"><?php echo $error; ?></a>
             <?php endif; ?>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <label id="stayConnected"><input type="checkbox" name="remember" value="true"> Rester connecté</label>
-            <button type="submit">Se connecter</button>
-            <a href="signup.php" id="bottomText">Créer un compte</a>
+            <input type="email" name="email" placeholder="<?php getValueFromJson('email'); ?>" required>
+            <input type="password" name="password" placeholder="<?php getValueFromJson('password'); ?>" required>
+            <label id="stayConnected"><input type="checkbox" name="remember" value="true"><?php getValueFromJson('remember'); ?></label>
+            <button type="submit"><?php getValueFromJson('signin'); ?></button>
+            <a href="signup.php" id="bottomText"><?php getValueFromJson('signup'); ?></a>
         </form>
     </main>
     <?php include 'components/footer.php'; ?>

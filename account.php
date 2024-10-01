@@ -38,49 +38,50 @@ if (!isset($_SESSION['username'])) {
         </div>
         <section class="accountSection">
             <div>
-                <h3>LaCorbeille account</h3>
-                <a>All the informations about your account</a>
+                <h3><?php getValueFromJson('sections.1.title'); ?></h3>
+                <a><?php getValueFromJson('sections.1.description'); ?></a>
             </div>
             <div>
-                <a>Username : <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'undefined'; ?></a>
-                <a>ID : <?php echo isset($_SESSION['id']) ? $_SESSION['id'] : 'undefined'; ?></a>
-                <a>Date of creation :
-                    <?php echo isset($_SESSION['creation_date']) ? $_SESSION['creation_date'] : 'undefined'; ?></a>
+                <a><?php getValueFromJson('sections.1.username'); ?><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'undefined'; ?></a>
+                <a><?php getValueFromJson('sections.1.id'); ?><?php echo isset($_SESSION['id']) ? $_SESSION['id'] : 'undefined'; ?></a>
+                <a><?php getValueFromJson('sections.1.creationDate'); ?><?php echo isset($_SESSION['creation_date']) ? $_SESSION['creation_date'] : 'undefined'; ?></a>
                 <form>
-                    <input type="text" name="username" placeholder="Change username" pattern="[A-Za-z]+"
+                    <input type="text" name="username" placeholder="<?php getValueFromJson('sections.1.editUsername'); ?>" pattern="[A-Za-z]+"
                         title="Username should only contain letters.">
                     <input type="submit" value="OK">
                 </form>
                 <form>
-                    <input type="password" name="password" placeholder="Change password">
+                    <input type="password" name="password" placeholder="<?php getValueFromJson('sections.1.editPassword'); ?>">
                     <input type="submit" value="OK">
                 </form>
-                <button id="deleteAccount">Delete my account</button>
+                <button id="deleteAccount"><?php getValueFromJson('sections.1.deleteAccount'); ?></button>
             </div>
         </section>
         <section class="accountSection">
             <div>
-                <h3>Personnal informations</h3>
-                <a>Your personnal informations</a>
+                <h3><?php getValueFromJson('sections.2.title'); ?></h3>
+                <a><?php getValueFromJson('sections.2.description'); ?></a>
             </div>
             <div>
-                <a>Firstname : <?php echo isset($_SESSION['firstname']) ? $_SESSION['firstname'] : 'undefined'; ?></a>
-                <a>Lastname : <?php echo isset($_SESSION['lastname']) ? $_SESSION['lastname'] : 'undefined'; ?></a>
-                <a>Email : <?php echo isset($_SESSION['email']) ? $_SESSION['email'] : 'undefined'; ?></a>
+                <a><?php getValueFromJson('sections.2.firstname'); ?><?php echo isset($_SESSION['firstname']) ? $_SESSION['firstname'] : 'undefined'; ?></a>
+                <a><?php getValueFromJson('sections.2.lastname'); ?><?php echo isset($_SESSION['lastname']) ? $_SESSION['lastname'] : 'undefined'; ?></a>
+                <a><?php getValueFromJson('sections.2.email'); ?><?php echo isset($_SESSION['email']) ? $_SESSION['email'] : 'undefined'; ?></a>
                 <form>
-                    <input type="email" name="email" placeholder="Change email">
+                    <input type="email" name="email" placeholder="<?php getValueFromJson('sections.2.editEmail'); ?>">
                     <input type="submit" value="OK">
                 </form>
             </div>
         </section>
         <section class="accountSection">
             <div>
-                <h3>Communication preferences</h3>
-                <a>Set your communication preferences</a>
+                <h3><?php getValueFromJson('sections.3.title'); ?></h3>
+                <a><?php getValueFromJson('sections.3.description'); ?></a>
             </div>
             <div>
-                <a>Newsletter :
-                    <?php echo isset($_SESSION['newsletter']) ? $_SESSION['newsletter'] : 'No'; ?></a>
+                <a>
+                    <?php getValueFromJson('sections.3.newsletter'); ?>
+                    <?php echo isset($_SESSION['newsletter']) ? $_SESSION['newsletter'] : 'No'; ?>
+                </a>
             </div>
         </section>
     </main>
