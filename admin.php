@@ -5,7 +5,12 @@ if (!isset($_SESSION)) {
 
 include_once __DIR__ . '/scripts/adminFunct.php';
 
-$users = retrieveUsers(startFrom: 0);
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $searchTerm = htmlspecialchars($_GET['search']);
+    $users = searchString($searchTerm);
+} else {
+    $users = retrieveUsers(startFrom: 0);
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +29,12 @@ $users = retrieveUsers(startFrom: 0);
     include 'components/header.php';
     ?>
     <main>
-        <input type="text" id="search" placeholder="Search : Username, ID...">
+        <div id="toolbar">
+            <input type="text" id="searchBar" placeholder="Search : Username, ID...">
+            <a href="#" id="searchButton"><img src="assets/img/icons/search.svg" alt="Search"></a>
+            <a href="https://mysql13.lwspanel.com/phpmyadmin" target="_blank"><img src="assets/img/icons/database.svg" alt="Database"></a>
+            <a href="https://mail.lacorbeille.studio" target="_blank"><img src="assets/img/icons/mail.svg" alt="Webmail"></a>
+        </div>
         <?php
         if (is_string($users)) {
             echo $users;
@@ -33,18 +43,7 @@ $users = retrieveUsers(startFrom: 0);
             echo '<section id="users">';
             echo '<div id="usersHeaders"><a>ID ; Username ; Email ; Creation date ; First name ; Last name ; Newsletter ; Role</a></div>';
             foreach ($users as $user) {
-                echo '<div class="user">';
-                echo '<a>#' . htmlspecialchars($user['id'] ?? 'undefined') . '</a>';
-                echo '<a>' . htmlspecialchars($user['username'] ?? 'undefined') . '</a>';
-                echo '<a>' . htmlspecialchars($user['email'] ?? 'undefined') . '</a>';
-                echo '<a>' . htmlspecialchars($user['creation_date'] ?? 'undefined') . '</a>';
-                echo '<a>' . htmlspecialchars($user['firstname'] ?? 'undefined') . '</a>';
-                echo '<a>' . htmlspecialchars($user['lastname'] ?? 'undefined') . '</a>';
-                echo '<a>' . htmlspecialchars($user['newsletter'] ?? 'undefined') . '</a>';
-                echo '<a>' . htmlspecialchars($user['role'] ?? 'undefined') . '</a>';
-                echo '<a id="editUser><img src="assets/img/icons/manage_account.svg" alt="manage user" ></a>';
-                echo '<a id="deleteUser><img src="assets/img/icons/delete.svg" alt="delete user" ></a>';
-                echo '</div><br>';
+                print($user);
             }
             echo '</section>';
         }

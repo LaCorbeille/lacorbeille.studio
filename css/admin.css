@@ -5,11 +5,46 @@ main {
     justify-content: flex-start;
 }
 
-input#search {
+#toolbar {
+    display: flex;
+    flex-direction: row;
     margin: 50px 0;
 }
 
+#toolbar>#searchBar {
+    width: 100%;
+}
+
+#toolbar>a {
+    background-color: var(--BrightGray);
+    border-radius: 5px;
+    border: none;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#toolbar>a:hover {
+    cursor: pointer;
+    background-color: var(--LightSilver);
+}
+
+#toolbar>*:first-child {
+    margin-right: 10px;
+}
+
+#toolbar>*:not(:first-child):not(:last-child) {
+    margin: 0 10px;
+}
+
+#toolbar>*:last-child {
+    margin-left: 10px;
+}
+
 .alert {
+    align-self: center;
+    width: fit-content;
     margin-bottom: 50px;
 }
 
