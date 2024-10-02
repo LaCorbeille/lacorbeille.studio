@@ -26,9 +26,8 @@ function registerUser($email, $username, $password) {
         return "Invalid email format";
     }
 
-    //Encrypt the password and email
+    //Encrypt the password
     $encryptedPassword = encrypt($password);
-    $encryptedEmail = encrypt($email);
 
     //Connect to the database
     $conn = connectToDB();
@@ -38,7 +37,7 @@ function registerUser($email, $username, $password) {
 
     // Check if email is already used
     $stmt = $conn->prepare("SELECT COUNT(*) FROM accounts WHERE email = :email");
-    $stmt->bindParam(':email', $encryptedEmail);
+    $stmt->bindParam(':email', $email);
     $stmt->execute();
     $count = $stmt->fetchColumn();
 
@@ -49,7 +48,7 @@ function registerUser($email, $username, $password) {
 
     // Continue with user registration
     $stmt = $conn->prepare("INSERT INTO accounts (email, username, password) VALUES (:email, :username, :password)");
-    $stmt->bindParam(':email', $encryptedEmail);
+    $stmt->bindParam(':email', $email);
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $encryptedPassword);
     $stmt->execute();

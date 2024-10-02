@@ -23,12 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } catch (Exception $e) {
             $error = "An error occurred: " . $e->getMessage();
         }
-        if ($result === true) {
-            $success = "Un email de confirmation vous a été envoyé.\nVeuillez vérifier votre compte.";
-            header("Location: signin.php");
-            exit;
+        if (!isset($result)) {
+            $error = "An error occurred: Please try again later.";
         } else {
-            $error = $result;
+            if ($result === true) {
+                $success = "Un email de confirmation vous a été envoyé.\nVeuillez vérifier votre compte.";
+                header("Location: signin.php");
+                exit;
+            } else {
+                $error = $result;
+            }
         }
     }
 }

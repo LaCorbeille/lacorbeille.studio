@@ -50,13 +50,14 @@ function searchString($string)
     }
 
     // Retrieve users with search string
-    $stmt = $conn->prepare("SELECT * FROM accounts WHERE (username LIKE :string OR email LIKE :string OR firstname LIKE :string OR lastname LIKE :string) AND id LIKE :string");
-    $stmt->bindParam(':string', $string, PDO::PARAM_STR);
+    $stmt = $conn->prepare("SELECT * FROM accounts WHERE username LIKE :string OR email LIKE :string OR firstname LIKE :string OR lastname LIKE :string OR id LIKE :string OR role LIKE :string");
+    $searchString = '%' . $string . '%';
+    $stmt->bindParam(':string', $searchString, PDO::PARAM_STR);
     $stmt->execute();
 
     // Check if there are users
     if ($stmt->rowCount() === 0) {
-        return '<a class="alert warning">No user found in database</a>';
+        return '<a class="alert warning">No user found in database for : '. $string .'</a>';
     }
 
     // Return the users

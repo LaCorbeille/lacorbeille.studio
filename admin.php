@@ -1,6 +1,14 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+
 if (!isset($_SESSION)) {
     session_start();
+}
+
+if ($_SESSION['role'] !== 'admin') {
+    header("Location: index.php");
+    exit;
 }
 
 include_once __DIR__ . '/scripts/adminFunct.php';
@@ -32,7 +40,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
         <div id="toolbar">
             <input type="text" id="searchBar" placeholder="Search : Username, ID...">
             <a href="#" id="searchButton"><img src="assets/img/icons/search.svg" alt="Search"></a>
-            <a href="https://mysql13.lwspanel.com/phpmyadmin" target="_blank"><img src="assets/img/icons/database.svg" alt="Database"></a>
+            <a href="https://mysql17.lwspanel.com/phpmyadmin" target="_blank"><img src="assets/img/icons/database.svg" alt="Database"></a>
             <a href="https://mail.lacorbeille.studio" target="_blank"><img src="assets/img/icons/mail.svg" alt="Webmail"></a>
         </div>
         <?php
@@ -43,7 +51,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
             echo '<section id="users">';
             echo '<div id="usersHeaders"><a>ID ; Username ; Email ; Creation date ; First name ; Last name ; Newsletter ; Role</a></div>';
             foreach ($users as $user) {
-                print($user);
+                printUser($user);
             }
             echo '</section>';
         }

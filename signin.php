@@ -25,11 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } catch (Exception $e) {
             $error = "An error occurred: " . $e->getMessage();
         }
-        if ($result === true) {
-            header("Location: index.php");
-            exit;
+        if (!isset($result)) {
+            $error = "An error occurred: Please try again later.";
         } else {
-            $error = $result;
+            if ($result === true) {
+                header("Location: index.php");
+                exit;
+            } else {
+                $error = $result;
+            }
         }
     }
 }
@@ -57,7 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" name="password" placeholder="<?php getValueFromJson('password'); ?>" required>
             <label id="stayConnected"><input type="checkbox" name="remember" value="true"><?php getValueFromJson('remember'); ?></label>
             <button type="submit"><?php getValueFromJson('signin'); ?></button>
-            <a href="signup.php" id="bottomText"><?php getValueFromJson('signup'); ?></a>
+            <a href="signup.php" class="bottomText"><?php getValueFromJson('signup'); ?></a>
+            <a href="#" class="bottomText"><?php getValueFromJson('forgot'); ?></a>
         </form>
     </main>
     <?php include 'components/footer.php'; ?>
