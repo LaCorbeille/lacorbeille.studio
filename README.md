@@ -7,9 +7,9 @@ LaCorbeille Studio website
 
 This repository contains the source code for the blueberrypictures.fr website.
 
-Uses [AutoSitemapUpdater-v1.0](https://github.com/YoruKiwi/AutoSitemapUpdater)
+Uses [AutoSitemapUpdater-v1.0](https://github.com/NoaSecond/AutoSitemapUpdater)
 
-Uses [AutoDeployToFTP-v1.0](https://github.com/YoruKiwi/AutoDeployToFTP)
+Uses [AutoDeployToFTP-v1.0](https://github.com/NoaSecond/AutoDeployToFTP)
 
 ## Contributing
 
