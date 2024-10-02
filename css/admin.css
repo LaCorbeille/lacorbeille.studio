@@ -1,0 +1,46 @@
+main {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+input#search {
+    margin: 50px 0;
+}
+
+.alert {
+    margin-bottom: 50px;
+}
+
+section#users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+#usersHeaders {
+    display: flex;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+    background: var(--DarkGray);
+    justify-content: space-between;
+}
+
+.user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+    background: var(--LightSilver);
+}
+
+.user * {
+    color: black;
+}

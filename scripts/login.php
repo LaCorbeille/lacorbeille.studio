@@ -18,10 +18,6 @@ function loginUser($email, $password, $remember) {
         return "Invalid email format";
     }
 
-    // Encrypt the password and email
-    $encryptedPassword = encrypt($password);
-    $encryptedEmail = encrypt($email);
-
     // Connect to the database
     $conn = connectToDB();
     if ($conn === false) {
@@ -29,15 +25,20 @@ function loginUser($email, $password, $remember) {
     }
 
     // Retrieve the user from the database
-    $stmt = $conn->prepare("SELECT * FROM accounts WHERE email = :email AND password = :password");
-    $stmt->bindParam(':email', $encryptedEmail);
-    $stmt->bindParam(':password', $encryptedPassword);
+    $stmt = $conn->prepare("SELECT * FROM accounts WHERE email = :email");
+    $stmt->bindParam(':email', $email);
     $stmt->execute();
 
     // Check if the user exists
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     if ($user === false) {
         return "Invalid email or password";
+    }
+
+    // Decrypt the password from the database and compare it with the provided password
+    $decryptedPassword = decrypt($user['password']);
+    if ($decryptedPassword !== $password) {
+        return "Invalid email or password" . $decryptedPassword . " != " . $password;
     }
 
     // Start the session

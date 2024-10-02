@@ -60,10 +60,9 @@ body {
 }
 
 main {
-    min-height: 100vh;
-    min-height: var(--app-height);
-    /* background-color: var(--RichBlack); */
-    margin-top: -75px; /* Height of the header */
+    /* Viewport height minus header height */
+    min-height: calc(100vh - 75px);
+    min-height: calc(var(--app-height) - 75px);
     padding: 0px 15vw;
     animation: fadeIn 1s ease-in-out;
 }
