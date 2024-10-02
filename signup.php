@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/signup.css">
+    <link rel="stylesheet" href="css/responsive/signup.css">
     <script src="js/popUp.js" defer></script>
     <!-- META TAGS -->
     <meta name="description" content="Rejoignez LaCorbeille STUDIO en créant un compte. Inscrivez-vous pour accéder à des contenus exclusifs et rester informé de nos actualités." />
@@ -65,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" name="password" placeholder="<?php getValueFromJson('password'); ?>" required>
             <label id="terms"><input type="checkbox" name="remember" value="true" required><?php getValueFromJson('accept'); ?></label>
             <button type="submit"><?php getValueFromJson('signup'); ?></button>
-            <a href="signin.php" id="bottomText"><?php getValueFromJson('signin'); ?></a>
+            <a href="signin.php" class="bottomText"><?php getValueFromJson('signin'); ?></a>
         </form>
         <div id="popUp">
             <h2><?php getValueFromJson('popUp.title'); ?></h2>

@@ -27,6 +27,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 <head>
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive/admin.css">
     <meta name="robots" content="nofollow">
     <script src="js/admin.js" defer></script>
 </head>

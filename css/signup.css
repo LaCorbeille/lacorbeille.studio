@@ -49,10 +49,12 @@ label {
     align-items: center;
 }
 
-#bottomText {
-    margin: 0;
+.bottomText:first-of-type {
     margin-top: 45px;
-    margin-bottom: -30px;
+}
+
+.bottomText {
+    margin: 5px 0;
     font-size: 0.8rem;
     color: var(--DarkGray);
 }

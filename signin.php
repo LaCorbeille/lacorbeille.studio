@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/signin.css">
+    <link rel="stylesheet" href="css/responsive/signin.css">
     <!-- META TAGS -->
     <meta name="description" content="Connectez-vous à votre compte LaCorbeille STUDIO pour accéder à vos demandes de support et recevoir des notifications personnalisées." />
 </head>
