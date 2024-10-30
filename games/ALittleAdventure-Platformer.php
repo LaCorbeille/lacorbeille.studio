@@ -9,9 +9,9 @@ if (!isset($_SESSION)) {
 
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/head.php'; ?>
-    <link rel="stylesheet" href="/css/games/RiceBattle.css">
-    <link rel="stylesheet" href="/css/responsive/games/RiceBattle.css">
-    <meta name="description" content="RiceBattle est un jeu de combat 2.5D gratuit." />
+    <link rel="stylesheet" href="/css/games/ALittleAdventure-Platformer.css">
+    <link rel="stylesheet" href="/css/responsive/games/ALittleAdventure-Platformer.css">
+    <meta name="description" content="A Little Adventure Platformer est un platformer 3D dans gratuit." />
     <!-- Schema.org -->
     <!-- OpenGraph -->
     <meta property="og:title" content="Nos Jeux - LaCorbeille STUDIO" />
@@ -33,21 +33,25 @@ if (!isset($_SESSION)) {
     include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php';
     ?>
     <main>
-        <div id="artworkWrapper"><img id="artwork" src="/assets/img/games/RiceBattle/artwork.png" alt="Artwork RiceBattle"></div>
-        <h1>RiceBattle</h1>
-        <a class="alert error">Le jeu est en cours de développement. L'alpha sera prochainement ouverte.</a>
+        <img id="artwork" src="/assets/img/games/ALittleAdventure-Platformer/artwork.png"
+            alt="Artwork A Little Adventure - Platformer">
+        <h1>A Little Adventure - Platformer</h1>
+        <a class="alert error">Le jeu est en cours de développement. L'alpha est ouverte.</a>
         <div id="description">
             <div>
-                <p>RiceBattle description</p>
+                <p>Plongez dans l'univers A Little Adventure avec ce platformer vibrant où chaque niveau regorge
+                    d'obstacles
+                    et de défis. Affrontez des canons, activez des mécanismes ingénieux et collectez des objets pour
+                    espérer
+                    compléter les niveaux.</p>
                 <div id="platforms"><a>Compatible Windows</a><img src="/assets/img/icons/platforms/Windows.svg"></div>
-                <div id="controllers"><a>Prise en charge</a><img src="/assets/img/icons/controllers/gamepad.png"><img
-                        src="/assets/img/icons/controllers/keyboardAndMouse.png"></div>
+                <div id="controllers"><a>Prise en charge</a><img src="/assets/img/icons/controllers/gamepad.png"><img src="/assets/img/icons/controllers/keyboardAndMouse.png"></div>
             </div>
-            <img src="/assets/img/games/RiceBattle/1.png" alt="RiceBattle">
+            <img src="/assets/img/games/ALittleAdventure-Platformer/1.png" alt="A Little Adventure - Platformer">
         </div>
-        <!-- <button
-            onclick="window.location.href='/assets/downloadable/RiceBattleAlpha1WindowsBuild.zip'">Télécharger
-            l'alpha</button> -->
+        <button
+            onclick="window.location.href='/assets/downloadable/ALittleAdventure - Platformer - Alpha1WindowsBuild.zip'">Télécharger
+            l'alpha</button>
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'; ?>
 </body>

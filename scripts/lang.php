@@ -39,7 +39,7 @@ function getValueFromJson($key, $print = true)
     $callerDir = dirname($callerFile);
 
     # Get value from json file
-    $filePath = "lang/$lang/$file.json";
+    $filePath = $_SERVER['DOCUMENT_ROOT'] . "/lang/$lang/$file.json";
     try {
         if (!file_exists($filePath)) {
             throw new Exception("File not found: $filePath");
@@ -89,4 +89,3 @@ function changeLang($lang)
     $_SESSION['lang'] = $lang;
     exit();
 }
-?>

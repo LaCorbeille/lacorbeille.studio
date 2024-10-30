@@ -1,0 +1,11 @@
+main {
+    padding: 0px 15vw;
+    padding-top: 50px;
+}
+
+section {
+    width: 100vw;
+    margin: 0 -15vw;
+    padding: 0 15vw;
+    background: #692a2a;
+}

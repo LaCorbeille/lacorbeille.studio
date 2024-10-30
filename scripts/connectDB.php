@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
-include_once __DIR__ . '/../scripts/dotenv.php';
-include_once __DIR__ . '/../scripts/encryption.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/dotenv.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/encryption.php';
 initEnvironmentVars();
 
 /**

@@ -7,7 +7,7 @@
  */
 function initEnvironmentVars()
 {
-    $env_file_path = realpath(__DIR__ . "/../.env");
+    $env_file_path = realpath($_SERVER['DOCUMENT_ROOT'] . "/.env");
 
     if (empty($env_file_path)) {
         throw new ErrorException("Environment File Path is Empty.");

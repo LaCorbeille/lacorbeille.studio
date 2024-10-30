@@ -1,0 +1,55 @@
+body {
+    background: var(--RichBlack);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 50px;
+}
+
+#artwork {
+    width: 100vw;
+    height: 50vh;
+    margin: 0px -15vw;
+    object-fit: cover;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#description {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#description>img {
+    width: 250px;
+    margin-left: 100px;
+}
+
+#description p {
+    margin-top: 75px;
+}
+
+#platforms,
+#controllers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#platforms img,
+#controllers img {
+    width: 40px;
+    margin-left: 20px;
+}
+
+button {
+    border: white solid 2px;
+    color: white;
+}

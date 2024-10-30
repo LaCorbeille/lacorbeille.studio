@@ -4,6 +4,7 @@ main {
     margin: 0;
     flex-wrap: wrap;
     align-items: stretch;
+    padding-top: 50px;
 }
 
 #text1 {

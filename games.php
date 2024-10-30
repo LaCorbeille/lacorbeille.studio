@@ -72,17 +72,18 @@ if (!isset($_SESSION)) {
         <div id="gamesWrapper">
             <?php
             $status = 'new';
+            $status = 'development';
             $title = 'Platformer 3D';
             $platforms = ['Windows'];
-            $img = 'assets/img/games/Platformer3D.png';
-            $target = 'games/Platformer3D.php';
+            $img = 'assets/img/games/ALittleAdventure-Platformer/Cover.png';
+            $target = 'games/ALittleAdventure-Platformer.php';
             include 'components/games/game.php';
             ?>
             <?php
             $status = 'development';
             $title = 'Rice Battle';
             $platforms = ['Windows'];
-            $img = 'assets/img/games/RiceBattle.png';
+            $img = 'assets/img/games/RiceBattle/Cover.png';
             $target = 'games/RiceBattle.php';
             include 'components/games/game.php';
             ?>
@@ -100,6 +101,14 @@ if (!isset($_SESSION)) {
             $platforms = ['Windows', 'Linux', 'XBox', 'PlayStation'];
             $img = 'https://placehold.co/400x600?text=BOT+A.N.I.C';
             $target = 'games/BOT-ANIC.php';
+            include 'components/games/game.php';
+            ?>
+            <?php
+            $status = 'conception';
+            $title = 'LeLAB';
+            $platforms = ['Windows', 'Linux', 'XBox', 'PlayStation'];
+            $img = 'https://placehold.co/400x600?text=Le+LAB';
+            $target = 'games/LeLAB.php';
             include 'components/games/game.php';
             ?>
         </div>

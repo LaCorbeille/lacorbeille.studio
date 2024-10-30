@@ -57,10 +57,11 @@ body {
     width: 100vw;
     min-height: 100vh;
     background-image: url(/assets/img/noise-light.webp);
+    color: white;
 }
 
 main {
-    /* Viewport height minus header height */
+    /* Viewport height, minus header height */
     min-height: calc(100vh - 75px);
     min-height: calc(var(--app-height) - 75px);
     padding: 0px 15vw;
@@ -209,4 +210,14 @@ input[type="submit"]:hover,
 button:hover {
     border: solid 2px var(--Fuchsia);
     color: var(--Fuchsia);
+}
+
+button:disabled {
+    cursor: not-allowed !important;
+}
+
+button:disabled:hover {
+    cursor: not-allowed !important;
+    color: var(--LightSilver);
+    border-color: var(--LightSilver);
 }

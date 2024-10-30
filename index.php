@@ -59,7 +59,7 @@ if (!isset($_SESSION)) {
                 <h3><?php getValueFromJson('showcase.description'); ?></h3>
             </div>
         </div>
-        <h1><?php getValueFromJson('latestProject.title.1'); ?><b><?php getValueFromJson('latestProject.title.2'); ?></b></h1>
+        <h1><?php getValueFromJson('latestProject.title'); ?></h1>
         <section id="latestProject">
             <img src="https://placehold.co/500x500?text=assets/img/latestProjects.png" alt="latest project">
             <div>

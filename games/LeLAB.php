@@ -9,16 +9,16 @@ if (!isset($_SESSION)) {
 
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/head.php'; ?>
-    <link rel="stylesheet" href="/css/games/bot-anic.css">
+    <link rel="stylesheet" href="/css/games/lelab.css">
     <meta name="description"
-        content="BOT - A.N.I.C est un jeu développé par LaCorbeille STUDIO. Explorez un monde post-apocalyptique avec un androïde combatif, A.N.I.C, dans une aventure stratégique où vos choix auront des conséquences." />
+        content="LeLAB est un jeu développé par LaCorbeille STUDIO. Dans ce FPS multijoueurs rapide, construisez des arènes et battez-vous." />
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VideoGame",
-      "name": "BOT - A.N.I.C",
-      "description": "BOT - A.N.I.C est un jeu où vous incarnez un androïde combattant dans un monde post-apocalyptique envahi par des plantes mutantes.",
+      "name": "LeLAB",
+      "description": "LeLAB est un jeu développé par LaCorbeille STUDIO. Dans ce FPS multijoueurs rapide, construisez des arènes et battez-vous.",
       "image": "https://lacorbeille.studio/assets/img/branding/LogoFull.svg",
       "genre": "Action, Stratégie",
       "publisher": {
@@ -27,29 +27,29 @@ if (!isset($_SESSION)) {
         "url": "https://lacorbeille.studio"
       },
       "platform": "PC",
-      "url": "https://lacorbeille.studio/games/BOT-ANIC",
+      "url": "https://lacorbeille.studio/games/LeLAB",
       "potentialAction": {
         "@type": "PlayAction",
         "target": {
           "@type": "EntryPoint",
-          "urlTemplate": "https://lacorbeille.studio/games/BOT-ANIC"
+          "urlTemplate": "https://lacorbeille.studio/games/LeLAB"
         }
       }
     }
     </script>
     <!-- OpenGraph -->
-    <meta property="og:title" content="BOT - A.N.I.C | LaCorbeille STUDIO" />
+    <meta property="og:title" content="LeLAB | LaCorbeille STUDIO" />
     <meta property="og:description"
-        content="Incarnez l'androïde A.N.I.C et affrontez des plantes mutantes dans un monde post-apocalyptique." />
+        content="Dans ce FPS multijoueurs rapide, construisez des arènes et battez-vous." />
     <meta property="og:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
-    <meta property="og:url" content="https://lacorbeille.studio/games/BOT-ANIC" />
+    <meta property="og:url" content="https://lacorbeille.studio/games/LeLAB" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="LaCorbeille STUDIO" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="BOT - A.N.I.C | LaCorbeille STUDIO" />
+    <meta name="twitter:title" content="LeLAB | LaCorbeille STUDIO" />
     <meta name="twitter:description"
-        content="Incarnez A.N.I.C, un androïde prêt à affronter des hordes de plantes mutantes pour sauver son monde." />
+        content="Dans ce FPS multijoueurs rapide, construisez des arènes et battez-vous." />
     <meta name="twitter:image" content="https://lacorbeille.studio/assets/img/branding/LogoFull.svg" />
     <meta name="twitter:site" content="@LaCorbeilleSTD" />
 </head>
@@ -60,10 +60,7 @@ if (!isset($_SESSION)) {
     include $_SERVER['DOCUMENT_ROOT'] . '/components/header.php';
     ?>
     <main>
-      <h1><b>BOT - A.N.I.C</b></h1>
-        <section>Biomes et créatures</section>
-        <section>Customisation</section>
-        <section>Rechargement</section>
+      <h1><b>LeLAB</b></h1>
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/footer.php'; ?>
 </body>

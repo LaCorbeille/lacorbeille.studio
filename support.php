@@ -71,17 +71,23 @@ if (!isset($_SESSION)) {
             <div class="help">
                 <h2>Demander de l'aide</h2>
             </div>
-            <form class="help" action="/submit_help_request" method="post">
+            <form class="help" <?php if (isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['email'])) {echo 'action="/submit_help_request" method="post"';}?>>
+                <?php if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || !isset($_SESSION['email'])): ?>
+                    <a class="alert error">Vous devez être connecté pour envoyer le formulaire.</a>
+                <?php endif; ?>
                 <textarea id="help-text" name="help_text" rows="5" placeholder="Décrivez votre problème ici..."
                     required></textarea>
-                <div><button type="submit">Envoyer</button></div>
+                <div><button type="submit" <?php if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || !isset($_SESSION['email'])) echo 'disabled'; ?>>Envoyer</button></div>
             </form>
 
             <!-- Bug -->
             <div class="bug">
                 <h2>Déclarer un bug</h2>
             </div>
-            <form class="bug" action="/report_bug" method="post" enctype="multipart/form-data">
+            <form class="bug" <?php if (isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['email'])) {echo 'action="/report_bug" method="post" enctype="multipart/form-data"';} ?>>
+                <?php if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || !isset($_SESSION['email'])): ?>
+                    <a class="alert error">Vous devez être connecté pour envoyer le formulaire.</a>
+                <?php endif; ?>
                 <div>
                     <select id="game-select" name="game">
                         <option value="jeu1">Jeu 1</option>
@@ -96,17 +102,20 @@ if (!isset($_SESSION)) {
                 <input type="file" id="proof" name="proof"
                     accept=".png, .jpeg, .jpg, .webp, .gif, .bmp, .svg, .mp4, .avi, .mov, .mkv, .webm"
                     max-file-size="5000000">
-                <div><button type="submit">Envoyer</button></div>
+                <div><button type="submit" <?php if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || !isset($_SESSION['email'])) echo 'disabled'; ?>>Envoyer</button></div>
             </form>
 
             <!-- Contact -->
             <div class="contact">
                 <h2>Entrer en contact</h2>
             </div>
-            <form class="contact" action="/contact_us" method="post">
+            <form class="contact" <?php if (isset($_SESSION['id']) && isset($_SESSION['username']) && isset($_SESSION['email'])) {echo 'action="/contact_us" method="post"';}?>>
+                <?php if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || !isset($_SESSION['email'])): ?>
+                    <a class="alert error">Vous devez être connecté pour envoyer le formulaire.</a>
+                <?php endif; ?>
                 <textarea id="contact-message" name="contact_message" rows="5"
                     placeholder="Écrivez votre message ici..." required></textarea>
-                <div><button type="submit">Envoyer</button></div>
+                <div><button type="submit" <?php if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || !isset($_SESSION['email'])) echo 'disabled'; ?>>Envoyer</button></div>
             </form>
         </section>
         <!-- FAQ -->
