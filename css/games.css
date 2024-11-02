@@ -18,7 +18,8 @@ main {
 
 #showcase>video {
     width: 100vw;
-    height: 75vh;
+    height: 50vh;
+    filter: blur(2px);
     object-fit: cover;
     margin: 0;
 }
@@ -41,7 +42,7 @@ main {
 
 #showcase>a#showcaseLogo {
     position: absolute;
-    height: 75vh; /* Same height as the showcase video */
+    height: 50vh; /* Same height as the showcase video */
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -60,7 +61,7 @@ main {
 }
 
 #showcase>a#showcaseLogo>img {
-    width: 50vw;
+    width: 30vw;
     height: auto;
 }
 

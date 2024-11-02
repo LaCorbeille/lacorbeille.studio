@@ -24,7 +24,8 @@ main>img {
 
 #showcase>video {
     width: 100vw;
-    height: 75vh;
+    height: 50vh;
+    filter: blur(2px);
     object-fit: cover;
     margin: 0;
 }
