@@ -40,6 +40,7 @@ main>img {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+    align-items: center;
 }
 
 #latestProject>* {
@@ -48,6 +49,8 @@ main>img {
 
 #latestProject>img {
     border-radius: 5px;
+    width: 25%;
+    height: 25%;
 }
 
 li {

@@ -70,6 +70,7 @@ form {
 
 form>* {
     margin: 10px 0px;
+    color: black;
 }
 
 #support h2 {

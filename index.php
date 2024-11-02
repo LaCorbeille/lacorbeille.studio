@@ -61,7 +61,7 @@ if (!isset($_SESSION)) {
         </div>
         <h1><?php getValueFromJson('latestProject.title'); ?></h1>
         <section id="latestProject">
-            <img src="https://placehold.co/500x500?text=assets/img/latestProjects.png" alt="latest project">
+            <img src="/assets/img/latestProject.png" alt="latest project">
             <div>
                 <h3><?php getValueFromJson('latestProject.subtitle'); ?></h3>
                 <ul>
@@ -69,7 +69,7 @@ if (!isset($_SESSION)) {
                     <li><?php getValueFromJson('latestProject.paragraph.2'); ?></li>
                     <li><?php getValueFromJson('latestProject.paragraph.3'); ?></li>
                 </ul>
-                <button onclick="window.location.href='/games/BOT-ANIC.php'"><?php getValueFromJson('latestProject.button'); ?></button>
+                <button onclick="window.location.href='/games/ALittleAdventure-Platformer.php'"><?php getValueFromJson('latestProject.button'); ?></button>
             </div>
         </section>
     </main>

@@ -90,9 +90,8 @@ if (!isset($_SESSION)) {
                 <?php endif; ?>
                 <div>
                     <select id="game-select" name="game">
-                        <option value="jeu1">Jeu 1</option>
-                        <option value="jeu2">Jeu 2</option>
-                        <option value="jeu3">Jeu 3</option>
+                        <option value="A Little Adventure - Platformer">A Little Adventure - Platformer</option>
+                        <option value="RiceBattle">RiceBattle</option>
                     </select>
                 </div>
                 <textarea id="bug-description" name="bug_description" rows="5"
