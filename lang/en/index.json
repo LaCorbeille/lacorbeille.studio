@@ -1,0 +1,17 @@
+{
+    "showcase" : {
+        "error": "Your browser does not support the video tag.",
+        "title": "Welcome to <b>LaCorbeille</b> !",
+        "description": "Plongez dans l'univers de notre studio de développement de jeux vidéo indépendant, où créativité et passion se rencontrent."
+    },
+    "latestProject" : {
+        "title": "<b>BOT A.N.I.C</b>",
+        "subtitle": "Suivez la conception de notre tout premier jeu.",
+        "paragraph": {
+            "1" : "Une immersion totale : Les mécaniques de jeu sont conçues pour vous faire oublier que vous êtes devant un écran, vous plongeant entièrement dans l'expérience.",
+            "2" : "Des graphismes impressionnants : Grâce à Unreal Engine 5, nous exploitons les dernières avancées technologiques pour renforcer l'immersion visuelle et vous offrir des environnements à couper le souffle.",
+            "3" : "Un récit interactif : Laissez-vous transporter par une histoire pleine de rebondissements, qui s'adapte à vos choix et à votre style de jeu."
+        },
+        "button": "En savoir plus"
+    }
+}

@@ -1,0 +1,105 @@
+main {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+section {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+section:first-of-type {
+    margin-top: 50px;
+}
+
+section>* {
+    padding: 25px;
+}
+
+section h3 {
+    margin-top: 0;
+}
+
+section>div:first-child {
+    background-color: var(--RaisinBlack);
+    border-radius: 5px 0px 0px 5px;
+    width: 40%;
+}
+
+section>div:first-child>a {
+    color: var(--DarkGray);
+}
+
+section>div:last-child {
+    background-color: var(--Jet);
+    border-radius: 0px 5px 5px 0px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section>div:last-child>* {
+    margin: 10px 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form>input {
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+
+input[type="submit"], button {
+    color: white;
+    border-color: white;
+}
+
+/* Deletion Pop Up */
+#deletionPopUp {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: var(--app-height);
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#deletionPopUp>div {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+#deletionPopUp>div>* {
+    margin: 25px;
+    font-size: 1.2rem;
+    color: black;
+}
+
+#deletionPopUp.active {
+    display: flex;
+    animation: showPopUp 0.2s ease-in-out forwards;
+}
+
+@keyframes showPopUp {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

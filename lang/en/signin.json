@@ -1,0 +1,9 @@
+{
+    "title": "Sign In",
+    "email": "Email Address",
+    "password": "Password",
+    "remember": "Stay Signed In",
+    "forgot": "Forgot Password?",
+    "signin": "Sign In",
+    "signup": "Create an Account"
+}

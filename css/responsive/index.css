@@ -1,0 +1,34 @@
+@media (max-width: 1000px) {
+    #showcase {
+        margin: 0px -5vw;
+    }
+
+    #showcase>div {
+        margin: 0px 5vw;
+    }
+
+    #latestProject {
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #latestProject>* {
+        width: inherit;
+    }
+
+    #latestProject>div {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+}

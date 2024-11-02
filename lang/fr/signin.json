@@ -1,0 +1,9 @@
+{
+    "title": "Connexion",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "remember": "Rester connecté",
+    "forgot": "Mot de passe oublié ?",
+    "signin": "Se connecter",
+    "signup": "Créer un compte"
+}

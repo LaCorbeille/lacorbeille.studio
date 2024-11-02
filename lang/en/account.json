@@ -1,0 +1,29 @@
+{
+    "sections" : {
+        "1": {
+            "title": "LaCorbeille Account",
+            "description": "All information related to your LaCorbeille account",
+            "username": "Username: ",
+            "id": "ID: ",
+            "creationDate": "Creation Date: ",
+            "editUsername": "Edit Username",
+            "editPassword": "Edit Password",
+            "deleteAccount": "Delete Account",
+            "ok": "OK"
+        },
+        "2": {
+            "title": "Personal Information",
+            "description": "Your personal information",
+            "firstname": "First Name: ",
+            "lastname": "Last Name: ",
+            "email": "Email: ",
+            "editEmail": "Edit Email",
+            "ok": "OK"
+        },
+        "3": {
+            "title": "Communication Preferences",
+            "description": "Set your communication preferences",
+            "newsletter": "Receive the newsletter: "
+        }
+    }
+}

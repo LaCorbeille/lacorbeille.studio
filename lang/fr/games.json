@@ -1,0 +1,9 @@
+{
+    "showcase": {
+        "error": "Votre navigateur ne supporte pas la balise vidéo.",
+        "button": "Voir plus"
+    },
+    "games": {
+        "title": "Nos <b>jeux</b> vidéos"
+    }
+}

@@ -1,0 +1,6 @@
+@media (max-width: 800px) {
+    form {
+        padding: 25px;
+        width: 90%;
+    }
+}
