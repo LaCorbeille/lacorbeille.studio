@@ -3,9 +3,14 @@ CREATE TABLE accounts (
     username VARCHAR(50) NOT NULL UNIQUE,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     firstname VARCHAR(50),
     lastname VARCHAR(50),
     newsletter BOOLEAN DEFAULT FALSE,
-    role VARCHAR(20) DEFAULT 'user'
+    role VARCHAR(20) DEFAULT 'user',
+    is_admin tinyint(1) NOT NULL DEFAULT 0,
+    creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    active tinyint(1) DEFAULT 0,
+    activation_code varchar(255) NOT NULL,
+    activation_expiry datetime NOT NULL,
+    activated_at datetime DEFAULT NULL,
 );
