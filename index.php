@@ -12,6 +12,7 @@ if (!isset($_SESSION)) {
     <link rel="stylesheet" href="css/gameCard.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/responsive/index.css">
+    <link rel="stylesheet" href="css/responsive/gameCard.css">
     <script src="js/carousel.js" defer></script>
     <meta name="description"
         content="LaCorbeille STUDIO, créateur de jeux vidéo indépendant. Découvrez nos projets en cours, nos jeux sortis, et les dernières actualités de notre studio." />
@@ -89,7 +90,7 @@ if (!isset($_SESSION)) {
             ?>
         </div>
         <div id="bottomFade"></div>
-        <img id="background" src="assets/video/background.svg" alt="Background" />
+        <img id="background" src="assets/img/background.png" alt="Background" />
     </main>
     <footer>
         <div id="navArrows">

@@ -10,7 +10,7 @@
     --PastelGreen: #6BFF6B;
 
     /* Viewport */
-    --app-height: 100%;
+    --app-height: 100vh;
 
     /* Glassmorphism */
     --Blur: 10px;
@@ -56,6 +56,7 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
+    height: var(--app-height);
     color: white;
 }
 

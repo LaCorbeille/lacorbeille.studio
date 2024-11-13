@@ -1,34 +1,112 @@
-@media (max-width: 1000px) {
-    #showcase {
-        margin: 0px -5vw;
+@media (max-width: 1500px) {
+
+    /* Header */
+    header>img {
+        height: 5vh;
     }
 
-    #showcase>div {
-        margin: 0px 5vw;
+    /* Main */
+    main #contentWrapper {
+        right: 10vw;
+        top: 15vh;
     }
 
-    #latestProject {
-        justify-content: space-between;
-        flex-direction: column;
-        align-items: stretch;
+    h1 {
+        font-size: 2.5vw;
     }
 
-    #latestProject>* {
-        width: inherit;
+    main #gameDescription {
+        font-size: 1.5vw;
     }
 
-    #latestProject>div {
+    main button {
+        font-size: 1.5vw;
+    }
+
+    /* Footer */
+    footer>#navArrows img,
+    footer>#social img {
+        height: 2vw;
+    }
+
+    footer #arrowLeft {
+        margin-right: 3vw;
+    }
+
+    footer>#social a:first-of-type {
+        margin-right: 4vw;
+    }
+
+    footer>#social a:not(:first-of-type) {
+        margin-left: 1vw;
+    }
+
+    footer>#social a:first-of-type {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width: 1000px),
+(max-height: 650px) {
+
+    /* Header */
+    header {
         display: flex;
-        justify-content: space-between;
-        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Main */
+    main #contentWrapper {
+        display: flex;
         align-items: center;
+        top: 150px;
+        right: 0;
+        width: 100%;
     }
 
-    ul {
-        padding: 0;
+    h1 {
+        font-size: 1.5rem;
     }
 
-    li {
-        list-style: none;
+    main #gameDescription {
+        font-size: 1rem;
+        text-align: center;
+        width: 85%;
+    }
+
+    main #gameTags>a {
+        font-size: 0.8rem;
+    }
+
+    main #gamePlatforms img {
+        height: 20px;
+        margin-right: 0;
+    }
+
+    main button {
+        font-size: 0.8rem;
+    }
+
+    .gameCard {
+        margin-left: 3vw;
+    }
+
+    /* Footer */
+    footer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    footer>* {
+        margin: 1vh 0;
+    }
+
+    footer>#social a:first-of-type {
+        display: none;
+    }
+    
+    footer>#navArrows img, footer>#social img {
+        height: 20px;
     }
 }

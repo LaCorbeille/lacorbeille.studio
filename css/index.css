@@ -22,7 +22,7 @@ header>img {
 /* Main */
 main {
     width: 100vw;
-    height: 100vh;
+    height: var(--app-height);
 
     position: absolute;
     z-index: 1;
@@ -148,7 +148,7 @@ footer>#navArrows img {
     width: auto;
 }
 
-footer>#navArrows img:first-of-type {
+footer #arrowLeft {
     margin-right: 50px;
 }
 

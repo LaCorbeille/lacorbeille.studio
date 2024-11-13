@@ -1,0 +1,50 @@
+@media (max-width: 1500px) {
+
+    .gameCard,
+    .gameCard .foreground svg,
+    .gameCard .foreground>img,
+    .gameCard .cover {
+        width: 20vw;
+        height: 11.25vw;
+    }
+
+    .gameCard .foreground h2 {
+        font-size: 1.5vw;
+        margin-left: 15px;
+    }
+
+    .gameCard .foreground .platforms>img {
+        width: 1.5vw;
+        height: auto;
+    }
+
+    .gameCard .foreground .platforms {
+        margin-left: 15px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 1000px),
+(max-height: 650px) {
+
+    .gameCard {
+        margin-left: 3vw;
+    }
+
+    .gameCard .platforms {
+        display: none;
+    }
+
+    .gameCard .foreground h2 {
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        font-size: 0.7rem;
+        text-align: center;
+    }
+}
