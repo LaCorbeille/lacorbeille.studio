@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
 }
 
 //Language
-include_once $_SERVER['DOCUMENT_ROOT'].'/scripts/lang.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/lang.php';
 $language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 $deviceLang = substr($language, 0, 2);
 $lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : $deviceLang;
@@ -23,17 +23,11 @@ if (!isset($_SESSION['lang'])) {
 <!-- CSS -->
 <link rel="stylesheet" href="/css/stylesheet.css">
 <link rel="stylesheet" href="/css/responsive/stylesheet.css">
-<link rel="stylesheet" href="/css/footer.css">
-<link rel="stylesheet" href="/css/responsive/footer.css">
-<link rel="stylesheet" href="/css/header.css">
-<link rel="stylesheet" href="/css/responsive/header.css">
 <!-- JS -->
 <script src="/js/viewportHeight.js"></script>
 <script src="/js/lang.js" defer></script>
 <script src="/js/dynamicTitle.js" defer></script>
-<script src="/js/themeSwitcher.js" defer></script>
 <script src="/js/rightClick.js" defer></script>
-<script src="/js/header.js" defer></script>
 <!-- Ajax -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Fonts -->
@@ -44,9 +38,8 @@ if (!isset($_SESSION['lang'])) {
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9KYR4HG6WC"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9KYR4HG6WC');
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-9KYR4HG6WC');
 </script>
