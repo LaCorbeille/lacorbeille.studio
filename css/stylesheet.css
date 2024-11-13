@@ -1,19 +1,20 @@
 /*----- VARIABLES -----*/
 :root {
-    /* Colors */
+    /* Brand colors */
     --Fuchsia: #F500FF;
-    --RichBlack: #03061B;
-    --RaisinBlack: #222222;
-    --Jet: #343434;
-    --DarkGray: #A9A9A9;
-    --LightSilver: #D9D9D9;
-    --BrightGray: #E8EAED;
+    --RichBlack: #090B15;
+
+    /* Alerts */
     --PastelRed: #FF6767;
     --PastelYellow: #FFD167;
     --PastelGreen: #6BFF6B;
 
     /* Viewport */
     --app-height: 100%;
+
+    /* Glassmorphism */
+    --Blur: 10px;
+    --GlassOpacity: 0.1;
 }
 
 /*----- SCROLLBAR -----*/
@@ -47,25 +48,19 @@
 }
 
 html {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    overflow: hidden;
     background-color: var(--RichBlack);
 }
 
 body {
     margin: 0;
     width: 100vw;
-    min-height: 100vh;
-    background-image: url(/assets/img/noise-light.webp);
+    height: 100vh;
     color: white;
 }
 
 main {
-    /* Viewport height, minus header height */
-    min-height: calc(100vh - 75px);
-    min-height: calc(var(--app-height) - 75px);
-    padding: 0px 15vw;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -78,68 +73,8 @@ main {
     }
 }
 
-a,
-p,
-b,
-ul,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Open Sans", sans-serif;
-    color: white;
-}
 
-h1 {
-    font-size: 3.3em;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-h2 {
-    text-decoration: none;
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    font-size: 2rem;
-    color: var(--RichBlack);
-}
-
-b {
-    color: var(--Fuchsia);
-    font-family: "Rubik Glitch", system-ui;
-    font-weight: 400;
-    animation: boldTextBlink 1s ease-in-out forwards;
-}
-
-@keyframes boldTextBlink {
-    0% {
-        color: white;
-    }
-
-    70% {
-        color: white;
-    }
-
-    80% {
-        color: var(--Fuchsia);
-    }
-
-    90% {
-        color: white;
-    }
-
-    100% {
-        color: var(--Fuchsia);
-    }
-}
-
+/* Alerts */
 .alert {
     border-radius: 5px;
     padding: 10px;
@@ -156,68 +91,4 @@ b {
 
 .alert.success {
     background-color: var(--PastelGreen);
-}
-
-input,
-textarea {
-    all: unset;
-    background-color: var(--BrightGray);
-    border-radius: 5px;
-    border: none;
-    padding: 20px;
-    font-weight: 600;
-}
-
-select {
-    background-color: var(--BrightGray);
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-input[type="checkbox"] {
-    all: revert;
-    background-color: var(--BrightGray);
-    border-radius: 5px;
-    width: 1rem;
-    height: 1rem;
-    cursor: pointer;
-    padding: 5px;
-    margin: 0;
-    margin-right: 10px;
-}
-
-input::placeholder {
-    color: var(--DarkGray);
-}
-
-input[type="submit"],
-button {
-    border: solid 2px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    font-weight: 600;
-    background-color: transparent;
-    cursor: pointer;
-    transition: ease-in-out 0.25s;
-    text-transform: uppercase;
-}
-
-input[type="submit"]:hover,
-button:hover {
-    border: solid 2px var(--Fuchsia);
-    color: var(--Fuchsia);
-}
-
-button:disabled {
-    cursor: not-allowed !important;
-}
-
-button:disabled:hover {
-    cursor: not-allowed !important;
-    color: var(--LightSilver);
-    border-color: var(--LightSilver);
 }

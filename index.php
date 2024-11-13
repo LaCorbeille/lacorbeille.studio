@@ -9,9 +9,12 @@ if (!isset($_SESSION)) {
 
 <head>
     <?php include 'components/head.php'; ?>
+    <link rel="stylesheet" href="css/gameCard.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/responsive/index.css">
-    <meta name="description" content="LaCorbeille STUDIO, créateur de jeux vidéo indépendant. Découvrez nos projets en cours, nos jeux sortis, et les dernières actualités de notre studio." />
+    <script src="js/carousel.js" defer></script>
+    <meta name="description"
+        content="LaCorbeille STUDIO, créateur de jeux vidéo indépendant. Découvrez nos projets en cours, nos jeux sortis, et les dernières actualités de notre studio." />
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
@@ -38,42 +41,74 @@ if (!isset($_SESSION)) {
 </head>
 
 <body>
-    <?php
-    $active = basename($_SERVER['PHP_SELF']);
-    include 'components/header.php';
-    ?>
+    <header>
+        <img src="assets/img/branding/LogoFullWhite.svg" alt="LaCorbeille STUDIO" />
+    </header>
     <main>
-        <div class="loadingContainer">
-            <svg class="loadingSVGContainer" viewBox="0 0 40 40" height="40" width="40">
-                <circle class="track" cx="20" cy="20" r="17.5" pathlength="100" stroke-width="5px" fill="none" />
-                <circle class="car" cx="20" cy="20" r="17.5" pathlength="100" stroke-width="5px" fill="none" />
-            </svg>
+        <div id="contentWrapper">
+            <h1>LaCorbeille STUDIO</h1>
         </div>
-        <div id="showcase">
-            <video autoplay loop muted>
-                <source src="assets/video/showcase.mp4" type="video/mp4">
-                <?php getValueFromJson('showcase.error'); ?>
-            </video>
-            <div>
-                <h1><?php getValueFromJson('showcase.title'); ?></h1>
-                <h3><?php getValueFromJson('showcase.description'); ?></h3>
-            </div>
+        <div id="carousel">
+            <?php
+            $title = "A Little Adventure";
+            $description = "A Little Adventure est platformer vibrant où chaque niveau regorge d'obstacles et de défis.";
+            $gameTags = ["Platformer", "Adventure", "3D", "LowPoly"];
+            $action = "Télécharger l'alpha";
+            $platforms = ["Windows"];
+            $cover = "ALittleAdventure.png";
+            include 'components/gameCard.php';
+            ?>
+            <?php
+            $title = "Rice Battle";
+            // $description = "Rice Battle est un jeu de combat en 2.5D dans l'univers de la cuisine asiatique.";
+            $description = "Ce jeu est en cours de conception.";
+            $gameTags = ["Combat", "2.5D", "Arcade"];
+            // $action = "Télécharger la beta";
+            $action = "";
+            $platforms = ["Windows"];
+            $cover = "RiceBattle.png";
+            include 'components/gameCard.php';
+            ?>
+            <?php
+            $title = "BOT A.N.I.C";
+            $description = "Ce jeu est en cours de conception.";
+            $gameTags = [""];
+            $action = "";
+            $platforms = [""];
+            $cover = "";
+            include 'components/gameCard.php';
+            ?>
+            <?php
+            $title = "Le LAB";
+            $description = "Ce jeu est en cours de conception.";
+            $gameTags = [""];
+            $action = "";
+            $platforms = [""];
+            $cover = "";
+            include 'components/gameCard.php';
+            ?>
         </div>
-        <h1><?php getValueFromJson('latestProject.title'); ?></h1>
-        <section id="latestProject">
-            <img src="/assets/img/latestProject.png" alt="latest project">
-            <div>
-                <h3><?php getValueFromJson('latestProject.subtitle'); ?></h3>
-                <ul>
-                    <li><?php getValueFromJson('latestProject.paragraph.1'); ?></li>
-                    <li><?php getValueFromJson('latestProject.paragraph.2'); ?></li>
-                    <li><?php getValueFromJson('latestProject.paragraph.3'); ?></li>
-                </ul>
-                <button onclick="window.location.href='/games/ALittleAdventure-Platformer.php'"><?php getValueFromJson('latestProject.button'); ?></button>
-            </div>
-        </section>
+        <div id="bottomFade"></div>
+        <img id="background" src="assets/video/background.svg" alt="Background" />
     </main>
-    <?php include 'components/footer.php'; ?>
+    <footer>
+        <div id="navArrows">
+            <a id="arrowLeft"><img src="assets/img/icons/Arrow_Left.svg"></a>
+            <a id="arrowRight"><img src="assets/img/icons/Arrow_Right.svg"></a>
+        </div>
+        <div id="social">
+            <a>Suivez-nous</a>
+            <a href="https://lacorbeille-studio.itch.io"><img src="assets/img/icons/social/ItchIO.svg"></a>
+            <a href="https://discord.com/invite/hmPzS4k"><img src="assets/img/icons/social/Discord.svg"></a>
+            <a href="https://www.facebook.com/people/LaCorbeille-Studio/61565357266191/"><img
+                    src="assets/img/icons/social/Facebook.svg"></a>
+            <a href="https://www.linkedin.com/company/lacorbeille-studio"><img
+                    src="assets/img/icons/social/LinkedIn.svg"></a>
+            <a href="https://x.com/LaCorbeilleSTD"><img src="assets/img/icons/social/X.svg"></a>
+            <a href="https://www.instagram.com/lacorbeille.studio"><img src="assets/img/icons/social/Instagram.svg"></a>
+        </div>
+        <a id="mail" href="mailto:contact@lacorbeille.studio">contact@lacorbeille.studio</a>
+    </footer>
 </body>
 
 </html>
