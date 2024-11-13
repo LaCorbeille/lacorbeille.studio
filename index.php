@@ -55,6 +55,7 @@ if (!isset($_SESSION)) {
             $description = "A Little Adventure est platformer vibrant où chaque niveau regorge d'obstacles et de défis.";
             $gameTags = ["Platformer", "Adventure", "3D", "LowPoly"];
             $action = "Télécharger le prototype";
+            $actionLink = "/assets/downloadable/A Little Adventure.exe";
             $platforms = ["Windows"];
             $cover = "ALittleAdventure.png";
             include 'components/gameCard.php';
@@ -66,6 +67,7 @@ if (!isset($_SESSION)) {
             $gameTags = ["Combat", "2.5D", "Arcade"];
             // $action = "Télécharger la beta";
             $action = "";
+            $actionLink = "";
             $platforms = ["Windows"];
             $cover = "RiceBattle.png";
             include 'components/gameCard.php';
@@ -75,6 +77,7 @@ if (!isset($_SESSION)) {
             $description = "Ce jeu est en cours de conception.";
             $gameTags = [""];
             $action = "";
+            $actionLink = "";
             $platforms = [""];
             $cover = "";
             include 'components/gameCard.php';
@@ -84,6 +87,7 @@ if (!isset($_SESSION)) {
             $description = "Ce jeu est en cours de conception.";
             $gameTags = [""];
             $action = "";
+            $actionLink = "";
             $platforms = [""];
             $cover = "";
             include 'components/gameCard.php';

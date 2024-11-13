@@ -51,6 +51,7 @@ function updateContentWrapper(card) {
     const cardDescription = card.querySelector('.contentWrapperInfo .description').textContent || 'Description non disponible';
     const cardTags = card.querySelector('.contentWrapperInfo .tags').textContent || '';
     const cardButton = card.querySelector('.contentWrapperInfo .action').textContent;
+    const cardActionLink = card.querySelector('.contentWrapperInfo .actionLink').textContent;
     const tagsArray = cardTags ? cardTags.split(',') : [];
     const platformImages = Array.from(card.querySelectorAll('.platforms img'));
 
@@ -89,6 +90,9 @@ function updateContentWrapper(card) {
     if (cardButton) {
         const contentWrapperButton = document.createElement('button');
         contentWrapperButton.textContent = cardButton;
+        contentWrapperButton.addEventListener('click', () => {
+            window.location.href = cardActionLink;
+        });
         contentWrapper.appendChild(contentWrapperButton);
     }
 }

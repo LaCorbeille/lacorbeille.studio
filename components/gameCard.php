@@ -4,6 +4,7 @@
         <a class="description"><?php echo htmlspecialchars($description); ?></a>
         <a class="tags"><?php echo htmlspecialchars(implode(',', $gameTags)); ?></a>
         <a class="action"><?php echo htmlspecialchars($action); ?></a>
+        <a class="actionLink"><?php echo htmlspecialchars($actionLink); ?></a>
     </div>
     <div class="foreground">
         <?php include 'foregroundGradient.php'; ?>
