@@ -24,8 +24,8 @@ if (!isset($_SESSION['lang'])) {
 <link rel="stylesheet" href="/css/stylesheet.css">
 <link rel="stylesheet" href="/css/responsive/stylesheet.css">
 <!-- JS -->
-<script src="/js/viewportHeight.js"></script>
-<script src="/js/lang.js" defer></script>
+<!-- <script src="/js/viewportHeight.js"></script> -->
+<!-- <script src="/js/lang.js" defer></script> -->
 <script src="/js/dynamicTitle.js" defer></script>
 <script src="/js/rightClick.js" defer></script>
 <!-- Ajax -->

@@ -18,6 +18,10 @@ const prevBtn = document.querySelector('#arrowLeft');
 const nextBtn = document.querySelector('#arrowRight');
 
 prevBtn.addEventListener('click', () => {
+    showPrevCard();
+});
+
+function showPrevCard() {
     const activeCard = document.querySelector('.gameCard.active');
     const prevCard = activeCard.previousElementSibling;
 
@@ -27,9 +31,13 @@ prevBtn.addEventListener('click', () => {
 
         updateContentWrapper(prevCard);
     }
-});
+}
 
 nextBtn.addEventListener('click', () => {
+    showNextCard();
+});
+
+function showNextCard() {
     const activeCard = document.querySelector('.gameCard.active');
     const nextCard = activeCard.nextElementSibling;
 
@@ -38,6 +46,19 @@ nextBtn.addEventListener('click', () => {
         nextCard.classList.add('active');
 
         updateContentWrapper(nextCard);
+    }
+}
+
+document.addEventListener("keydown", function (event) {
+    switch (event.key) {
+        case "ArrowLeft":
+            console.log("Flèche gauche");
+            showPrevCard();
+            break;
+        case "ArrowRight":
+            console.log("Flèche droite");
+            showNextCard();
+            break;
     }
 });
 
