@@ -12,7 +12,7 @@
         <div class="platforms">
             <?php foreach ($platforms as $platform): ?>
                 <?php if (!empty($platform)): ?>
-                    <img src="assets/img/icons/platforms/<?php echo $platform; ?>.svg" />
+                    <img src="assets/img/icons/platforms/<?php echo $platform; ?>.svg" alt="<?php echo $platform; ?>"/>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
