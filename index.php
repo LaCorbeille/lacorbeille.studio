@@ -8,14 +8,16 @@ if (!isset($_SESSION)) {
 <html lang="<?php echo isset($_SESSION['lang']) ? $_SESSION['lang'] : 'fr'; ?>">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LaCorbeille STUDIO, créateur de jeux vidéo indépendant. Découvrez nos projets en cours, nos jeux sortis, et les dernières actualités de notre studio." />
+    <title>LaCorbeille STUDIO</title>
     <?php include 'components/head.php'; ?>
     <link rel="stylesheet" href="css/gameCard.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/responsive/index.css">
     <link rel="stylesheet" href="css/responsive/gameCard.css">
     <script src="js/carousel.js" defer></script>
-    <meta name="description"
-        content="LaCorbeille STUDIO, créateur de jeux vidéo indépendant. Découvrez nos projets en cours, nos jeux sortis, et les dernières actualités de notre studio." />
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
