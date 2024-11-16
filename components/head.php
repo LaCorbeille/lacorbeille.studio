@@ -4,13 +4,13 @@ if (!isset($_SESSION)) {
 }
 
 //Language
-include_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/lang.php';
-$language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-$deviceLang = substr($language, 0, 2);
-$lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : $deviceLang;
-if (!isset($_SESSION['lang'])) {
-    $_SESSION['lang'] = $deviceLang;
-}
+// include_once $_SERVER['DOCUMENT_ROOT'] . '/scripts/lang.php';
+// $language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+// $deviceLang = substr($language, 0, 2);
+// $lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : $deviceLang;
+// if (!isset($_SESSION['lang'])) {
+//     $_SESSION['lang'] = $deviceLang;
+// }
 ?>
 
 <meta charset="UTF-8">
