@@ -79,6 +79,11 @@ main button {
     font-weight: 600;
 }
 
+main button:hover {
+    background-color: white;
+    color: black;
+}
+
 main #carousel {
     position: absolute;
     z-index: 3;
@@ -146,6 +151,21 @@ footer>#navArrows a {
 footer>#navArrows img {
     height: 33px;
     width: auto;
+    filter: brightness(100%);
+}
+
+footer>#navArrows img:hover {
+    animation: arrowHover 0.5s forwards;
+}
+
+@keyframes arrowHover {
+    0% {
+        filter: brightness(100%);
+    }
+
+    100% {
+        filter: brightness(999%);
+    }
 }
 
 footer #arrowLeft {
