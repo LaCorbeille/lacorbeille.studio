@@ -127,7 +127,7 @@ function updateContentWrapper(card) {
         contentWrapper.appendChild(contentWrapperButton);
     } else if (cardButton && !isOSAvaible) {
         const contentWrapperButton = document.createElement('button');
-        contentWrapperButton.textContent = 'Indisponible pour' + os;
+        contentWrapperButton.textContent = 'Indisponible pour votre OS (' + os + ')';
         contentWrapperButton.disabled = true;
         contentWrapper.appendChild(contentWrapperButton);
     }
