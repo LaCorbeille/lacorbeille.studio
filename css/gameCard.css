@@ -22,8 +22,8 @@
     border-radius: 15px;
     clip-path: path("M0 0H76.5278C81.5245 0 86.4421 1.24806 90.8341 3.63087L312.153 123.705C316.989 126.328 320 131.388 320 136.889V180H0V0Z");
     backdrop-filter: blur(2px);
-    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.25));
-    background-color: #ffffff60;
+    /* filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.25)); */
+    /* background-color: #ffffff60; */
 }
 
 .gameCard .foreground h2 {
@@ -47,4 +47,12 @@
 .gameCard .foreground>img,
 .gameCard .cover {
     border-radius: 15px;
+}
+
+.gameCard .foreground>img,
+.gameCard .foreground svg,
+.gameCard .cover,
+.gameCard {
+    width: 20vw;
+    height: 11.25vw;
 }

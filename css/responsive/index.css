@@ -105,8 +105,9 @@
     footer>#social a:first-of-type {
         display: none;
     }
-    
-    footer>#navArrows img, footer>#social img {
+
+    footer>#navArrows img,
+    footer>#social img {
         height: 20px;
     }
 }
