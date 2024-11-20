@@ -70,7 +70,6 @@ if (!isset($_SESSION)) {
             $title = "Rice Battle";
             $description = "Rice Battle est un jeu de combat en 2.5D dans l'univers de la cuisine asiatique.<br>Ce jeu est en cours de développement.";
             $gameTags = ["Combat", "2.5D", "Arcade"];
-            // $action = "Télécharger la beta";
             $action = "";
             $actionLink = "";
             $platforms = ["Windows"];

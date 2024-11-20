@@ -125,7 +125,7 @@ function updateContentWrapper(card) {
             window.location.href = cardActionLink;
         });
         contentWrapper.appendChild(contentWrapperButton);
-    } else if (!isOSAvaible) {
+    } else if (cardButton && !isOSAvaible) {
         const contentWrapperButton = document.createElement('button');
         contentWrapperButton.textContent = 'Indisponible sur votre OS';
         contentWrapperButton.disabled = true;

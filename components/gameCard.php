@@ -9,7 +9,14 @@
         <a class="actionLink"><?php echo htmlspecialchars($actionLink); ?></a>
     </div>
     <div class="foreground">
-        <?php include 'foregroundGradient.php'; ?>
+        <?php
+        $foregroundImage = "assets/img/gameCards/{$title}_Foreground.svg";
+        if (!file_exists($foregroundImage)) {
+            $foregroundImage = "assets/img/gameCards/Default_Foreground.svg";
+        }
+        echo file_get_contents($foregroundImage);
+        ?>
+
         <h2 class="gameTitle"><?php echo $title; ?></h2>
         <div class="platforms">
             <?php foreach ($platforms as $platform): ?>

@@ -94,14 +94,6 @@ main #carousel {
     flex-direction: row;
 }
 
-.gameCard:nth-of-type(1) .foreground svg {
-    background-color: #ffd00060;
-}
-
-.gameCard:nth-of-type(2) .foreground svg {
-    background-color: #ff000060;
-}
-
 img#background {
     position: absolute;
     top: 0;
