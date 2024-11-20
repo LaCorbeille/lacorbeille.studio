@@ -74,6 +74,8 @@ function updateContentWrapper(card) {
     const cardButton = card.querySelector('.contentWrapperInfo .action').textContent;
     const cardActionLink = card.querySelector('.contentWrapperInfo .actionLink').textContent;
     const tagsArray = cardTags ? cardTags.split(',') : [];
+    const avaiblePlatforms = card.querySelector('.avaiblePlatforms').textContent;
+    const platformsArray = avaiblePlatforms ? avaiblePlatforms.split(',') : [];
     const platformImages = Array.from(card.querySelectorAll('.platforms img'));
 
     // Create new elements
@@ -82,7 +84,7 @@ function updateContentWrapper(card) {
 
     const contentWrapperDescription = document.createElement('a');
     contentWrapperDescription.id = 'gameDescription';
-    contentWrapperDescription.textContent = cardDescription;
+    contentWrapperDescription.innerHTML = cardDescription;
 
     const contentWrapperTagsWrapper = document.createElement('div');
     contentWrapperTagsWrapper.id = 'gameTags';
@@ -102,18 +104,31 @@ function updateContentWrapper(card) {
         contentWrapperPlatformsWrapper.appendChild(platformImg);
     });
 
+    // OS detection
+    const os = detectOS();
+    let isOSAvaible = false;
+    platformsArray.forEach(platform => {
+        if (platform === os) {
+            isOSAvaible = true;
+        }
+    });
 
     // Add new elements to the contentWrapper
     contentWrapper.appendChild(contentWrapperTitle);
     contentWrapper.appendChild(contentWrapperDescription);
     contentWrapper.appendChild(contentWrapperTagsWrapper);
     contentWrapper.appendChild(contentWrapperPlatformsWrapper);
-    if (cardButton) {
+    if (cardButton && isOSAvaible) {
         const contentWrapperButton = document.createElement('button');
         contentWrapperButton.textContent = cardButton;
         contentWrapperButton.addEventListener('click', () => {
             window.location.href = cardActionLink;
         });
+        contentWrapper.appendChild(contentWrapperButton);
+    } else if (!isOSAvaible) {
+        const contentWrapperButton = document.createElement('button');
+        contentWrapperButton.textContent = 'Indisponible sur votre OS';
+        contentWrapperButton.disabled = true;
         contentWrapper.appendChild(contentWrapperButton);
     }
 }

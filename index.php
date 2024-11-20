@@ -52,9 +52,13 @@ if (!isset($_SESSION)) {
             <h1>LaCorbeille STUDIO</h1>
         </div>
         <div id="carousel">
+            <?php 
+            // Correct platforms labels : Windows, Linux, MacOS, iOS, Android
+            $unavailable = "Indisponible pour votre plateforme";
+            ?>
             <?php
             $title = "A Little Adventure";
-            $description = "A Little Adventure est platformer vibrant où chaque niveau regorge d'obstacles et de défis.";
+            $description = "A Little Adventure est un platformer vibrant où chaque niveau regorge d'obstacles et de défis.";
             $gameTags = ["Platformer", "Adventure", "3D", "LowPoly"];
             $action = "Télécharger le prototype";
             $actionLink = "/assets/downloadable/A Little Adventure.exe";
@@ -64,8 +68,7 @@ if (!isset($_SESSION)) {
             ?>
             <?php
             $title = "Rice Battle";
-            // $description = "Rice Battle est un jeu de combat en 2.5D dans l'univers de la cuisine asiatique.";
-            $description = "Ce jeu est en cours de développement.";
+            $description = "Rice Battle est un jeu de combat en 2.5D dans l'univers de la cuisine asiatique.<br>Ce jeu est en cours de développement.";
             $gameTags = ["Combat", "2.5D", "Arcade"];
             // $action = "Télécharger la beta";
             $action = "";

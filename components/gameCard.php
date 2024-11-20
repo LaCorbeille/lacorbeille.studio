@@ -3,7 +3,9 @@
         <a class="title"><?php echo htmlspecialchars($title); ?></a>
         <a class="description"><?php echo htmlspecialchars($description); ?></a>
         <a class="tags"><?php echo htmlspecialchars(implode(',', $gameTags)); ?></a>
+        <a class="avaiblePlatforms"><?php echo htmlspecialchars(implode( ',', $platforms)); ?></a>
         <a class="action"><?php echo htmlspecialchars($action); ?></a>
+        <a class="unavaible"><?php echo htmlspecialchars($unavailable); ?></a>
         <a class="actionLink"><?php echo htmlspecialchars($actionLink); ?></a>
     </div>
     <div class="foreground">

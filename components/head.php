@@ -25,6 +25,7 @@ if (!isset($_SESSION)) {
 <!-- <script src="/js/lang.js" defer></script> -->
 <script src="/js/dynamicTitle.js" defer></script>
 <script src="/js/rightClick.js" defer></script>
+<script src="/js/osDetection.js" defer></script>
 <!-- Ajax -->
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 <!-- Fonts -->
