@@ -61,7 +61,7 @@ if (!isset($_SESSION)) {
             $description = "A Little Adventure est un platformer vibrant où chaque niveau regorge d'obstacles et de défis.";
             $gameTags = ["Platformer", "Adventure", "3D", "LowPoly"];
             $action = "Télécharger le prototype";
-            $actionLink = "/assets/downloadable/A Little Adventure.exe";
+            $actionLink = "/assets/downloadable/A Little Adventure - Installer.exe";
             $platforms = ["Windows"];
             $cover = "ALittleAdventure.webp";
             include 'components/gameCard.php';
