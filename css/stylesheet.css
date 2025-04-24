@@ -4,17 +4,11 @@
     --Fuchsia: #F500FF;
     --RichBlack: #090B15;
 
-    /* Alerts */
-    --PastelRed: #FF6767;
-    --PastelYellow: #FFD167;
-    --PastelGreen: #6BFF6B;
-
     /* Viewport */
     --app-height: 100vh;
 
-    /* Glassmorphism */
-    --Blur: 10px;
-    --GlassOpacity: 0.1;
+    /* Margin */
+    --margin: 25px;
 }
 
 /*----- SCROLLBAR -----*/
@@ -48,16 +42,15 @@
 }
 
 html {
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: var(--RichBlack);
 }
 
 body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
-    height: var(--app-height);
-    color: white;
+    /* height: var(--app-height); */
+    background-color: white;
 }
 
 main {
@@ -74,22 +67,27 @@ main {
     }
 }
 
-
-/* Alerts */
-.alert {
-    border-radius: 5px;
-    padding: 10px;
-    color: white !important;
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: calc(var(--margin) * 2);
+    padding-bottom: calc(var(--margin) * 2);
 }
 
-.alert.error {
-    background-color: var(--PastelRed);
-}
-
-.alert.warning {
-    background-color: var(--PastelYellow);
-}
-
-.alert.success {
-    background-color: var(--PastelGreen);
+button {
+    border-radius: 500px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: calc(var(--margin) / 2) var(--margin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #2F2F2F;
+    color: white;
 }
