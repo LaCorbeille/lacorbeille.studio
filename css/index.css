@@ -2,7 +2,7 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: calc(var(--margin) / 1.3) var(--margin);
+    padding: 50px;
     background-color: #171717;
     align-items: center;
 }
@@ -42,7 +42,7 @@ section {
 section:nth-of-type(1) .slideshow-container {
     position: relative;
     margin: 100px;
-    margin: calc(var(--margin) * 2) calc(var(--margin) * 4);
+    margin: calc(var(--main-side-padding) * 2) calc(var(--main-side-padding) * 4);
     margin-bottom: 30px;
 }
 
@@ -86,6 +86,8 @@ section:nth-of-type(1) .slide>img {
     object-fit: cover;
     height: 500px;
     width: 800px;
+    width: 42vw;
+    height: 26.25vw;
 }
 
 section:nth-of-type(1) .dots {
@@ -117,17 +119,18 @@ section:nth-of-type(1) .dot:hover {
 
 /* Section 2 */
 section:nth-of-type(2) {
-    padding-bottom: var(--margin);
+    padding-bottom: 50px;
 }
 
 section:nth-of-type(2)>h1 {
+    padding-bottom: 100px;
     color: white;
 }
 
 section:nth-of-type(2)>div {
     display: flex;
     justify-content: space-between;
-    padding: 0 calc(var(--margin) * 4)
+    padding: 0 calc(var(--main-side-padding) * 4);
 }
 
 section:nth-of-type(2)>div div.game-card {
@@ -156,7 +159,7 @@ section:nth-of-type(2)>div div.platforms {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-bottom: calc(var(--margin) / 2);
+    margin-bottom: 25px;
     background-color: rgb(0 0 0 / 35%);
     border-radius: 500px;
     padding: 5px;
@@ -173,21 +176,23 @@ section:nth-of-type(2)>button {
     position: relative;
     cursor: pointer;
     justify-self: center;
-    margin-top: calc(var(--margin) * 2);
+    margin-top: 100px;
 }
 
 /* Section 3 */
 section:nth-of-type(3)>h1 {
-    padding-top: var(--margin);
+    padding-top: var(--main-side-padding);
     background: #0D0D0D;
     border-radius: 15px 15px 0 0;
     color: white;
+    padding-top: 50px;
+    padding-bottom: 100px;
 }
 
 section:nth-of-type(3)>div {
     display: flex;
     justify-content: space-between;
-    padding: 0 calc(var(--margin) * 4);
+    padding: 0 calc(var(--main-side-padding) * 4);
     margin-bottom: 50px;
 }
 
@@ -256,7 +261,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: calc(var(--margin)/1.3) var(--margin);
+    padding: 50px;
     background-color: #171717;
 }
 
@@ -268,7 +273,7 @@ footer div#branding {
 
 footer div#branding>img {
     height: 75px;
-    margin-right: var(--margin);
+    margin-right: 50px;
 }
 
 footer div#contact {
