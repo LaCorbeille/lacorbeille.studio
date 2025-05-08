@@ -83,6 +83,7 @@ h1 {
 }
 
 button {
+    cursor: pointer;
     border-radius: 500px;
     border: none;
     text-transform: uppercase;
@@ -94,4 +95,5 @@ button {
     text-align: center;
     background-color: #171717;
     color: white;
+    border: solid #171717 2px;
 }

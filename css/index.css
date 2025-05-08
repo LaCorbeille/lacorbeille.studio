@@ -2,13 +2,13 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: 50px;
+    padding: 25px 40px;
     background-color: #171717;
     align-items: center;
 }
 
 header img {
-    height: 50px;
+    height: 40px;
 }
 
 header nav {
@@ -31,6 +31,10 @@ header nav>ul>li>a {
     text-transform: uppercase;
     font-weight: 600;
     color: white;
+}
+
+header nav>ul>li>a:hover {
+    color: #838383;
 }
 
 /* MAIN */
@@ -259,12 +263,24 @@ section:nth-of-type(3)>div>#news>.news-card>img {
     width: 200px;
 }
 
+section:nth-of-type(3)>button {
+    cursor: pointer;
+    border: solid white 2px;
+    margin: 50px 0;
+    justify-self: center;
+}
+
+section:nth-of-type(3)>button:hover {
+    background-color: white;
+    color: #0D0D0D;
+}
+
 /* FOOTER */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 50px;
+    padding: 50px 40px;
     background-color: #171717;
 }
 
@@ -272,10 +288,12 @@ footer div#branding {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    width: 30%;
+    justify-content: flex-start;
 }
 
 footer div#branding>img {
-    height: 75px;
+    height: 60px;
     margin-right: 50px;
 }
 
@@ -289,10 +307,25 @@ footer div#contact>a {
     color: white;
 }
 
+footer div#links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+}
+
+footer div#links>a {
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
 footer div#socials {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 30%;
+    justify-content: flex-end;
 }
 
 footer div#socials>a {

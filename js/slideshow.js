@@ -30,7 +30,7 @@ function showSlides(n) {
 
 function startSlideShow() {
     clearInterval(slideInterval);
-    slideInterval = setInterval(() => plusSlides(1), 3000);
+    slideInterval = setInterval(() => plusSlides(1), 5000);
 }
 
 function createDots() {
