@@ -60,6 +60,7 @@ section:nth-of-type(1) .slide>div {
     justify-content: flex-start;
     padding: 50px;
     padding-right: 150px;
+    height: calc((500 * 0.05vw) - 100px);
 }
 
 section:nth-of-type(1) .slide>div>h2 {
@@ -84,10 +85,12 @@ section:nth-of-type(1) .slide>div>button:hover {
 section:nth-of-type(1) .slide>img {
     border-radius: 15px;
     object-fit: cover;
-    height: 500px;
+    /* height: 500px;
     width: 800px;
     width: 42vw;
-    height: 26.25vw;
+    height: 26.25vw; */
+    width: calc(800 * 0.05vw);
+    height: calc(500 * 0.05vw);
 }
 
 section:nth-of-type(1) .dots {
