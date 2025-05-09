@@ -1,113 +1,93 @@
 @media (max-width: 1500px) {
 
-    /* Header */
-    header>img {
-        height: 5vh;
+    /* Section 1 */
+    section:nth-of-type(1) .slide {
+        flex-direction: column-reverse;
     }
 
-    /* Main */
-    main #contentWrapper {
-        right: 10vw;
-        top: 15vh;
-    }
-
-    h1 {
-        font-size: 2.5vw;
-    }
-
-    main #gameDescription {
-        font-size: 1.5vw;
-    }
-
-    main button {
-        font-size: 1.5vw;
-    }
-
-    /* Footer */
-    footer>#navArrows img,
-    footer>#social img {
-        height: 2vw;
-    }
-
-    footer #arrowLeft {
-        margin-right: 3vw;
-    }
-
-    footer>#social a:first-of-type {
-        margin-right: 4vw;
-    }
-
-    footer>#social a:not(:first-of-type) {
-        margin-left: 1vw;
-    }
-
-    footer>#social a:first-of-type {
-        font-size: 1.8vw;
-    }
-}
-
-@media (max-width: 1000px),
-(max-height: 650px) {
-
-    /* Header */
-    header {
-        display: flex;
-        justify-content: center;
-    }
-
-    /* Main */
-    main #contentWrapper {
-        display: flex;
-        align-items: center;
-        top: 150px;
-        right: 0;
+    section:nth-of-type(1) .slide>img {
         width: 100%;
+        height: auto;
     }
 
-    h1 {
-        font-size: 1.5rem;
+    section:nth-of-type(1) .slide>div {
+        padding-right: 50px;
+        height: fit-content;
     }
 
-    main #gameDescription {
-        font-size: 1rem;
-        text-align: center;
-        width: 85%;
+    /* Section 2 */
+    section:nth-of-type(2)>div {
+        overflow-x: scroll;
     }
 
-    main #gameTags>a {
-        font-size: 0.8rem;
+    section:nth-of-type(2)>div div.game-card {
+        margin-right: 50px;
     }
 
-    main #gamePlatforms img {
-        height: 20px;
-        margin-right: 0;
+    section:nth-of-type(2)>div div.game-card>img {
+        height: calc(450 * 0.10vw);
+        width: calc(300 * 0.10vw);
     }
 
-    main button {
-        font-size: 0.8rem;
-    }
-
-    .gameCard {
-        margin-left: 3vw;
-    }
-
-    /* Footer */
-    footer {
-        display: flex;
-        align-items: center;
+    /* Section 3 */
+    section:nth-of-type(3)>div {
         flex-direction: column;
     }
 
-    footer>* {
-        margin: 1vh 0;
+    section:nth-of-type(3)>div>#main-news-card {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 
-    footer>#social a:first-of-type {
-        display: none;
+    section:nth-of-type(3)>div>#news>.news-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1250px) {
+
+    /* Footer */
+    footer {
+        flex-direction: column-reverse;
+        align-items: center;
     }
 
-    footer>#navArrows img,
-    footer>#social img {
-        height: 20px;
+    footer div#socials {
+        width: fit-content;
+        margin-bottom: 50px;
+    }
+
+    footer div#links {
+        margin-bottom: 50px;
+    }
+
+    footer div#branding {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /* Footer */
+    footer>#socials {
+        margin-bottom: 50px;
+    }
+
+    footer>div#socials>a {
+        margin-left: 30px;
+    }
+
+    footer div#branding {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    footer div#branding>img {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    footer div#branding>#contact {
+        align-items: center;
     }
 }
