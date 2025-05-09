@@ -12,6 +12,7 @@
 
     section:nth-of-type(1) .slide>div {
         padding-right: 50px;
+        height: fit-content;
     }
 
     /* Section 2 */
