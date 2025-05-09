@@ -81,7 +81,7 @@
         flex-direction: column;
         align-items: center;
     }
-    
+
     footer div#branding>img {
         margin-right: 0;
         margin-bottom: 50px;
@@ -89,5 +89,24 @@
 
     footer div#branding>#contact {
         align-items: center;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    /* Header */
+    header img#logoSmall {
+        display: block;
+    }
+
+    header img#logoFull {
+        display: none;
+    }
+
+    /* Section 1 */
+    section:nth-of-type(1) .slide>div {
+        padding: 15px;
     }
 }
