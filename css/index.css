@@ -187,8 +187,9 @@ section:nth-of-type(2)>div div.platforms>img {
 section:nth-of-type(2)>button {
     position: relative;
     cursor: pointer;
-    justify-self: center;
     margin-top: 100px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Section 3 */
@@ -272,8 +273,9 @@ section:nth-of-type(3)>button {
     cursor: pointer;
     border: solid white 2px;
     margin: 50px 0;
-    justify-self: center;
     background-color: #0D0D0D;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 section:nth-of-type(3)>button:hover {
