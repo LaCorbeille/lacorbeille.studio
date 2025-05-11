@@ -1,50 +1,3 @@
-/* HEADER */
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 25px 40px;
-    background-color: #171717;
-    align-items: center;
-}
-
-header img {
-    height: 40px;
-}
-
-header img#logoSmall {
-    display: none;
-}
-
-header img#logoFull {
-    display: block;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-}
-
-header nav>ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style-type: none;
-}
-
-header nav>ul>li:not(:last-child) {
-    margin-right: 20px;
-}
-
-header nav>ul>li>a {
-    text-transform: uppercase;
-    font-weight: 600;
-    color: white;
-}
-
-header nav>ul>li>a:hover {
-    color: #838383;
-}
-
 /* MAIN */
 section {
     position: relative;
@@ -149,6 +102,7 @@ section:nth-of-type(2)>div {
 
 section:nth-of-type(2)>div div.game-card {
     position: relative;
+    cursor: pointer;
 }
 
 section:nth-of-type(2)>div div#whiteBackground {
@@ -249,6 +203,10 @@ section:nth-of-type(3)>div>#news>.news-card:last-of-type {
     margin-bottom: 0;
 }
 
+section:nth-of-type(3)>div>#news>.news-card.clickable {
+    cursor: pointer;
+}
+
 section:nth-of-type(3)>div>#news>.news-card>div {
     padding: 20px;
     width: 50%;
@@ -281,66 +239,4 @@ section:nth-of-type(3)>button {
 section:nth-of-type(3)>button:hover {
     background-color: white;
     color: #0D0D0D;
-}
-
-/* FOOTER */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 50px 40px;
-    background-color: #171717;
-}
-
-footer div#branding {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    width: 30%;
-    justify-content: flex-start;
-}
-
-footer div#branding>img {
-    height: 60px;
-    margin-right: 50px;
-}
-
-footer div#contact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-footer div#contact>a {
-    color: white;
-}
-
-footer div#links {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-self: center;
-}
-
-footer div#links>a {
-    color: white;
-    margin-right: 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-footer div#socials {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 30%;
-    justify-content: flex-end;
-}
-
-footer div#socials>a {
-    margin-left: 15px;
-}
-
-footer div#socials>a>img {
-    height: 30px;
 }

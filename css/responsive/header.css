@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+
+    /* Header */
+    header img#logoSmall {
+        display: block;
+    }
+
+    header img#logoFull {
+        display: none;
+    }
+}
