@@ -3,8 +3,8 @@ const path = require('path');
 
 // Variables to setup
 const baseUrl = 'https://lacorbeille.studio/'; // Base URL of the website
-const excludedPages = ['admin.php', 'adminLogin.php','404.php', '500.php', '403.php']; // Pages to exclude from the sitemap
-const priorityPages = ['index.php']; // Priority is set to 1 for these pages
+const excludedPages = ['404.html', '500.html', '403.html']; // Pages to exclude from the sitemap
+const priorityPages = ['index.html']; // Priority is set to 1 for these pages
 const defaultPriority = 0.8; // Default priority for pages
 
 // Generate sitemap content
@@ -32,7 +32,7 @@ function generateSitemap(pages, priorityPages) {
 
 // List pages to include in the sitemap
 const pages = fs.readdirSync(path.join(__dirname, '../'))
-    .filter(file => file.endsWith('.php') && !excludedPages.includes(file));
+    .filter(file => file.endsWith('.html') && !excludedPages.includes(file));
     //.map(file => `/${file.replace('.php', '')}`); // Extension remover
 
 // Write content to sitemap.xml
