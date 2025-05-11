@@ -22,3 +22,9 @@
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 600px) {
+    :root {
+        --main-side-padding: 5px;
+    }
+}
