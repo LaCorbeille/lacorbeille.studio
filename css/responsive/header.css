@@ -1,11 +1,11 @@
 @media (max-width: 600px) {
 
     /* Header */
-    header img#logoSmall {
+    header a#logoSmall {
         display: block;
     }
 
-    header img#logoFull {
+    header a#logoFull {
         display: none;
     }
 }

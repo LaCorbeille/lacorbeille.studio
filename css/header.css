@@ -11,11 +11,11 @@ header img {
     height: 40px;
 }
 
-header img#logoSmall {
+header a#logoSmall {
     display: none;
 }
 
-header img#logoFull {
+header a#logoFull {
     display: block;
 }
 
