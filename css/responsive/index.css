@@ -67,6 +67,10 @@
         top: 300px;
     }
 
+    section:nth-of-type(2)>div div.platforms {
+        margin-bottom: 15px;
+    }
+
     /* Section 3 */
     section:nth-of-type(3)>div>#news>.news-card {
         height: 25vw;
@@ -92,6 +96,10 @@
     /* Section 2 */
     section:nth-of-type(2)>div div#whiteBackground {
         top: 250px;
+    }
+
+    section:nth-of-type(2)>div div.platforms {
+        margin-bottom: 5px;
     }
 
     /* Section 3 */
