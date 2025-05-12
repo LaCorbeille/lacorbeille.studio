@@ -29,14 +29,25 @@ function showSlides(n) {
 }
 
 function startSlideShow() {
+    console.log("Starting slideshow");
     clearInterval(slideInterval);
     slideInterval = setInterval(() => plusSlides(1), 5000);
+    document.getElementById("resume").style.display = "none";
+    document.getElementById("pause").style.display = "flex";
+}
+
+function stopSlideShow() {
+    console.log("Stopping slideshow");
+    clearInterval(slideInterval);
+    document.getElementById("resume").style.display = "flex";
+    document.getElementById("pause").style.display = "none";
 }
 
 function createDots() {
     let slides = document.querySelectorAll(".slideshow-container .slide");
     let dotsContainer = document.querySelector(".dots");
-    dotsContainer.innerHTML = ""; // Clear existing dots
+    let existingDots = dotsContainer.querySelectorAll(".dot");
+    existingDots.forEach(dot => dot.remove());
     slides.forEach((slide, index) => {
         let dot = document.createElement("span");
         dot.className = "dot";

@@ -55,10 +55,20 @@ section:nth-of-type(1) .slide>img {
 }
 
 section:nth-of-type(1) .dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     text-align: center;
     left: 50%;
     transform: translate(-50%, 0%);
+}
+
+section:nth-of-type(1) .dots>a {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 section:nth-of-type(1) .dot {
@@ -101,8 +111,14 @@ section:nth-of-type(2)>div {
 }
 
 section:nth-of-type(2)>div div.game-card {
+    border-radius: 15px;
     position: relative;
     cursor: pointer;
+    height: calc(450 * 0.05vw);
+}
+
+section:nth-of-type(2)>div div.game-card:hover {
+    box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 25%);
 }
 
 section:nth-of-type(2)>div div#whiteBackground {
