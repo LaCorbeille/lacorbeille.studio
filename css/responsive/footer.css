@@ -11,8 +11,16 @@
         margin-bottom: 50px;
     }
 
+    footer>div#socials>a:first-of-type {
+        margin-left: 0;
+    }
+
     footer div#links {
         margin-bottom: 50px;
+    }
+
+    footer div#links>a:last-of-type {
+        margin-right: 0;
     }
 
     footer div#branding {
@@ -29,10 +37,6 @@
 
     footer>div#socials>a {
         margin-left: 30px;
-    }
-
-    footer>div#socials>a:first-of-type {
-        margin-left: 0;
     }
 
     footer div#branding {

@@ -27,4 +27,8 @@
     :root {
         --main-side-padding: 5px;
     }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }
