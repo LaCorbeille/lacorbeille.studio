@@ -2,10 +2,31 @@ const fs = require('fs');
 const path = require('path');
 
 // Variables to setup
-const baseUrl = 'https://lacorbeille.studio/'; // Base URL of the website
-const excludedPages = ['404.html', '500.html', '403.html']; // Pages to exclude from the sitemap
-const priorityPages = ['index.html']; // Priority is set to 1 for these pages
-const defaultPriority = 0.8; // Default priority for pages
+const baseUrl = 'https://lacorbeille.studio/';
+const excludedPages = ['404.html', '500.html', '403.html'];
+const priorityPages = ['index.html'];
+const defaultPriority = 0.8;
+
+// Recursively get all .html files (relative to baseDir)
+function getHtmlFiles(dir, baseDir = dir) {
+    let results = [];
+    const list = fs.readdirSync(dir);
+    list.forEach(file => {
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+        if (stat && stat.isDirectory()) {
+            results = results.concat(getHtmlFiles(filePath, baseDir));
+        } else if (
+            file.endsWith('.html') &&
+            !excludedPages.includes(file)
+        ) {
+            // Get relative path from baseDir and use forward slashes
+            const relPath = path.relative(baseDir, filePath).replace(/\\/g, '/');
+            results.push(relPath);
+        }
+    });
+    return results;
+}
 
 // Generate sitemap content
 function generateSitemap(pages, priorityPages) {
@@ -30,13 +51,12 @@ function generateSitemap(pages, priorityPages) {
     return xml;
 }
 
-// List pages to include in the sitemap
-const pages = fs.readdirSync(path.join(__dirname, '../'))
-    .filter(file => file.endsWith('.html') && !excludedPages.includes(file));
-    //.map(file => `/${file.replace('.php', '')}`); // Extension remover
+// List pages to include in the sitemap (recursively)
+const baseDir = path.join(__dirname, '../');
+const pages = getHtmlFiles(baseDir);
 
 // Write content to sitemap.xml
-const sitemapPath = path.join(__dirname, '../sitemap.xml');
+const sitemapPath = path.join(baseDir, 'sitemap.xml');
 const sitemapContent = generateSitemap(pages, priorityPages);
 
 fs.writeFile(sitemapPath, sitemapContent, err => {
