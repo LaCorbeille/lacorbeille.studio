@@ -1,6 +1,7 @@
 # lacorbeille.studio
 
-<img src="https://skillicons.dev/icons?i=html,css,php,mysql,js,svg,git,github,githubactions,vscode"/>
+<!-- <img src="https://skillicons.dev/icons?i=html,css,php,mysql,js,svg,git,github,githubactions,vscode"/> -->
+<img src="https://skillicons.dev/icons?i=html,css,js,svg,git,github,githubactions,vscode"/>
 
 This repository contains the source code for [LaCorbeille STUDIO](https://www.lacorbeille.studio) website.
 
