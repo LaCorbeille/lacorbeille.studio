@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         <url>
+            <loc>https://lacorbeille.studio/games/A Little Adventure.html</loc>
+            <lastmod>2025-05-13</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>https://lacorbeille.studio/games/BOT A.N.I.C.html</loc>
+            <lastmod>2025-05-13</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>https://lacorbeille.studio/games/Camasiat.html</loc>
+            <lastmod>2025-05-13</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>https://lacorbeille.studio/games/Le LAB.html</loc>
+            <lastmod>2025-05-13</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>https://lacorbeille.studio/games/Rice Battle.html</loc>
+            <lastmod>2025-05-13</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
             <loc>https://lacorbeille.studio/index.html</loc>
             <lastmod>2025-05-13</lastmod>
             <changefreq>weekly</changefreq>
@@ -8,6 +38,12 @@
         </url>
         <url>
             <loc>https://lacorbeille.studio/legal.html</loc>
+            <lastmod>2025-05-13</lastmod>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+        </url>
+        <url>
+            <loc>https://lacorbeille.studio/links.lacorbeille.studio/index.html</loc>
             <lastmod>2025-05-13</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
