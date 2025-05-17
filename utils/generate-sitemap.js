@@ -3,7 +3,7 @@ const path = require('path');
 
 // Variables to setup
 const baseUrl = 'https://lacorbeille.studio/';
-const excludedPages = ['404.html', '500.html', '403.html'];
+const excludedPages = ['404.html', '500.html', '403.html', 'links.lacorbeille.studio/index.html'];
 const priorityPages = ['index.html'];
 const defaultPriority = 0.8;
 
