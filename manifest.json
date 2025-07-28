@@ -1,14 +1,21 @@
 {
-  "name": "La Corbeille Studio",
+  "name": "LaCorbeille STUDIO - Studio de Jeux Vidéo Indépendant",
   "short_name": "LaCorbeille",
-  "description": "Studio de développement de jeux vidéo indépendant",
+  "description": "Studio de développement de jeux vidéo indépendant français. Créateur d'expériences interactives uniques : A Little Adventure, LeLAB, Rice Battle.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#ffffff",
+  "theme_color": "#1a73e8",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "fr",
+  "dir": "ltr",
+  "categories": ["games", "entertainment", "productivity"],
+  "keywords": ["jeux vidéo", "indie games", "game development", "studio", "LaCorbeille", "France"],
+  "iarc_rating_id": "",
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
   "icons": [
     {
       "src": "assets/favicon/android-chrome-192x192.png",
@@ -25,21 +32,50 @@
     {
       "src": "assets/favicon/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "assets/favicon/favicon-16x16.png",
       "sizes": "16x16",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "assets/favicon/favicon-32x32.png",
       "sizes": "32x32",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
-  "categories": ["games", "entertainment"],
-  "screenshots": [],
+  "screenshots": [
+    {
+      "src": "assets/games/A Little Adventure/ALittleAdventure - Banner.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "A Little Adventure - Jeu d'aventure"
+    },
+    {
+      "src": "assets/games/LeLAB/LeLAB - Banner.jpg", 
+      "sizes": "1920x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "LeLAB - Expérience de laboratoire"
+    },
+    {
+      "src": "assets/games/Rice Battle/RiceBattle - Banner.jpg",
+      "sizes": "1920x1080", 
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Rice Battle - Jeu de stratégie"
+    }
+  ],
   "prefer_related_applications": false,
-  "related_applications": []
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://lacorbeille-studio.itch.io/"
+    }
+  ]
 }

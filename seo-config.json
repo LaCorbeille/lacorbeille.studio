@@ -1,0 +1,63 @@
+{
+  "siteVerification": {
+    "google": "<!-- Remplacer par votre code de vérification Google Search Console -->",
+    "bing": "<!-- Remplacer par votre code de vérification Bing Webmaster -->",
+    "yandex": "<!-- Remplacer par votre code de vérification Yandex -->",
+    "pinterest": "<!-- Remplacer par votre code de vérification Pinterest -->"
+  },
+  "analytics": {
+    "googleAnalytics": "<!-- Remplacer par votre ID Google Analytics -->",
+    "googleTagManager": "<!-- Remplacer par votre ID Google Tag Manager -->"
+  },
+  "socialPlatforms": {
+    "facebook": {
+      "appId": "<!-- Facebook App ID -->",
+      "pixelId": "<!-- Facebook Pixel ID -->"
+    },
+    "twitter": {
+      "site": "@LaCorbeilleSTD",
+      "creator": "@LaCorbeilleSTD"
+    },
+    "instagram": "@lacorbeille.studio",
+    "linkedin": "company/lacorbeille-studio",
+    "discord": "hmPzS4k",
+    "itchio": "lacorbeille-studio"
+  },
+  "structuredData": {
+    "organizationType": "Organization",
+    "industry": "Video Game Development",
+    "foundingDate": "2024",
+    "employees": "1-10",
+    "services": [
+      "Développement de jeux vidéo",
+      "Game Design",
+      "Programmation",
+      "Art numérique",
+      "Expériences interactives"
+    ]
+  },
+  "seoKeywords": {
+    "primary": [
+      "studio de jeux vidéo indépendant",
+      "développement jeux vidéo France",
+      "LaCorbeille STUDIO",
+      "indie game studio",
+      "créateur jeux vidéo"
+    ],
+    "secondary": [
+      "A Little Adventure",
+      "LeLAB",
+      "Rice Battle",
+      "game design",
+      "expériences interactives",
+      "studio indé français",
+      "développeur indépendant"
+    ],
+    "longTail": [
+      "studio de développement de jeux vidéo indépendant français",
+      "créateur d'expériences interactives uniques",
+      "développement de jeux vidéo innovants",
+      "studio de jeux vidéo basé en France"
+    ]
+  }
+}

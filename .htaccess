@@ -1,0 +1,156 @@
+# LaCorbeille STUDIO - Configuration Apache pour SEO et Performance
+
+# ----------------------------------------------------------------------
+# | Headers de sécurité et SEO                                        |
+# ----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    # Security headers
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    
+    # SEO and performance headers
+    Header set Cache-Control "public, max-age=31536000" env=IS_CSS
+    Header set Cache-Control "public, max-age=31536000" env=IS_JS
+    Header set Cache-Control "public, max-age=31536000" env=IS_IMAGE
+    
+    # HSTS pour HTTPS
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Redirections et URL canoniques                                    |
+# ----------------------------------------------------------------------
+
+# Redirection www vers non-www
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^www\.lacorbeille\.studio$ [NC]
+    RewriteRule ^(.*)$ https://lacorbeille.studio/$1 [R=301,L]
+    
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://lacorbeille.studio%{REQUEST_URI} [L,R=301]
+    
+    # Suppression du .html des URLs
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.html [NC,L]
+    
+    # Redirection des URLs avec .html vers sans .html
+    RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+    RewriteRule ^ /%1 [NC,L,R=301]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Compression GZIP                                                  |
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Cache Browser                                                     |
+# ----------------------------------------------------------------------
+
+<IfModule mod_expires.c>
+    ExpiresActive on
+    
+    # CSS et JavaScript
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    
+    # Images
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    
+    # Documents HTML
+    ExpiresByType text/html "access plus 1 week"
+    
+    # Manifeste et JSON
+    ExpiresByType application/json "access plus 1 week"
+    ExpiresByType application/manifest+json "access plus 1 week"
+    
+    # XML (sitemap, robots)
+    ExpiresByType application/xml "access plus 1 week"
+    ExpiresByType text/xml "access plus 1 week"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Pages d'erreur personnalisées                                     |
+# ----------------------------------------------------------------------
+
+ErrorDocument 404 /index.html
+ErrorDocument 403 /index.html
+ErrorDocument 500 /index.html
+
+# ----------------------------------------------------------------------
+# | Types MIME                                                        |
+# ----------------------------------------------------------------------
+
+<IfModule mod_mime.c>
+    AddType application/manifest+json webmanifest
+    AddType application/json json
+    AddType image/svg+xml svg
+    AddType font/woff woff
+    AddType font/woff2 woff2
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Variables d'environnement pour le cache                          |
+# ----------------------------------------------------------------------
+
+<IfModule mod_setenvif.c>
+    SetEnvIf Request_URI \.(css)$ IS_CSS
+    SetEnvIf Request_URI \.(js)$ IS_JS
+    SetEnvIf Request_URI \.(png|jpe?g|gif|svg|webp|ico)$ IS_IMAGE
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | Sécurité des fichiers                                            |
+# ----------------------------------------------------------------------
+
+# Bloquer l'accès aux fichiers sensibles
+<FilesMatch "\.(env|log|json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Autoriser schemas.json pour le SEO
+<Files "schemas.json">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# Bloquer l'accès aux dossiers système
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.vscode
+RedirectMatch 404 /node_modules

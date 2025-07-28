@@ -3,8 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LaCorbeille STUDIO, créateur de jeux vidéo indépendant." />
-    <title>LaCorbeille STUDIO</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>LaCorbeille STUDIO - Studio de Jeux Vidéo Indépendant | Créateur d'Expériences Interactives</title>
+    <meta name="description" content="LaCorbeille STUDIO est un studio de développement de jeux vidéo indépendant français. Découvrez nos créations uniques : A Little Adventure, LeLAB, Rice Battle. Expériences interactives innovantes et créatives." />
+    <meta name="keywords" content="jeux vidéo indépendant, studio de développement, game dev, indie games, A Little Adventure, LeLAB, Rice Battle, LaCorbeille Studio, développement jeux vidéo France, studio indé français" />
+    <meta name="author" content="LaCorbeille STUDIO" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="French" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="General" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lacorbeille.studio/" />
+    <meta property="og:title" content="LaCorbeille STUDIO - Studio de Jeux Vidéo Indépendant" />
+    <meta property="og:description" content="Studio de développement de jeux vidéo indépendant français. Créateur d'expériences interactives uniques et innovantes." />
+    <meta property="og:image" content="https://lacorbeille.studio/assets/branding/LogoFullWhite.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo LaCorbeille STUDIO" />
+    <meta property="og:site_name" content="LaCorbeille STUDIO" />
+    <meta property="og:locale" content="fr_FR" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@LaCorbeilleSTD" />
+    <meta name="twitter:creator" content="@LaCorbeilleSTD" />
+    <meta name="twitter:title" content="LaCorbeille STUDIO - Studio de Jeux Vidéo Indépendant" />
+    <meta name="twitter:description" content="Studio de développement de jeux vidéo indépendant français. Créateur d'expériences interactives uniques et innovantes." />
+    <meta name="twitter:image" content="https://lacorbeille.studio/assets/branding/LogoFullWhite.svg" />
+    <meta name="twitter:image:alt" content="Logo LaCorbeille STUDIO" />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LaCorbeille STUDIO",
+      "alternateName": "LaCorbeille Studio",
+      "url": "https://lacorbeille.studio",
+      "logo": "https://lacorbeille.studio/assets/branding/LogoFullWhite.svg",
+      "description": "Studio de développement de jeux vidéo indépendant français spécialisé dans la création d'expériences interactives uniques et innovantes.",
+      "foundingDate": "2024",
+      "knowsAbout": ["Développement de jeux vidéo", "Game Design", "Programmation", "Art numérique", "Expériences interactives"],
+      "sameAs": [
+        "https://www.instagram.com/lacorbeille.studio",
+        "https://x.com/LaCorbeilleSTD/",
+        "https://discord.com/invite/hmPzS4k/",
+        "https://www.facebook.com/people/LaCorbeille-Studio/61565357266191/",
+        "https://www.linkedin.com/company/lacorbeille-studio/",
+        "https://lacorbeille-studio.itch.io/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "",
+        "contactType": "customer service",
+        "email": "contact@lacorbeille.studio",
+        "availableLanguage": ["French", "English"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "makesOffer": [
+        {
+          "@type": "Service",
+          "name": "Développement de jeux vidéo",
+          "description": "Création de jeux vidéo indépendants sur mesure"
+        },
+        {
+          "@type": "Service", 
+          "name": "Game Design",
+          "description": "Conception d'expériences interactives et de gameplay innovant"
+        }
+      ]
+    }
+    </script>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lacorbeille.studio/" />
+    
+    <!-- Hreflang for internationalization -->
+    <link rel="alternate" hreflang="fr" href="https://lacorbeille.studio/" />
+    <link rel="alternate" hreflang="x-default" href="https://lacorbeille.studio/" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
@@ -16,6 +98,16 @@
     <!-- Web App Manifest -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1a73e8">
+    <meta name="msapplication-TileColor" content="#1a73e8">
+    <meta name="application-name" content="LaCorbeille STUDIO">
+    
+    <!-- Security and Performance -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="LaCorbeille STUDIO">
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,8 +136,13 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="assets/branding/LogoFullWhite.svg" alt="LaCorbeille STUDIO" width="200" height="40">
+                    <a href="index.html" aria-label="Retour à l'accueil de LaCorbeille STUDIO">
+                        <img src="assets/branding/LogoFullWhite.svg" 
+                             alt="LaCorbeille STUDIO - Logo du studio de développement de jeux vidéo indépendant" 
+                             width="200" 
+                             height="40"
+                             loading="eager"
+                             itemprop="logo">
                     </a>
                 </div>
                 <nav class="nav">
@@ -71,11 +168,11 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="gradient-text">LaCorbeille</span>
+                <h1 class="hero-title" itemscope itemtype="https://schema.org/Organization">
+                    <span class="gradient-text" itemprop="name">LaCorbeille</span>
                     <span class="hero-studio">STUDIO</span>
                 </h1>
-                <p class="hero-subtitle">Studio de développement de jeux vidéo indépendant</p>
+                <p class="hero-subtitle" itemprop="description">Studio de développement de jeux vidéo indépendant</p>
                 <p class="hero-description">
                     Créateur d'expériences interactives uniques et innovantes qui repoussent les limites de la créativité
                 </p>
