@@ -573,19 +573,30 @@ section {
     color: #a1a1aa;
 }
 
+/* Style pour le lien email */
+.contact-item p a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item p a:hover {
+    color: #f3f4f6;
+}
+
 .social-links {
     display: flex;
     gap: 1rem;
 }
 
 .social-links a {
-    color: #06B6D4;
+    color: #d1d5db;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #0891b2;
+    color: #f3f4f6;
 }
 
 

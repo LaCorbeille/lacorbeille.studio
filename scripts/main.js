@@ -277,13 +277,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Get form data
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
 
-            // Simulate form submission
-            console.log('Form submitted:', data);
+            // Map subject values to French labels
+            const subjectMap = {
+                'collaboration': 'Collaboration',
+                'press': 'Presse / Média',
+                'business': 'Partenariat commercial',
+                'other': 'Autre'
+            };
 
-            // Show success message (you would replace this with actual form submission)
-            alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+            const subjectText = subjectMap[subject] || subject;
+
+            // Create mailto URL
+            const emailBody = `Bonjour LaCorbeille STUDIO,
+
+Nom: ${name}
+Email: ${email}
+
+Message:
+${message}
+
+Cordialement,
+${name}`;
+
+            const mailtoUrl = `mailto:contact@lacorbeille.studio?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(emailBody)}`;
+
+            // Open default email client
+            window.location.href = mailtoUrl;
+
+            // Show confirmation message
+            alert('Votre client de messagerie va s\'ouvrir avec le message pré-rempli. Vous pouvez l\'envoyer directement !');
 
             // Reset form
             this.reset();
