@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://lacorbeille.studio/sitemap.xml
+
+# Disallow crawling of potentially sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow crawling of important pages
+Allow: /index.html
+Allow: /press.html
+Allow: /assets/games/
+Allow: /assets/branding/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

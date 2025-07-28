@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://lacorbeille.studio/</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Page d'accueil avec index.html -->
+    <url>
+        <loc>https://lacorbeille.studio/index.html</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Page Press -->
+    <url>
+        <loc>https://lacorbeille.studio/press.html</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Assets de branding -->
+    <url>
+        <loc>https://lacorbeille.studio/assets/branding/LogoFullWhite.svg</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <url>
+        <loc>https://lacorbeille.studio/assets/branding/LogoSmallWhite.svg</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Images des jeux -->
+    <url>
+        <loc>https://lacorbeille.studio/assets/games/A%20Little%20Adventure/ALittleAdventure%20-%20Banner.jpg</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://lacorbeille.studio/assets/games/A%20Little%20Adventure/ALittleAdventure%20-%20Card.jpg</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://lacorbeille.studio/assets/games/LeLAB/LeLAB%20-%20Banner.jpg</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://lacorbeille.studio/assets/games/LeLAB/LeLAB%20-%20Card.jpg</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://lacorbeille.studio/assets/games/Rice%20Battle/RiceBattle%20-%20Banner.jpg</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://lacorbeille.studio/assets/games/Rice%20Battle/RiceBattle%20-%20Card.jpg</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Manifest -->
+    <url>
+        <loc>https://lacorbeille.studio/manifest.json</loc>
+        <lastmod>2025-07-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.4</priority>
+    </url>
+</urlset>
