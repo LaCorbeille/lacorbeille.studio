@@ -221,13 +221,34 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
 
         modal.style.display = 'block';
+        modal.classList.add('show');
         document.body.style.overflow = 'hidden';
+        
+        // Add smooth transition for modal appearance
+        setTimeout(() => {
+            modal.style.opacity = '1';
+            
+            // Check if content is scrollable and add scroll indicators
+            const modalContentElement = modal.querySelector('.modal-content');
+            if (modalContentElement.scrollHeight > modalContentElement.clientHeight) {
+                modalContentElement.classList.add('has-scroll');
+            }
+        }, 10);
     }
 
     // Close modal
     function closeModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        modal.style.opacity = '0';
+        modal.classList.remove('show');
+        
+        // Remove scroll indicators
+        const modalContentElement = modal.querySelector('.modal-content');
+        modalContentElement.classList.remove('has-scroll');
+        
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
     }
 
     if (modalClose) {

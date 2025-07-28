@@ -12,6 +12,91 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
+/* Custom Scrollbar for Main Page */
+html {
+    scroll-behavior: smooth;
+    /* Custom scrollbar styles for main page */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 92, 246, 0.8) transparent;
+    overflow-y: auto;
+}
+
+body {
+    /* Ensure body doesn't interfere with html scrollbar */
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) - Main Page */
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8B5CF6 0%, #9333EA 50%, #7C3AED 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #9333EA 0%, #7C3AED 50%, #6D28D9 100%);
+    border: 1px solid rgba(139, 92, 246, 0.6);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.6);
+    transform: scaleX(1.2);
+}
+
+html::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 50%, #5B21B6 100%);
+    box-shadow: 0 2px 6px rgba(139, 92, 246, 0.8);
+}
+
+html::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Scrollbar glow effect animation for main page */
+@keyframes mainScrollbarGlow {
+    0% {
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(139, 92, 246, 0.6);
+    }
+    100% {
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    }
+}
+
+/* Apply subtle glow animation to main scrollbar */
+html::-webkit-scrollbar-thumb {
+    animation: mainScrollbarGlow 3s ease-in-out infinite;
+}
+
+/* Responsive scrollbar for main page on smaller screens */
+@media (max-width: 768px) {
+    html::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    html::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+    }
+}
+
+/* Firefox scrollbar styling for main page */
+@supports (scrollbar-width: thin) {
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: #8B5CF6 transparent;
+    }
+}
+
 .gradient-text {
     background: linear-gradient(135deg, #8B5CF6, #06B6D4);
     -webkit-background-clip: text;
@@ -517,6 +602,12 @@ section {
     background-color: rgba(0, 0, 0, 0.8);
     -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+    opacity: 1;
 }
 
 .modal-content {
@@ -531,6 +622,144 @@ section {
     overflow-y: auto;
     border: 1px solid rgba(139, 92, 246, 0.3);
     position: relative;
+    /* Custom scrollbar styles */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 92, 246, 0.8) transparent;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+/* Scroll indicator shadows */
+.modal-content::before,
+.modal-content::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.8), transparent);
+    opacity: 0;
+}
+
+.modal-content::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent);
+    opacity: 0;
+}
+
+/* Show scroll indicators when content is scrollable */
+.modal-content.has-scroll::before {
+    opacity: 1;
+}
+
+.modal-content.has-scroll::after {
+    opacity: 1;
+}
+
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8B5CF6 0%, #9333EA 50%, #7C3AED 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    position: relative;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #9333EA 0%, #7C3AED 50%, #6D28D9 100%);
+    border: 1px solid rgba(139, 92, 246, 0.6);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.6);
+    transform: scaleX(1.2);
+}
+
+.modal-content::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 50%, #5B21B6 100%);
+    box-shadow: 0 2px 6px rgba(139, 92, 246, 0.8);
+}
+
+.modal-content::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Enhanced scrollbar for better visual feedback */
+.modal-content {
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar glow effect animation */
+@keyframes scrollbarGlow {
+    0% {
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(139, 92, 246, 0.6);
+    }
+    100% {
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    }
+}
+
+/* Apply glow animation when modal is active */
+.modal.show .modal-content::-webkit-scrollbar-thumb {
+    animation: scrollbarGlow 2s ease-in-out infinite;
+}
+
+/* Additional scrollbar enhancements */
+.modal-content::-webkit-scrollbar-thumb:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 10px;
+}
+
+/* Responsive scrollbar for smaller screens */
+@media (max-width: 768px) {
+    .modal-content::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+    }
+    
+    .modal-content::-webkit-scrollbar-track {
+        border-radius: 8px;
+        margin: 5px 0;
+    }
+}
+
+/* Firefox scrollbar styling */
+@supports (scrollbar-width: thin) {
+    .modal-content {
+        scrollbar-width: thin;
+        scrollbar-color: #8B5CF6 transparent;
+    }
 }
 
 .modal-close {
