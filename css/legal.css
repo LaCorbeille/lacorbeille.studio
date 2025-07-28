@@ -1,9 +1,0 @@
-main {
-    margin: calc(var(--main-side-padding) * 2) calc(var(--main-side-padding) * 4);
-}
-
-h2,
-a,
-p {
-    color: white;
-}

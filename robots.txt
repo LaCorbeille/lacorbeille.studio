@@ -1,5 +1,0 @@
-# Autorise l'accès à toutes les pages pour les robots
-User-agent: *
-
-# Indique le chemin du fichier sitemap
-Sitemap: https://lacorbeille.studio/sitemap.xml

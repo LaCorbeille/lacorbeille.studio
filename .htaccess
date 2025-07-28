@@ -1,8 +1,0 @@
-# Enable mod_rewrite
-RewriteEngine On
-
-# Set the base directory
-RewriteBase /
-
-# Error pages
-ErrorDocument 404 /index.html
