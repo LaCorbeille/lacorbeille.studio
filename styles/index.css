@@ -823,9 +823,7 @@ section {
         display: flex;
     }
     
-    .nav-list {
-        display: none;
-    }
+    /* 🚫 Retiré .nav-list { display: none; } car géré par header.css */
     
     .hero-buttons {
         flex-direction: column;
