@@ -1,0 +1,462 @@
+/* Press Kit Specific Styles */
+
+.press-hero {
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+    margin-top: 70px;
+    position: relative;
+}
+
+.press-hero-content {
+    text-align: center;
+}
+
+.press-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.press-subtitle {
+    font-size: 1.3rem;
+    color: #a1a1aa;
+}
+
+/* Scroll indicator for press page */
+.press-hero .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+.press-hero .scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid #8B5CF6;
+    border-bottom: 2px solid #8B5CF6;
+    transform: rotate(45deg);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+.press-content {
+    padding: 4rem 0;
+}
+
+.press-grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.press-section {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.press-section h2 {
+    color: #8B5CF6;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Studio Information */
+.info-card h3 {
+    color: #06B6D4;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.info-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    color: #a1a1aa;
+}
+
+.info-item strong {
+    color: #8B5CF6;
+}
+
+.studio-description {
+    color: #a1a1aa;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+/* Logos */
+.logos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.logo-item {
+    text-align: center;
+    background: rgba(39, 39, 42, 0.5);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(113, 113, 122, 0.3);
+}
+
+.logo-preview {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-preview.dark {
+    background: #1a1a1a;
+}
+
+.logo-item h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.logo-item p {
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Assets des Jeux */
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.screenshot-item {
+    background: rgba(39, 39, 42, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(113, 113, 122, 0.3);
+    transition: all 0.3s ease;
+}
+
+.screenshot-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.5);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+
+.screenshot-info {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.screenshot-info h4 {
+    color: white;
+    margin: 0;
+}
+
+/* Team */
+.team-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: rgba(39, 39, 42, 0.5);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(113, 113, 122, 0.3);
+}
+
+.team-member-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.team-member-info {
+    flex: 1;
+}
+
+.team-member h4 {
+    color: #06B6D4;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.role {
+    color: #8B5CF6;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.bio {
+    color: #a1a1aa;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.team-member-socials {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(113, 113, 122, 0.2);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(113, 113, 122, 0.1);
+    border: 1px solid rgba(113, 113, 122, 0.3);
+    border-radius: 8px;
+    color: #a1a1aa;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.social-link:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: #8B5CF6;
+    color: #8B5CF6;
+    transform: translateY(-2px);
+}
+
+.social-link:hover::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 0.5rem;
+    z-index: 10;
+}
+
+.social-link:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 2px;
+    z-index: 10;
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Contact */
+.contact-card {
+    background: rgba(39, 39, 42, 0.5);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(113, 113, 122, 0.3);
+}
+
+.contact-item {
+    margin-bottom: 1rem;
+    color: #a1a1aa;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item strong {
+    color: #8B5CF6;
+    margin-right: 1rem;
+}
+
+.contact-item a {
+    color: #06B6D4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #0891b2;
+}
+
+/* Download All */
+.download-all-card {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    text-align: center;
+}
+
+.download-all-card h3 {
+    color: #06B6D4;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.download-all-card p {
+    color: #a1a1aa;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.download-all-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-all-card li {
+    color: #a1a1aa;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.download-all-card li::before {
+    content: '✔';
+    color: #22c55e;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.download-all-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .press-content {
+        padding: 2rem 0;
+    }
+    
+    .press-section {
+        padding: 1.5rem;
+    }
+    
+    .info-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .logos-grid,
+    .screenshots-grid,
+    .team-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot-info {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .press-hero {
+        min-height: 30vh;
+        padding: 2rem 0;
+    }
+    
+    .download-all-card {
+        padding: 1.5rem;
+    }
+    
+    .download-all-card ul {
+        text-align: center;
+    }
+    
+    .team-member-socials {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-link svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* Désactiver les tooltips sur mobile */
+    .social-link:hover::after,
+    .social-link:hover::before {
+        display: none;
+    }
+}

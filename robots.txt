@@ -1,5 +1,44 @@
-# Autorise l'accès à toutes les pages pour les robots
 User-agent: *
+Allow: /
 
-# Indique le chemin du fichier sitemap
+# Sitemap
 Sitemap: https://lacorbeille.studio/sitemap.xml
+
+# Disallow crawling of potentially sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.vscode/
+Disallow: /temp/
+Disallow: /cache/
+
+# Allow crawling of important pages and assets
+Allow: /index.html
+Allow: /press.html
+Allow: /assets/games/
+Allow: /assets/branding/
+Allow: /assets/favicon/
+Allow: /manifest.json
+Allow: /schemas.json
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Host directive (preferred domain)
+Host: https://lacorbeille.studio

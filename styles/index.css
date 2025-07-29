@@ -1,0 +1,1037 @@
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Custom Scrollbar for Main Page */
+html {
+    scroll-behavior: smooth;
+    /* Custom scrollbar styles for main page */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 92, 246, 0.8) transparent;
+    overflow-y: auto;
+}
+
+body {
+    /* Ensure body doesn't interfere with html scrollbar */
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) - Main Page */
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8B5CF6 0%, #9333EA 50%, #7C3AED 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #9333EA 0%, #7C3AED 50%, #6D28D9 100%);
+    border: 1px solid rgba(139, 92, 246, 0.6);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.6);
+    transform: scaleX(1.2);
+}
+
+html::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 50%, #5B21B6 100%);
+    box-shadow: 0 2px 6px rgba(139, 92, 246, 0.8);
+}
+
+html::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Scrollbar glow effect animation for main page */
+@keyframes mainScrollbarGlow {
+    0% {
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(139, 92, 246, 0.6);
+    }
+    100% {
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    }
+}
+
+/* Apply subtle glow animation to main scrollbar */
+html::-webkit-scrollbar-thumb {
+    animation: mainScrollbarGlow 3s ease-in-out infinite;
+}
+
+/* Responsive scrollbar for main page on smaller screens */
+@media (max-width: 768px) {
+    html::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    html::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+    }
+}
+
+/* Firefox scrollbar styling for main page */
+@supports (scrollbar-width: thin) {
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: #8B5CF6 transparent;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #8B5CF6;
+    border: 2px solid #8B5CF6;
+}
+
+.btn-secondary:hover {
+    background: #8B5CF6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #06B6D4;
+    border: 1px solid #06B6D4;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-outline:hover {
+    background: #06B6D4;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-studio {
+    color: white;
+    display: block;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #71717a;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid #8B5CF6;
+    border-bottom: 2px solid #8B5CF6;
+    transform: rotate(45deg);
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #a1a1aa;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h3 {
+    color: #8B5CF6;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    color: #a1a1aa;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #06B6D4;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #a1a1aa;
+    font-size: 1rem;
+}
+
+/* Games Section */
+.games {
+    background: #0a0a0a;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.game-card {
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+.game-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.1);
+}
+
+.game-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.game-status.development {
+    background: rgba(34, 197, 94, 0.8);
+    color: white;
+    border: 1px solid rgba(34, 197, 94, 0.9);
+}
+
+.game-status.prototype {
+    background: rgba(249, 115, 22, 0.8);
+    color: white;
+    border: 1px solid rgba(249, 115, 22, 0.9);
+}
+
+.game-status.concept {
+    background: rgba(139, 92, 246, 0.8);
+    color: white;
+    border: 1px solid rgba(139, 92, 246, 0.9);
+}
+
+.game-info {
+    padding: 1.5rem;
+}
+
+.game-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.game-description {
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+}
+
+.game-platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.platform {
+    padding: 0.25rem 0.75rem;
+    background: rgba(6, 182, 212, 0.2);
+    color: #06B6D4;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+/* News Section */
+.news {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.news-card {
+    background: rgba(26, 26, 26, 0.8);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(6, 182, 212, 0.5);
+}
+
+.news-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-date {
+    color: #06B6D4;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.news-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.news-excerpt {
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.news-link {
+    color: #06B6D4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.news-link:hover {
+    color: #0891b2;
+}
+
+.instagram-feed {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.instagram-feed h3 {
+    color: #8B5CF6;
+    margin-bottom: 1rem;
+}
+
+.instagram-feed a {
+    color: #06B6D4;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Contact Section */
+.contact {
+    background: #0a0a0a;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.contact-form {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #a1a1aa;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(39, 39, 42, 0.8);
+    border: 1px solid rgba(113, 113, 122, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8B5CF6;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+.contact-item h4 {
+    color: #06B6D4;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: #a1a1aa;
+}
+
+/* Style pour le lien email */
+.contact-item p a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item p a:hover {
+    color: #f3f4f6;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #f3f4f6;
+}
+
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    margin: 5% auto;
+    padding: 2rem;
+    padding-right: 4rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    position: relative;
+    /* Custom scrollbar styles */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 92, 246, 0.8) transparent;
+    transform: translateY(20px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+/* Scroll indicator shadows */
+.modal-content::before,
+.modal-content::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-content::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.8), transparent);
+    opacity: 0;
+}
+
+.modal-content::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent);
+    opacity: 0;
+}
+
+/* Show scroll indicators when content is scrollable */
+.modal-content.has-scroll::before {
+    opacity: 1;
+}
+
+.modal-content.has-scroll::after {
+    opacity: 1;
+}
+
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #8B5CF6 0%, #9333EA 50%, #7C3AED 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    position: relative;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #9333EA 0%, #7C3AED 50%, #6D28D9 100%);
+    border: 1px solid rgba(139, 92, 246, 0.6);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.6);
+    transform: scaleX(1.2);
+}
+
+.modal-content::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 50%, #5B21B6 100%);
+    box-shadow: 0 2px 6px rgba(139, 92, 246, 0.8);
+}
+
+.modal-content::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Enhanced scrollbar for better visual feedback */
+.modal-content {
+    scroll-behavior: smooth;
+}
+
+/* Scrollbar glow effect animation */
+@keyframes scrollbarGlow {
+    0% {
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(139, 92, 246, 0.6);
+    }
+    100% {
+        box-shadow: 0 2px 8px rgba(139, 92, 246, 0.4);
+    }
+}
+
+/* Apply glow animation when modal is active */
+.modal.show .modal-content::-webkit-scrollbar-thumb {
+    animation: scrollbarGlow 2s ease-in-out infinite;
+}
+
+/* Additional scrollbar enhancements */
+.modal-content::-webkit-scrollbar-thumb:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 10px;
+}
+
+/* Responsive scrollbar for smaller screens */
+@media (max-width: 768px) {
+    .modal-content::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .modal-content::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+    }
+    
+    .modal-content::-webkit-scrollbar-track {
+        border-radius: 8px;
+        margin: 5px 0;
+    }
+}
+
+/* Firefox scrollbar styling */
+@supports (scrollbar-width: thin) {
+    .modal-content {
+        scrollbar-width: thin;
+        scrollbar-color: #8B5CF6 transparent;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #a1a1aa;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #8B5CF6;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .nav-list {
+        display: none;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-content,
+    .contact-content,
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .games-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 1.5rem;
+        padding-right: 3rem;
+    }
+}
+
+/* Game Modal Styles */
+.game-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    gap: 1rem;
+}
+
+.game-modal-header h2 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.game-modal-header .game-status {
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-right: 1rem;
+}
+
+.game-status-container {
+    text-align: left;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.game-status-container .game-status {
+    position: static;
+    display: inline-block;
+    margin: 0;
+}
+
+.game-modal-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.meta-item {
+    color: #a1a1aa;
+}
+
+.meta-item strong {
+    color: #8B5CF6;
+}
+
+.game-modal-description,
+.game-modal-features {
+    margin-bottom: 2rem;
+}
+
+.game-modal-description h3,
+.game-modal-features h3 {
+    color: #06B6D4;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.game-modal-description p {
+    color: #a1a1aa;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.game-modal-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.game-modal-features li {
+    color: #a1a1aa;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.game-modal-features li::before {
+    content: '▶';
+    color: #8B5CF6;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .game-modal-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .game-modal-header h2 {
+        margin-right: 0;
+        font-size: 1.5rem;
+    }
+    
+    .game-modal-meta {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* News Modal Specific Styles */
+.news-modal-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.news-modal-header h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.news-modal-date {
+    color: #06B6D4;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.news-modal-content {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.news-modal-content h4 {
+    color: #8B5CF6;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.news-modal-content p {
+    color: #a1a1aa;
+    margin-bottom: 1rem;
+}
+
+.news-modal-action {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.news-modal-action .btn {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    min-width: 200px;
+}
+
+/* News cards cursor pointer */
+.news-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+}
