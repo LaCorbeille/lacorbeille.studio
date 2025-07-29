@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>Nous sommes ravis de vous présenter le nouveau site web de LaCorbeille STUDIO ! Après plusieurs mois de développement, nous avons créé une plateforme moderne qui reflète notre identité et nos valeurs.</p>
                 
                 <h4>🎨 Design moderne et responsif</h4>
-                <p>Le nouveau design utilise notre palette de couleurs signature avec des dégradés violets et cyan, créant une expérience visuelle immersive. Le site s'adapte parfaitement à tous les appareils, du mobile au desktop.</p>
+                <p>Le nouveau design utilise notre palette de couleurs signature avec des dégradés violets et cyan. Le site s'adapte parfaitement à tous les appareils, du mobile au desktop.</p>
                 
                 <h4>⚡ Performance optimisée</h4>
                 <p>Nous avons mis l'accent sur la performance avec un temps de chargement ultra-rapide, des images optimisées et une architecture CSS modulaire utilisant les dernières technologies web.</p>
@@ -138,26 +138,26 @@ document.addEventListener('DOMContentLoaded', function() {
             date: '20 Juillet 2025',
             image: 'assets/news/news_lelab.jpg',
             content: `
-                <p>C'est avec une grande fierté que nous annonçons le passage de LeLAB en phase de développement actif ! Ce projet, qui nous tient particulièrement à cœur, représente notre laboratoire d'expérimentations interactives.</p>
+                <p>C'est avec une grande fierté que nous annonçons le passage de LeLAB en phase de développement actif ! Ce FPS dynamique met l'accent sur des affrontements rapides entre amis dans des arènes personnalisables.</p>
                 
-                <h4>🔬 Un laboratoire d'innovations</h4>
-                <p>LeLAB n'est pas un jeu classique, c'est notre espace de recherche et développement où nous testons de nouvelles mécaniques, explorons des concepts innovants et repoussons les limites de l'interactivité.</p>
+                <h4>🎯 FPS dynamique et compétitif</h4>
+                <p>Le LAB encourage des stratégies basées sur la mobilité et des réflexes instantanés. Avec des mécaniques de déplacement avancées, chaque partie devient un défi tactique unique.</p>
                 
-                <h4>🛠️ Développement collaboratif</h4>
-                <p>Pour la première fois, nous impliquons la communauté dans le processus de développement. Les joueurs pourront tester les nouvelles fonctionnalités, proposer des améliorations et participer à la création du jeu.</p>
+                <h4>🛠️ Création de cartes sans limite</h4>
+                <p>Les joueurs auront la possibilité de créer leurs propres cartes, favorisant une créativité sans limite. Chaque carte se présente sous un style de "level prototyping", utilisant des textures, formes et structures simples.</p>
                 
-                <h4>⚡ Technologies de pointe</h4>
-                <p>LeLAB utilise les dernières technologies de développement pour offrir une expérience fluide et modulaire. Chaque élément peut être modifié, personnalisé et partagé avec la communauté.</p>
+                <h4>⚡ Mécaniques innovantes</h4>
+                <p>Le jeu propose de nombreuses mécaniques sympas, comme des plateformes de gravité qui révolutionnent les déplacements et ouvrent de nouvelles possibilités stratégiques.</p>
                 
-                <h4>🎯 Objectifs du projet</h4>
-                <p>Ce laboratoire nous permettra de valider nos concepts avant de les intégrer dans nos productions principales, garantissant ainsi la qualité de nos futurs jeux.</p>
+                <h4>👥 Orienté vers la compétition amicale</h4>
+                <p>Le LAB offre aux joueurs l'opportunité de défier leurs amis dans des environnements qu'ils ont eux-mêmes conçus, créant une expérience personnalisée et compétitive.</p>
                 
-                <p>Restez connectés pour découvrir les premières versions jouables dans les semaines à venir !</p>
+                <p>Préparez-vous à découvrir un FPS qui redéfinit les codes du genre !</p>
             `,
             action: {
                 text: 'Découvrir LeLAB',
                 scrollTo: 'lelab',
-                icon: '🔬'
+                icon: '🎯'
             }
         },
         'ricebattle': {
@@ -167,27 +167,27 @@ document.addEventListener('DOMContentLoaded', function() {
             content: `
                 <p>Le moment que vous attendiez est arrivé ! Le premier prototype jouable de Rice Battle est maintenant disponible et nous sommes impatients de recueillir vos premiers retours.</p>
                 
-                <h4>⚔️ Mécaniques de combat uniques</h4>
-                <p>Découvrez un système de combat stratégique innovant où chaque variété de riz possède ses propres propriétés, forces et faiblesses. Basmati, Jasmine, Arborio... chaque grain raconte une histoire de bataille !</p>
+                <h4>🥢 Combat 2.5D unique</h4>
+                <p>RiceBattle propose une expérience de combat inédite en 2.5D où les environnements sont modélisés en 3D tandis que les personnages et éléments d'interaction restent en 2D, créant un style visuel distinctif.</p>
                 
-                <h4>🎮 Gameplay stratégique</h4>
-                <p>Les combats se déroulent au tour par tour, mêlant réflexion tactique et mécaniques de timing. Anticipez les mouvements de vos adversaires et créez des combos dévastateurs.</p>
+                <h4>� Personnages culinaires</h4>
+                <p>Les combattants incarnent divers aliments emblématiques de la cuisine asiatique : onigiris, boulettes de riz, sushis... chaque personnage apporte ses propres techniques de combat !</p>
                 
-                <h4>🌾 Univers culinaire épique</h4>
-                <p>Plongez dans un monde où la gastronomie rencontre la stratégie militaire. Chaque bataille se déroule dans des environnements inspirés des traditions culinaires du monde entier.</p>
+                <h4>�️ Items et interactions</h4>
+                <p>Au cours des manches, des items spéciaux comme la sauce soja et le wasabi apparaissent pour offrir aux joueurs des buffs temporaires. Les personnages peuvent aussi interagir avec le décor pour créer des opportunités tactiques.</p>
                 
-                <h4>🔄 Version prototype</h4>
-                <p>Cette version prototype contient les mécaniques de base, 5 variétés de riz jouables et 3 arènes de combat. Vos retours nous aideront à façonner l'expérience finale !</p>
+                <h4>🎮 Combats personnalisables</h4>
+                <p>Le jeu propose des combats entièrement personnalisables : définissez le nombre de manches, choisissez votre type de contrôleur (manette ou clavier) et affrontez vos amis dans des duels épiques !</p>
                 
-                <h4>🎯 Prochaines étapes</h4>
-                <p>Basé sur vos retours, nous ajouterons de nouvelles variétés de riz, des modes de jeu supplémentaires et le multijoueur en ligne.</p>
+                <h4>🚀 Version prototype</h4>
+                <p>Cette version contient les mécaniques de base et plusieurs personnages jouables. Vos retours nous aideront à enrichir l'expérience avec de nouveaux combattants et fonctionnalités.</p>
                 
-                <p>Prêt à livrer votre première bataille de riz ?</p>
+                <p>Prêt à livrer votre première bataille culinaire ?</p>
             `,
             action: {
                 text: 'Voir Rice Battle',
                 scrollTo: 'rice-battle',
-                icon: '🌾'
+                icon: '🥢'
             }
         }
     };
@@ -213,51 +213,51 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'LeLAB',
             status: 'En développement',
             platforms: ['Windows', 'Linux'],
-            description: 'LeLAB est notre laboratoire d\'expérimentations interactives où nous explorons de nouvelles mécaniques de jeu et des concepts innovants. Ce projet nous permet de tester des idées créatives avant de les intégrer dans nos productions principales.',
-            features: ['Mécaniques expérimentales', 'Interface modulaire', 'Système de feedback en temps réel', 'Outils de création communautaire'],
+            description: 'Le LAB est un FPS dynamique qui met l\'accent sur des affrontements rapides entre amis dans des arènes personnalisables. Avec des mécaniques de déplacement avancées, Le LAB encourage des stratégies basées sur la mobilité et des réflexes instantanés. Les joueurs auront la possibilité de créer leurs propres cartes, favorisant une créativité sans limite. Chaque carte se présente sous un style de "level prototyping", utilisant des textures, formes et structures simples.',
+            features: ['Mécaniques de déplacement avancées', 'Éditeur de cartes intégré', 'Style "level prototyping"', 'Plateformes de gravité', 'Compétition amicale'],
             screenshots: ['assets/games/LeLAB/LeLAB - Banner.jpg'],
             releaseDate: 'T2 2025',
-            genre: 'Expérimental / Sandbox'
+            genre: 'First-Person Shooter (FPS) / Action / 3D'
         },
         'rice-battle': {
             title: 'Rice Battle',
             status: 'Prototype',
             platforms: ['Windows', 'Linux', 'Switch'],
-            description: 'Rice Battle est un jeu de combat stratégique qui se déroule dans un univers culinaire unique. Les joueurs s\'affrontent dans des batailles épiques en utilisant différentes variétés de riz comme armes et sorts.',
-            features: ['Combat stratégique au tour par tour', 'Plus de 20 variétés de riz différentes', 'Mode multijoueur local et en ligne', 'Système de craft d\'équipements'],
+            description: 'RiceBattle est un jeu de combat en 2.5D pour deux joueurs, où les environnements sont modélisés en 3D tandis que les personnages et les éléments d\'interaction sont en 2D. Le jeu se déroule dans un univers inspiré par la cuisine asiatique dans lequel les personnages peuvent interagir avec l\'environnement. Les combattants incarnent divers aliments emblématiques comme des onigiris, des boulettes de riz et des sushis.',
+            features: ['Combat 2.5D (décors 3D, personnages 2D)', 'Personnages inspirés de la cuisine asiatique', 'Items spéciaux (sauce soja, wasabi)', 'Interaction avec le décor', 'Combats personnalisables'],
             screenshots: ['assets/games/Rice Battle/RiceBattle - Banner.jpg'],
             releaseDate: 'T4 2025',
-            genre: 'Stratégie / Combat'
+            genre: 'Fighter / 2.5D'
         },
         'little-adventure': {
             title: 'A Little Adventure',
             status: 'Prototype',
             platforms: ['Windows', 'Linux'],
-            description: 'A Little Adventure est un jeu d\'aventure narratif touchant qui raconte l\'histoire d\'un petit personnage dans un grand monde. Malgré sa taille modeste, cette aventure promet de grandes émotions.',
-            features: ['Narration immersive', 'Art style minimaliste', 'Puzzles environnementaux', 'Bande sonore émotionnelle'],
+            description: 'A Little Adventure est un jeu de plateforme en 3D où le joueur explore un monde coloré rempli de défis en tout genre. Il sera amené à se battre contre des monstres, résoudre de petites énigmes et s\'aventurer dans des niveaux de plus en plus difficiles. Son objectif est simple : compléter tous les niveaux et trouver les jetons cachés dans chacun d\'entre eux.',
+            features: ['Plateforme 3D colorée', 'Combat contre des monstres', 'Énigmes à résoudre', 'Jetons cachés à collecter', 'Difficulté progressive'],
             screenshots: ['assets/games/A Little Adventure/ALittleAdventure - Banner.jpg'],
             releaseDate: 'T1 2026',
-            genre: 'Aventure / Narratif'
+            genre: 'Platformer / Aventure / Puzzle / 3D'
         },
         'bot-anic': {
             title: 'BOT A.N.I.C',
             status: 'Concept',
             platforms: ['Windows', 'Linux', 'PlayStation', 'Xbox'],
-            description: 'BOT A.N.I.C explore la relation entre intelligence artificielle et nature. Dans ce jeu, vous incarnez un robot jardinier chargé de restaurer un écosystème détruit, en apprenant à comprendre et respecter la nature.',
-            features: ['IA évolutive', 'Simulation d\'écosystème', 'Crafting organique', 'Multiples fins selon vos choix'],
+            description: 'A.N.I.C (Androïde avec Noyau Intelligent de Combat) s\'éveille dans un laboratoire souterrain en ruine de NEMESIS Corp, envahi par des racines et plantes mutantes. Dans ce monde post-apocalyptique où la nature a triomphé de l\'humanité, A.N.I.C doit maîtriser ses compétences pour survivre face aux plantes agressives et machines corrompues, tout en découvrant l\'origine de cette invasion.',
+            features: ['Action-aventure à la troisième personne', 'Monde post-apocalyptique immersif', 'Combats stratégiques', 'Choix moraux impactants', 'Gestion des ressources'],
             screenshots: ['https://placehold.co/800x400?text=BOT+A.N.I.C+Banner'],
             releaseDate: 'TBD',
-            genre: 'Simulation / Aventure'
+            genre: 'Aventure / Puzzle / 3D / FPS'
         },
         'archipel': {
             title: 'Archipel',
             status: 'Concept',
             platforms: ['Windows', 'Linux'],
-            description: 'Archiper vous invite à explorer un archipel mystérieux rempli de secrets anciens. Naviguez entre les îles, découvrez des civilisations perdues et percez les mystères de cet univers aquatique.',
-            features: ['Exploration maritime', 'Découverte de civilisations', 'Système de navigation dynamique', 'Mystères à résoudre'],
+            description: 'Archipel est un jeu solo en 3D stylisé en vue à la troisième personne, mêlant aventure, exploration, stratégie, combat et gestion de ressources. Le joueur incarne un personnage qui se réveille sur une île flottante dans son village natal après avoir échoué lors d\'une exploration. Chaque île propose des environnements uniques et des activités variées selon l\'humeur du joueur.',
+            features: ['Exploration d\'îles flottantes uniques', 'Combat stratégique et apprivoisement', 'Système de crafting et construction', 'Personnalisation du personnage', 'Activités variées (pêche, chasse, photographie)'],
             screenshots: ['https://placehold.co/800x400?text=Archipel+Banner'],
             releaseDate: 'TBD',
-            genre: 'Exploration / Aventure'
+            genre: 'Troisième personne / Aventure / Stratégie / 3D'
         }
     };
 
