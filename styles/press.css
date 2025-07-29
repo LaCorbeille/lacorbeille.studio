@@ -168,7 +168,7 @@
     box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
 }
 
-/* Screenshots */
+/* Assets des Jeux */
 .screenshots-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
