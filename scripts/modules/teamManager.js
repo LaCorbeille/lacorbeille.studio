@@ -28,47 +28,25 @@ class TeamManager {
         this.teamData = {
             "team": [
                 {
-                    "id": "alex-martin",
-                    "name": "Alex Martin",
-                    "role": "Game Director & Fondateur",
-                    "bio": "10 ans d'expérience dans l'industrie du jeu vidéo, passionné par la narration interactive.",
+                    "id": "noa-second",
+                    "name": "Noa Second",
+                    "role": "Fondateur & Game Designer",
+                    "bio": "Fondateur de LaCorbeille STUDIO, game designer passionné, à l'origine des projets du studio. Gestion d'équipe et vision créative.",
                     "socials": {
-                        "linkedin": "https://www.linkedin.com/in/alex-martin-gamedev",
-                        "github": "https://github.com/alexmartin-gamedev",
-                        "twitter": "https://twitter.com/alexmartin_dev"
+                        "portfolio": "https://www.noasecond.com/",
+                        "linkedin": "https://www.linkedin.com/in/noa-second/",
+                        "github": "https://github.com/NoaSecond",
+                        "instagram": "https://instagram.com/noa.second"
                     }
                 },
                 {
-                    "id": "sarah-chen",
-                    "name": "Sarah Chen",
-                    "role": "Lead Developer",
-                    "bio": "Experte en développement Unity et C#, spécialisée dans l'optimisation et l'architecture de jeux.",
+                    "id": "romain-varene-rebuffat",
+                    "name": "Romain VARENE-REBUFFAT",
+                    "role": "Testeur QA & Développement Réseau",
+                    "bio": "Testeur QA spécialisé dans l'assurance qualité des jeux vidéo. Apporte également son expertise sur la partie réseau du développement.",
                     "socials": {
-                        "linkedin": "https://www.linkedin.com/in/sarah-chen-unity",
-                        "github": "https://github.com/sarahchen-dev",
-                        "portfolio": "https://sarahchen.dev"
-                    }
-                },
-                {
-                    "id": "marcus-rodriguez",
-                    "name": "Marcus Rodriguez",
-                    "role": "Artist Director",
-                    "bio": "Artiste visuel avec une expertise en art conceptuel et direction artistique pour jeux indépendants.",
-                    "socials": {
-                        "artstation": "https://www.artstation.com/marcusrodriguez",
-                        "instagram": "https://www.instagram.com/marcus_art_games",
-                        "behance": "https://www.behance.net/marcusrodriguez"
-                    }
-                },
-                {
-                    "id": "emma-thompson",
-                    "name": "Emma Thompson",
-                    "role": "Sound Designer",
-                    "bio": "Compositrice et sound designer, créatrice d'ambiances sonores immersives.",
-                    "socials": {
-                        "soundcloud": "https://soundcloud.com/emma-thompson-audio",
-                        "spotify": "https://open.spotify.com/artist/emmathompson",
-                        "linkedin": "https://www.linkedin.com/in/emma-thompson-audio"
+                        "portfolio": "https://www.root3301.fr/",
+                        "linkedin": "https://www.linkedin.com/in/romain-varene-rebuffat-328782186"
                     }
                 }
             ]
