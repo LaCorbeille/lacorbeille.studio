@@ -100,6 +100,113 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalContent = document.getElementById('gameModalContent');
     const modalClose = document.querySelector('.modal-close');
 
+    // News modal system
+    const newsCards = document.querySelectorAll('.news-card');
+    const newsModal = document.getElementById('newsModal') || createNewsModal();
+
+    // News data
+    const newsData = {
+        'website': {
+            title: 'Nouveau site web en ligne !',
+            date: '28 Juillet 2025',
+            image: 'assets/news/news_website.webp',
+            content: `
+                <p>Nous sommes ravis de vous présenter le nouveau site web de LaCorbeille STUDIO ! Après plusieurs mois de développement, nous avons créé une plateforme moderne qui reflète notre identité et nos valeurs.</p>
+                
+                <h4>🎨 Design moderne et responsif</h4>
+                <p>Le nouveau design utilise notre palette de couleurs signature avec des dégradés violets et cyan, créant une expérience visuelle immersive. Le site s'adapte parfaitement à tous les appareils, du mobile au desktop.</p>
+                
+                <h4>⚡ Performance optimisée</h4>
+                <p>Nous avons mis l'accent sur la performance avec un temps de chargement ultra-rapide, des images optimisées et une architecture CSS modulaire utilisant les dernières technologies web.</p>
+                
+                <h4>🎮 Présentation de nos jeux</h4>
+                <p>Découvrez nos projets en cours avec des modales interactives, des captures d'écran haute qualité et des informations détaillées sur chaque jeu.</p>
+                
+                <h4>📱 SEO et accessibilité</h4>
+                <p>Le site est entièrement optimisé pour les moteurs de recherche et respecte les standards d'accessibilité pour être utilisable par tous.</p>
+                
+                <p>Nous espérons que cette nouvelle expérience vous plaira ! N'hésitez pas à nous faire part de vos retours.</p>
+            `,
+            action: {
+                text: 'Laisser un avis Google',
+                url: 'https://share.google/zZhVolTMXj5qokXrK',
+                icon: '⭐'
+            }
+        },
+        'lelab': {
+            title: 'LeLAB entre en phase de développement',
+            date: '20 Juillet 2025',
+            image: 'assets/news/news_lelab.jpg',
+            content: `
+                <p>C'est avec une grande fierté que nous annonçons le passage de LeLAB en phase de développement actif ! Ce projet, qui nous tient particulièrement à cœur, représente notre laboratoire d'expérimentations interactives.</p>
+                
+                <h4>🔬 Un laboratoire d'innovations</h4>
+                <p>LeLAB n'est pas un jeu classique, c'est notre espace de recherche et développement où nous testons de nouvelles mécaniques, explorons des concepts innovants et repoussons les limites de l'interactivité.</p>
+                
+                <h4>🛠️ Développement collaboratif</h4>
+                <p>Pour la première fois, nous impliquons la communauté dans le processus de développement. Les joueurs pourront tester les nouvelles fonctionnalités, proposer des améliorations et participer à la création du jeu.</p>
+                
+                <h4>⚡ Technologies de pointe</h4>
+                <p>LeLAB utilise les dernières technologies de développement pour offrir une expérience fluide et modulaire. Chaque élément peut être modifié, personnalisé et partagé avec la communauté.</p>
+                
+                <h4>🎯 Objectifs du projet</h4>
+                <p>Ce laboratoire nous permettra de valider nos concepts avant de les intégrer dans nos productions principales, garantissant ainsi la qualité de nos futurs jeux.</p>
+                
+                <p>Restez connectés pour découvrir les premières versions jouables dans les semaines à venir !</p>
+            `,
+            action: {
+                text: 'Découvrir LeLAB',
+                scrollTo: 'lelab',
+                icon: '🔬'
+            }
+        },
+        'ricebattle': {
+            title: 'Rice Battle : Premier prototype jouable',
+            date: '15 Juillet 2025',
+            image: 'assets/news/news_ricebattle.jpg',
+            content: `
+                <p>Le moment que vous attendiez est arrivé ! Le premier prototype jouable de Rice Battle est maintenant disponible et nous sommes impatients de recueillir vos premiers retours.</p>
+                
+                <h4>⚔️ Mécaniques de combat uniques</h4>
+                <p>Découvrez un système de combat stratégique innovant où chaque variété de riz possède ses propres propriétés, forces et faiblesses. Basmati, Jasmine, Arborio... chaque grain raconte une histoire de bataille !</p>
+                
+                <h4>🎮 Gameplay stratégique</h4>
+                <p>Les combats se déroulent au tour par tour, mêlant réflexion tactique et mécaniques de timing. Anticipez les mouvements de vos adversaires et créez des combos dévastateurs.</p>
+                
+                <h4>🌾 Univers culinaire épique</h4>
+                <p>Plongez dans un monde où la gastronomie rencontre la stratégie militaire. Chaque bataille se déroule dans des environnements inspirés des traditions culinaires du monde entier.</p>
+                
+                <h4>🔄 Version prototype</h4>
+                <p>Cette version prototype contient les mécaniques de base, 5 variétés de riz jouables et 3 arènes de combat. Vos retours nous aideront à façonner l'expérience finale !</p>
+                
+                <h4>🎯 Prochaines étapes</h4>
+                <p>Basé sur vos retours, nous ajouterons de nouvelles variétés de riz, des modes de jeu supplémentaires et le multijoueur en ligne.</p>
+                
+                <p>Prêt à livrer votre première bataille de riz ?</p>
+            `,
+            action: {
+                text: 'Voir Rice Battle',
+                scrollTo: 'rice-battle',
+                icon: '🌾'
+            }
+        }
+    };
+
+    // Create news modal if it doesn't exist
+    function createNewsModal() {
+        const modal = document.createElement('div');
+        modal.id = 'newsModal';
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <div id="newsModalContent"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        return modal;
+    }
+
     // Game data
     const gameData = {
         'lelab': {
@@ -251,21 +358,194 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
 
+    // News modal functions
+    function openNewsModal(newsId) {
+        const news = newsData[newsId];
+        if (!news) return;
+
+        const newsModalContent = document.getElementById('newsModalContent') || 
+                                newsModal.querySelector('.modal-content').appendChild(
+                                    (() => {
+                                        const div = document.createElement('div');
+                                        div.id = 'newsModalContent';
+                                        return div;
+                                    })()
+                                );
+
+        newsModalContent.innerHTML = `
+            <div class="news-modal-header">
+                <h2>${news.title}</h2>
+                <div class="news-modal-date">${news.date}</div>
+            </div>
+            <div class="news-modal-image">
+                <img src="${news.image}" alt="${news.title}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin: 1rem 0;">
+            </div>
+            <div class="news-modal-content">
+                ${news.content}
+            </div>
+            <div class="news-modal-action">
+                ${news.action.url ? 
+                    `<a href="${news.action.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        ${news.action.icon} ${news.action.text}
+                    </a>` :
+                    `<button onclick="scrollToGame('${news.action.scrollTo}')" class="btn btn-primary">
+                        ${news.action.icon} ${news.action.text}
+                    </button>`
+                }
+            </div>
+        `;
+
+        // Reattach close button event listener
+        const newsModalCloseBtn = newsModal.querySelector('.modal-close');
+        if (newsModalCloseBtn) {
+            newsModalCloseBtn.addEventListener('click', closeNewsModal);
+        }
+
+        newsModal.style.display = 'block';
+        newsModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        
+        // Add smooth transition for modal appearance
+        setTimeout(() => {
+            newsModal.style.opacity = '1';
+            
+            // Check if content is scrollable and add scroll indicators
+            const modalContentElement = newsModal.querySelector('.modal-content');
+            if (modalContentElement.scrollHeight > modalContentElement.clientHeight) {
+                modalContentElement.classList.add('has-scroll');
+            }
+        }, 10);
+    }
+
+    function closeNewsModal() {
+        newsModal.style.opacity = '0';
+        newsModal.classList.remove('show');
+        
+        // Remove scroll indicators
+        const modalContentElement = newsModal.querySelector('.modal-content');
+        if (modalContentElement) {
+            modalContentElement.classList.remove('has-scroll');
+        }
+        
+        setTimeout(() => {
+            newsModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    // Scroll to specific game function
+    window.scrollToGame = function(gameId) {
+        closeNewsModal();
+        
+        setTimeout(() => {
+            const gameCard = document.querySelector(`[data-game="${gameId}"]`);
+            if (gameCard) {
+                const headerHeight = header.offsetHeight;
+                const targetPosition = gameCard.offsetTop - headerHeight - 100;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Highlight the game card briefly
+                gameCard.style.transform = 'scale(1.05)';
+                gameCard.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.4)';
+                
+                setTimeout(() => {
+                    gameCard.style.transform = '';
+                    gameCard.style.boxShadow = '';
+                }, 2000);
+            }
+        }, 300);
+    };
+
+    // News cards click handlers
+    newsCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const newsImage = card.querySelector('.news-image img');
+            if (newsImage) {
+                const imageSrc = newsImage.src;
+                let newsId = '';
+                
+                // Determine news type based on image source
+                if (imageSrc.includes('news_website')) {
+                    newsId = 'website';
+                } else if (imageSrc.includes('news_lelab')) {
+                    newsId = 'lelab';
+                } else if (imageSrc.includes('news_ricebattle')) {
+                    newsId = 'ricebattle';
+                }
+                
+                if (newsId) {
+                    openNewsModal(newsId);
+                }
+            }
+        });
+        
+        // Add cursor pointer style
+        card.style.cursor = 'pointer';
+    });
+
+    // News link click handlers (prevent default and open modal instead)
+    const newsLinks = document.querySelectorAll('.news-link');
+    newsLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const newsCard = this.closest('.news-card');
+            const newsImage = newsCard.querySelector('.news-image img');
+            if (newsImage) {
+                const imageSrc = newsImage.src;
+                let newsId = '';
+                
+                if (imageSrc.includes('news_website')) {
+                    newsId = 'website';
+                } else if (imageSrc.includes('news_lelab')) {
+                    newsId = 'lelab';
+                } else if (imageSrc.includes('news_ricebattle')) {
+                    newsId = 'ricebattle';
+                }
+                
+                if (newsId) {
+                    openNewsModal(newsId);
+                }
+            }
+        });
+    });
+
+    // Modal close handlers
     if (modalClose) {
         modalClose.addEventListener('click', closeModal);
     }
 
-    // Close modal when clicking outside
+    // News modal close handlers
+    const newsModalClose = newsModal.querySelector('.modal-close');
+    if (newsModalClose) {
+        newsModalClose.addEventListener('click', closeNewsModal);
+    }
+
+    // Close modals when clicking outside
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeModal();
         }
     });
 
-    // Close modal with Escape key
+    newsModal.addEventListener('click', function(e) {
+        if (e.target === newsModal) {
+            closeNewsModal();
+        }
+    });
+
+    // Close modals with Escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'block') {
-            closeModal();
+        if (e.key === 'Escape') {
+            if (modal.style.display === 'block') {
+                closeModal();
+            }
+            if (newsModal.style.display === 'block') {
+                closeNewsModal();
+            }
         }
     });
 
