@@ -35,13 +35,10 @@ npx http-server -p 8080 -c-1
 │   ├── 📁 favicon/               # Icons du site
 │   ├── 📁 games/                 # Screenshots et médias des jeux
 │   └── 📁 news/                  # Images des actualités
-├── 📁 components/
-│   └── 📄 footer.html            # Composant footer réutilisable
 ├── 📁 data/
 │   ├── 📄 games.js               # Données des jeux (JavaScript natif)
 │   ├── 📄 news.js                # Données des actualités (JavaScript natif)
 │   └── 📄 team.js                # Données de l'équipe (JavaScript natif)
-├── 📄 schemas.json               # Données structurées SEO (JSON-LD requis)
 ├── 📁 scripts/
 │   ├── 📄 main.js                # Point d'entrée principal
 │   └── 📁 modules/
@@ -157,8 +154,7 @@ Pour les hébergeurs utilisant Apache, le fichier `.htaccess` inclus configure :
 
 1. **Vérifiez les logs de console** pour détecter d'éventuelles erreurs 403
 2. **Testez les modales** - elles doivent s'ouvrir correctement
-3. **Validez le manifest.json** pour le support PWA
-4. **Contrôlez les performances** avec les outils dev du navigateur
+3. **Contrôlez les performances** avec les outils dev du navigateur
 
 ## 🚨 Résolution des Problèmes Courants
 

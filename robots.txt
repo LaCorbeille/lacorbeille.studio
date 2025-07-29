@@ -19,8 +19,6 @@ Allow: /press.html
 Allow: /assets/games/
 Allow: /assets/branding/
 Allow: /assets/favicon/
-Allow: /manifest.json
-Allow: /schemas.json
 
 # Specific rules for search engines
 User-agent: Googlebot

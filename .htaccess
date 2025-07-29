@@ -148,13 +148,7 @@ ErrorDocument 500 /index.html
     Deny from all
 </FilesMatch>
 
-# Autoriser les fichiers JSON nécessaires
-<Files "schemas.json">
-    Order allow,deny
-    Allow from all
-</Files>
-
-# Bloquer l'accès aux dossiers système
+# 🔒 Bloquer l'accès aux dossiers système
 RedirectMatch 404 /\.git
 RedirectMatch 404 /\.vscode
 RedirectMatch 404 /node_modules
