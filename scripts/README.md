@@ -13,11 +13,11 @@ scripts/
 │   ├── newsModal.js                 # Système de modales d'actualités
 │   ├── contactForm.js               # Gestionnaire de formulaire de contact
 │   └── animations.js                # Gestionnaire d'animations et effets visuels
-└── main-old.js                      # Ancienne version monolithique (backup)
 
 data/
-├── games.json                       # Données des jeux
-└── news.json                        # Données des actualités
+├── games.js                         # Données des jeux (JavaScript natif)
+├── news.js                          # Données des actualités (JavaScript natif)
+└── team.js                          # Données de l'équipe (JavaScript natif)
 ```
 
 ## 🔧 Modules disponibles
@@ -42,7 +42,7 @@ data/
 ### **GameModal** (`gameModal.js`)
 - **Rôle** : Système de modales pour les jeux
 - **Fonctionnalités** :
-  - Chargement des données depuis `data/games.json`
+  - Chargement des données depuis `data/games.js`
   - Affichage des détails des jeux
   - Intégration avec le ModalManager
 - **API** : `window.gameModal`
@@ -50,7 +50,7 @@ data/
 ### **NewsModal** (`newsModal.js`)
 - **Rôle** : Système de modales pour les actualités
 - **Fonctionnalités** :
-  - Chargement des données depuis `data/news.json`
+  - Chargement des données depuis `data/news.js`
   - Affichage du contenu des news
   - Actions personnalisées (liens externes, navigation interne)
 - **API** : `window.newsModal`
@@ -109,14 +109,15 @@ Contient toutes les actualités :
 - **Logique** : Modules JavaScript spécialisés
 - **Présentation** : CSS modulaire (déjà implémenté)
 
-## 🔄 Migration depuis l'ancienne version
+## 🔄 Architecture modulaire
 
-L'ancienne version monolithique (`main-old.js`) a été conservée comme backup. La nouvelle architecture :
+La nouvelle architecture apporte :
 
-1. **Sépare les données** dans des fichiers JSON
+1. **Utilise du JavaScript natif** pour les données
 2. **Modularise le code** en modules spécialisés
 3. **Centralise la gestion** des modales
 4. **Améliore la lisibilité** et la maintenabilité
+5. **Garantit la compatibilité** avec tous les hébergeurs
 
 ## 🛠️ Utilisation
 

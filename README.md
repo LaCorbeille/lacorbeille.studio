@@ -29,7 +29,6 @@ npx http-server -p 8080 -c-1
 📦 lacorbeille.studio
 ├── 📄 index.html                 # Page d'accueil
 ├── 📄 press.html                 # Page presse
-├── 📄 manifest.json              # PWA manifest
 ├── 📄 .htaccess                  # Configuration Apache
 ├── 📁 assets/
 │   ├── 📁 branding/              # Logos et identité visuelle
@@ -39,12 +38,10 @@ npx http-server -p 8080 -c-1
 ├── 📁 components/
 │   └── 📄 footer.html            # Composant footer réutilisable
 ├── 📁 data/
-│   ├── 📄 games.json             # Données des jeux
-│   ├── 📄 games.js               # Fallback JavaScript pour games.json
-│   ├── 📄 news.json              # Données des actualités
-│   ├── 📄 news.js                # Fallback JavaScript pour news.json
-│   ├── 📄 team.json              # Données de l'équipe
-│   └── 📄 team.js                # Fallback JavaScript pour team.json
+│   ├── 📄 games.js               # Données des jeux (JavaScript natif)
+│   ├── 📄 news.js                # Données des actualités (JavaScript natif)
+│   └── 📄 team.js                # Données de l'équipe (JavaScript natif)
+├── 📄 schemas.json               # Données structurées SEO (JSON-LD requis)
 ├── 📁 scripts/
 │   ├── 📄 main.js                # Point d'entrée principal
 │   ├── 📄 components.js          # Système de composants
@@ -88,12 +85,12 @@ const modules = [
 - Affichage détaillé des jeux du studio
 - Screenshots, descriptions, fonctionnalités
 - Informations sur les plateformes et dates de sortie
-- Chargement des données depuis `data/games.json` avec fallback JavaScript
+- Chargement des données depuis `data/games.js`
 
 #### **News Modal**  
 - Système d'actualités avec contenu HTML riche
 - Images, liens et actions personnalisées
-- Chargement des données depuis `data/news.json` avec fallback JavaScript
+- Chargement des données depuis `data/news.js`
 
 #### **Modal Manager**
 - Gestion centralisée de toutes les modales
@@ -102,23 +99,23 @@ const modules = [
 
 ### 📊 Gestion des Données
 
-#### **Système de Fallback Robuste**
-En cas de problème avec les fichiers JSON (erreurs 403 sur certains hébergeurs) :
-1. Tentative de chargement du fichier `.json`
-2. En cas d'échec, chargement automatique du fichier `.js` équivalent
-3. Gestion d'erreur gracieuse avec logs informatifs
+#### **Architecture JavaScript Native**
+Pour une compatibilité maximale avec tous les hébergeurs, le site utilise exclusivement du JavaScript natif :
 
 ```javascript
-// Exemple de fallback automatique
+// Chargement direct des données JavaScript
 try {
-    const response = await fetch('data/games.json');
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    this.gameData = await response.json();
+    await this.loadJavaScriptData(); // Charge games.js, news.js, team.js
 } catch (error) {
-    console.warn('Impossible de charger games.json, utilisation du fallback JavaScript');
-    await this.loadJavaScriptFallback(); // Charge games.js
+    console.error('❌ Erreur de chargement:', error);
 }
 ```
+
+#### **Avantages de cette approche :**
+- ✅ **Compatibilité universelle** : Fonctionne sur tous les hébergeurs
+- ✅ **Pas de restrictions** : Aucun problème avec les fichiers JSON bloqués
+- ✅ **Performance** : Chargement direct sans fetch API
+- ✅ **Simplicité** : Architecture plus simple et robuste
 
 ### Utilisation des Composants (Legacy)
 
@@ -148,18 +145,6 @@ Le site est 100% statique et compatible avec :
 ### Hébergement Apache (LWS, OVH, etc.)
 Pour les hébergeurs utilisant Apache, le fichier `.htaccess` inclus configure :
 
-#### **Accès aux fichiers JSON**
-```apache
-# Autoriser les fichiers JSON dans le dossier data
-<Directory "data">
-    <Files "*.json">
-        Order allow,deny
-        Allow from all
-        Header set Content-Type "application/json"
-    </Files>
-</Directory>
-```
-
 #### **Optimisations Performance**
 - Compression GZIP automatique
 - Cache navigateur optimisé
@@ -167,7 +152,7 @@ Pour les hébergeurs utilisant Apache, le fichier `.htaccess` inclus configure :
 
 #### **Gestion des Erreurs**
 - Pages d'erreur redirigées vers `index.html`
-- Support PWA avec `manifest.json`
+- Support des favicons et ressources statiques
 
 ### 🔧 Configuration Post-Déploiement
 
@@ -178,28 +163,28 @@ Pour les hébergeurs utilisant Apache, le fichier `.htaccess` inclus configure :
 
 ## 🚨 Résolution des Problèmes Courants
 
-### Erreurs 403 sur les fichiers JSON
-**Symptôme** : `GET data/games.json 403 (Forbidden)`
-
-**Solutions** :
-1. Vérifiez que le `.htaccess` est correctement uploadé
-2. Contactez votre hébergeur pour autoriser les fichiers JSON
-3. Le système de fallback JavaScript prendra automatiquement le relais
-
 ### Modales qui ne s'ouvrent pas
 **Symptôme** : Clics sans effet sur les cartes
 
 **Vérifications** :
 1. Console navigateur pour erreurs JavaScript
 2. Chargement correct des modules dans `main.js`
-3. Données disponibles dans `newsData` ou `gamesData`
+3. Données disponibles dans `newsData`, `gamesData` ou `teamData`
 
 ### Images non affichées
 **Symptôme** : Placeholders au lieu des images
 
 **Solutions** :
-1. Vérifiez les chemins dans `data/games.json` et `data/news.json`
+1. Vérifiez les chemins dans `data/games.js`, `data/news.js` et `data/team.js`
 2. Confirmez que les images sont uploadées dans `assets/`
+
+### Modules manquants
+**Symptôme** : `⚠️ Modules manquants: teamManager` dans la console
+
+**Solutions** :
+1. Vérifiez que `scripts/modules/teamManager.js` est uploadé
+2. Vérifiez que `data/team.js` est accessible
+3. Contrôlez les erreurs de chargement dans la console
 
 ## ✨ Fonctionnalités
 
@@ -252,12 +237,12 @@ npx http-server -p 8080 -c-1
 ### Ajouter du Contenu
 
 #### **Nouveau Jeu**
-1. Ajoutez les données dans `data/games.json` et `data/games.js`
+1. Ajoutez les données dans `data/games.js`
 2. Placez les assets dans `assets/games/NomDuJeu/`
 3. Le système se charge automatiquement de l'affichage
 
 #### **Nouvelle Actualité**  
-1. Ajoutez l'entrée dans `data/news.json` et `data/news.js`
+1. Ajoutez l'entrée dans `data/news.js`
 2. Ajoutez l'image dans `assets/news/`
 3. La modale news affichera automatiquement le contenu
 

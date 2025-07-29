@@ -6,37 +6,24 @@ class TeamManager {
     }
 
     async init() {
-        // Charger les données de l'équipe
+        // Charger les données de l'équipe directement depuis le fichier JavaScript
         try {
-            console.log('🔄 Chargement des données de l\'équipe...');
-            const response = await fetch('data/team.json');
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-            this.teamData = await response.json();
-            console.log('✅ Données de l\'équipe chargées:', this.teamData);
-            this.renderTeam();
+            await this.loadJavaScriptData();
         } catch (error) {
-            console.warn('Impossible de charger team.json, utilisation du fallback JavaScript:', error);
-            // Fallback : charger le fichier JavaScript
-            try {
-                await this.loadJavaScriptFallback();
-            } catch (jsError) {
-                console.error('❌ Erreur lors du chargement des données de l\'équipe:', jsError);
-                // Ultime fallback avec données hardcodées
-                this.loadHardcodedFallback();
-            }
+            console.warn('Impossible de charger team.js, utilisation du fallback hardcodé:', error);
+            // Fallback ultime avec données hardcodées
+            this.loadHardcodedFallback();
         }
     }
 
-    async loadJavaScriptFallback() {
+    async loadJavaScriptData() {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
             script.src = 'data/team.js';
             script.onload = () => {
                 if (window.teamData) {
                     this.teamData = window.teamData;
-                    console.log('✅ Données de l\'équipe chargées depuis le fallback JS');
+                    console.log('✅ Données de l\'équipe chargées depuis team.js');
                     this.renderTeam();
                     resolve();
                 } else {

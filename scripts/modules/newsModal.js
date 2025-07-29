@@ -7,21 +7,11 @@ class NewsModal {
     }
 
     async init() {
-        // Charger les données des actualités
+        // Charger les données des actualités directement depuis le fichier JavaScript
         try {
-            const response = await fetch('data/news.json');
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-            this.newsData = await response.json();
+            await this.loadJavaScriptData();
         } catch (error) {
-            console.warn('Impossible de charger news.json, utilisation du fallback JavaScript:', error);
-            // Fallback : charger le fichier JavaScript
-            try {
-                await this.loadJavaScriptFallback();
-            } catch (jsError) {
-                console.error('Erreur lors du chargement des données des actualités:', jsError);
-            }
+            console.error('❌ Erreur lors du chargement des données des actualités:', error);
         }
 
         // Enregistrer la modale dans le gestionnaire
@@ -32,13 +22,14 @@ class NewsModal {
         this.attachEventListeners();
     }
 
-    async loadJavaScriptFallback() {
+    async loadJavaScriptData() {
         return new Promise((resolve, reject) => {
             const script = document.createElement('script');
             script.src = 'data/news.js';
             script.onload = () => {
                 if (window.newsData) {
                     this.newsData = window.newsData;
+                    console.log('✅ Données des actualités chargées depuis news.js');
                     resolve();
                 } else {
                     reject(new Error('newsData non disponible après chargement du script'));
