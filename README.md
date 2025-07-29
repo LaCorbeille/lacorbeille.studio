@@ -1,6 +1,15 @@
 # LaCorbeille STUDIO - Site Web
 
-Site web statique avec système de composants client-side.
+Site web officiel de LaCorbeille STUDIO avec système de modales interactives, gestion de contenu dynamique et architecture modulaire.
+
+## 🎮 À propos
+
+LaCorbeille STUDIO développe des jeux vidéo innovants incluant :
+- **LeLAB** - FPS dynamique avec éditeur de cartes (En développement)
+- **Rice Battle** - Jeu de combat 2.5D culinaire (Prototype)
+- **A Little Adventure** - Platformer 3D coloré (Prototype)
+- **BOT A.N.I.C** - Action-aventure post-apocalyptique (Concept)
+- **Archipel** - Exploration d'îles flottantes (Concept)
 
 ## 🚀 Développement Local
 
@@ -14,81 +23,276 @@ Site web statique avec système de composants client-side.
 npx http-server -p 8080 -c-1
 ```
 
-## 📁 Structure des Composants
+## 📁 Architecture du Projet
 
 ```
-components/
-└── footer.html          # Composant footer réutilisable
-
-scripts/
-└── components.js         # Système de chargement des composants
+📦 lacorbeille.studio
+├── 📄 index.html                 # Page d'accueil
+├── 📄 press.html                 # Page presse
+├── 📄 manifest.json              # PWA manifest
+├── 📄 .htaccess                  # Configuration Apache
+├── 📁 assets/
+│   ├── 📁 branding/              # Logos et identité visuelle
+│   ├── 📁 favicon/               # Icons du site
+│   ├── 📁 games/                 # Screenshots et médias des jeux
+│   └── 📁 news/                  # Images des actualités
+├── 📁 components/
+│   └── 📄 footer.html            # Composant footer réutilisable
+├── 📁 data/
+│   ├── 📄 games.json             # Données des jeux
+│   ├── 📄 games.js               # Fallback JavaScript pour games.json
+│   ├── 📄 news.json              # Données des actualités
+│   ├── 📄 news.js                # Fallback JavaScript pour news.json
+│   └── 📄 team.json              # Données de l'équipe
+├── 📁 scripts/
+│   ├── 📄 main.js                # Point d'entrée principal
+│   ├── 📄 components.js          # Système de composants
+│   └── 📁 modules/
+│       ├── 📄 animations.js      # Gestion des animations
+│       ├── 📄 contactForm.js     # Formulaire de contact
+│       ├── 📄 gameModal.js       # Modale des jeux
+│       ├── 📄 modalManager.js    # Gestionnaire de modales
+│       ├── 📄 navigation.js      # Navigation et menu
+│       ├── 📄 newsModal.js       # Modale des actualités
+│       └── 📄 teamManager.js     # Gestion de l'équipe
+└── 📁 styles/
+    ├── 📄 stylesheet.css         # Styles principaux
+    ├── 📄 index.css              # Styles page d'accueil
+    ├── 📄 press.css              # Styles page presse
+    ├── 📄 header.css             # Styles header
+    └── 📄 footer.css             # Styles footer
 ```
 
-### Utilisation des Composants
+## 🔧 Système de Modules
 
-Dans vos pages HTML :
+### Architecture Modulaire
+Le site utilise une architecture modulaire avec chargement dynamique des modules :
+
+```javascript
+// main.js charge automatiquement tous les modules disponibles
+const modules = [
+    'modalManager',    // Gestionnaire de modales
+    'gameModal',       // Modale d'affichage des jeux
+    'newsModal',       // Modale d'affichage des actualités  
+    'navigation',      // Navigation et menu mobile
+    'contactForm',     // Formulaire de contact
+    'animationManager',// Animations et effets visuels
+    'teamManager'      // Gestion de l'équipe (optionnel)
+];
+```
+
+### 🎯 Modales Interactives
+
+#### **Game Modal**
+- Affichage détaillé des jeux du studio
+- Screenshots, descriptions, fonctionnalités
+- Informations sur les plateformes et dates de sortie
+- Chargement des données depuis `data/games.json` avec fallback JavaScript
+
+#### **News Modal**  
+- Système d'actualités avec contenu HTML riche
+- Images, liens et actions personnalisées
+- Chargement des données depuis `data/news.json` avec fallback JavaScript
+
+#### **Modal Manager**
+- Gestion centralisée de toutes les modales
+- Fermeture avec Escape, overlay, ou bouton
+- Gestion du focus et de l'accessibilité
+
+### 📊 Gestion des Données
+
+#### **Système de Fallback Robuste**
+En cas de problème avec les fichiers JSON (erreurs 403 sur certains hébergeurs) :
+1. Tentative de chargement du fichier `.json`
+2. En cas d'échec, chargement automatique du fichier `.js` équivalent
+3. Gestion d'erreur gracieuse avec logs informatifs
+
+```javascript
+// Exemple de fallback automatique
+try {
+    const response = await fetch('data/games.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    this.gameData = await response.json();
+} catch (error) {
+    console.warn('Impossible de charger games.json, utilisation du fallback JavaScript');
+    await this.loadJavaScriptFallback(); // Charge games.js
+}
+```
+
+### Utilisation des Composants (Legacy)
+
+**Note** : Le système de composants dynamiques n'est actuellement pas utilisé dans la version de production. Le footer et autres éléments sont directement intégrés dans le HTML des pages pour des raisons de simplicité et performance.
+
+Le système reste disponible pour de futurs développements :
 ```html
-<!-- Charge automatiquement le footer -->
+<!-- Chargement dynamique possible mais non utilisé -->
 <div data-component="footer"></div>
 ```
 
-Le JavaScript se charge du reste automatiquement !
+### 🏗️ Architecture Actuelle
 
-### 🔧 Système de Composants Détaillé
-
-#### **Fonctionnement**
-- **Chargement automatique** : Les composants marqués avec `data-component` se chargent au démarrage
-- **Cache intelligent** : Les composants sont mis en cache pour éviter les requêtes multiples
-- **Gestion d'erreurs** : Messages explicites en cas de composant introuvable
-- **Événements personnalisés** : Écoutez quand un composant est chargé
-
-#### **API JavaScript**
-```javascript
-// Charger un composant spécifique
-await ComponentLoader.loadComponent('components/header.html', '#header-container');
-
-// Charger le footer dans un élément custom
-await ComponentLoader.loadFooter('#custom-footer');
-
-// Charger automatiquement tous les composants
-await ComponentLoader.autoLoadComponents();
-
-// Vider le cache
-ComponentLoader.clearCache();
-
-// Écouter les événements de chargement
-document.addEventListener('componentLoaded', (event) => {
-    console.log('Composant chargé:', event.detail.componentPath);
-});
-```
-
-#### **Ajouter de nouveaux composants**
-1. Créez `components/nom-composant.html`
-2. Ajoutez `<div data-component="nom-composant"></div>` dans vos pages
-3. Le système les charge automatiquement !
-
-#### **Compatibilité**
-Compatible avec tous les navigateurs modernes supportant :
-- `fetch()` API
-- `Promises` / `async/await`
-- `CustomEvent`
+Le site utilise une approche **statique directe** :
+- Footer intégré directement dans chaque page HTML
+- Modales gérées par les modules JavaScript spécialisés
+- Composants réutilisables maintenus dans `components/` pour référence
 
 ## 🌐 Déploiement
 
-Votre site est 100% statique. Uploadez simplement tous les fichiers sur :
-- Netlify
-- Vercel  
-- GitHub Pages
+### Hébergement Statique Standard
+Le site est 100% statique et compatible avec :
+- Netlify / Vercel / GitHub Pages
 - Firebase Hosting
 - N'importe quel hébergeur statique
 
-**Aucun serveur backend requis !** 🎉
+### Hébergement Apache (LWS, OVH, etc.)
+Pour les hébergeurs utilisant Apache, le fichier `.htaccess` inclus configure :
 
-## ✨ Avantages
+#### **Accès aux fichiers JSON**
+```apache
+# Autoriser les fichiers JSON dans le dossier data
+<Directory "data">
+    <Files "*.json">
+        Order allow,deny
+        Allow from all
+        Header set Content-Type "application/json"
+    </Files>
+</Directory>
+```
 
-- ✅ **Composants réutilisables** : Un footer pour tout le site
-- ✅ **Facilement maintenable** : Modifiez le footer à un seul endroit
-- ✅ **Performance** : Cache automatique des composants
-- ✅ **Simplicité** : Pas de framework complexe
-- ✅ **SEO-friendly** : Contenu injecté côté client mais indexable
-- ✅ **Hébergement gratuit** : Compatible avec tous les hébergeurs statiques
+#### **Optimisations Performance**
+- Compression GZIP automatique
+- Cache navigateur optimisé
+- Headers de sécurité et SEO
+
+#### **Gestion des Erreurs**
+- Pages d'erreur redirigées vers `index.html`
+- Support PWA avec `manifest.json`
+
+### 🔧 Configuration Post-Déploiement
+
+1. **Vérifiez les logs de console** pour détecter d'éventuelles erreurs 403
+2. **Testez les modales** - elles doivent s'ouvrir correctement
+3. **Validez le manifest.json** pour le support PWA
+4. **Contrôlez les performances** avec les outils dev du navigateur
+
+## 🚨 Résolution des Problèmes Courants
+
+### Erreurs 403 sur les fichiers JSON
+**Symptôme** : `GET data/games.json 403 (Forbidden)`
+
+**Solutions** :
+1. Vérifiez que le `.htaccess` est correctement uploadé
+2. Contactez votre hébergeur pour autoriser les fichiers JSON
+3. Le système de fallback JavaScript prendra automatiquement le relais
+
+### Modales qui ne s'ouvrent pas
+**Symptôme** : Clics sans effet sur les cartes
+
+**Vérifications** :
+1. Console navigateur pour erreurs JavaScript
+2. Chargement correct des modules dans `main.js`
+3. Données disponibles dans `newsData` ou `gamesData`
+
+### Images non affichées
+**Symptôme** : Placeholders au lieu des images
+
+**Solutions** :
+1. Vérifiez les chemins dans `data/games.json` et `data/news.json`
+2. Confirmez que les images sont uploadées dans `assets/`
+
+## ✨ Fonctionnalités
+
+### 🎮 Interface Utilisateur
+- ✅ **Design moderne** : Dégradés violets/cyan, responsive design
+- ✅ **Modales interactives** : Jeux et actualités en overlay
+- ✅ **Navigation fluide** : Menu mobile, animations CSS
+- ✅ **Accessibilité** : Support clavier, ARIA labels, focus management
+
+### 🔧 Architecture Technique  
+- ✅ **Composants réutilisables** : Footer modulaire, système extensible
+- ✅ **Modules dynamiques** : Chargement conditionnel des fonctionnalités
+- ✅ **Gestion d'erreur robuste** : Fallbacks JavaScript, logs détaillés
+- ✅ **Performance optimisée** : Cache, compression, lazy loading
+
+### 🌐 SEO & PWA
+- ✅ **SEO-friendly** : Métadonnées complètes, Open Graph, schemas JSON-LD
+- ✅ **PWA Ready** : Manifest, favicons multi-résolutions
+- ✅ **Sécurité** : Headers CSP, HSTS, protection XSS
+- ✅ **Multi-hébergeur** : Compatible Apache, Nginx, CDN
+
+### 📊 Gestion de Contenu
+- ✅ **Données JSON** : Structure claire et maintenable
+- ✅ **Fallback JavaScript** : Compatibilité hébergeurs restrictifs  
+- ✅ **Images optimisées** : WebP, compression, lazy loading
+- ✅ **Actualités dynamiques** : Système de news avec HTML riche
+
+## 🛠️ Technologies Utilisées
+
+- **Frontend** : HTML5, CSS3 (Grid/Flexbox), JavaScript ES6+
+- **Architecture** : Modules ES6, Composants Web, PWA
+- **Performance** : Compression GZIP, Cache navigateur, Lazy loading
+- **SEO** : Métadonnées, Open Graph, JSON-LD, Sitemap
+- **Hébergement** : Apache/Nginx compatible, CDN ready
+
+## 🤝 Contribution
+
+### Structure de Développement
+```bash
+# Cloner le repo
+git clone https://github.com/LaCorbeille/lacorbeille.studio.git
+cd lacorbeille.studio
+
+# Lancer le serveur de développement
+npx http-server -p 8080 -c-1
+
+# Ou utiliser Live Server dans VS Code
+```
+
+### Ajouter du Contenu
+
+#### **Nouveau Jeu**
+1. Ajoutez les données dans `data/games.json` et `data/games.js`
+2. Placez les assets dans `assets/games/NomDuJeu/`
+3. Le système se charge automatiquement de l'affichage
+
+#### **Nouvelle Actualité**  
+1. Ajoutez l'entrée dans `data/news.json` et `data/news.js`
+2. Ajoutez l'image dans `assets/news/`
+3. La modale news affichera automatiquement le contenu
+
+#### **Nouveau Module**
+1. Créez `scripts/modules/monModule.js`
+2. Ajoutez-le à la liste dans `scripts/main.js`
+3. Le système le chargera automatiquement
+
+### 🔍 Tests et Validation
+
+- **Console navigateur** : Vérifiez qu'aucune erreur n'apparaît
+- **Lighthouse** : Score > 90 en Performance/SEO/Accessibilité
+- **Responsive** : Testez sur mobile/tablette/desktop
+- **PWA** : Validez le manifest avec Chrome DevTools
+
+## 📈 Version et Historique
+
+**Version actuelle** : 2.0.0 (Juillet 2025)
+
+### Changelog récent
+- ✨ Système de modales interactives pour jeux et actualités
+- 🔧 Architecture modulaire avec chargement dynamique
+- 🛡️ Système de fallback robuste pour l'hébergement Apache
+- 🎨 Design moderne avec dégradés et responsive design
+- 📱 Support PWA complet avec manifest et favicons
+- 🚀 Optimisations performance et SEO avancées
+
+---
+
+## 📞 Contact
+
+**LaCorbeille STUDIO**  
+🌐 [lacorbeille.studio](https://lacorbeille.studio)  
+📧 Contact via le formulaire du site  
+⭐ [Laisser un avis Google](https://share.google/zZhVolTMXj5qokXrK)
+
+---
+
+*Développé avec ❤️ par LaCorbeille STUDIO*
