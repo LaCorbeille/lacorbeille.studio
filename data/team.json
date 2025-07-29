@@ -1,0 +1,52 @@
+{
+  "team": [
+    {
+      "id": "alex-martin",
+      "name": "Alex Martin",
+      "role": "Game Director & Fondateur",
+      "bio": "10 ans d'expérience dans l'industrie du jeu vidéo, passionné par la narration interactive.",
+      "avatar": "assets/team/alex-martin.jpg",
+      "socials": {
+        "linkedin": "https://www.linkedin.com/in/alex-martin-gamedev",
+        "github": "https://github.com/alexmartin-gamedev",
+        "twitter": "https://twitter.com/alexmartin_dev"
+      }
+    },
+    {
+      "id": "sarah-chen",
+      "name": "Sarah Chen",
+      "role": "Lead Developer",
+      "bio": "Experte en développement Unity et C#, spécialisée dans l'optimisation et l'architecture de jeux.",
+      "avatar": "assets/team/sarah-chen.jpg",
+      "socials": {
+        "linkedin": "https://www.linkedin.com/in/sarah-chen-unity",
+        "github": "https://github.com/sarahchen-dev",
+        "portfolio": "https://sarahchen.dev"
+      }
+    },
+    {
+      "id": "marcus-rodriguez",
+      "name": "Marcus Rodriguez",
+      "role": "Artist Director",
+      "bio": "Artiste visuel avec une expertise en art conceptuel et direction artistique pour jeux indépendants.",
+      "avatar": "assets/team/marcus-rodriguez.jpg",
+      "socials": {
+        "artstation": "https://www.artstation.com/marcusrodriguez",
+        "instagram": "https://www.instagram.com/marcus_art_games",
+        "behance": "https://www.behance.net/marcusrodriguez"
+      }
+    },
+    {
+      "id": "emma-thompson",
+      "name": "Emma Thompson",
+      "role": "Sound Designer",
+      "bio": "Compositrice et sound designer, créatrice d'ambiances sonores immersives.",
+      "avatar": "assets/team/emma-thompson.jpg",
+      "socials": {
+        "soundcloud": "https://soundcloud.com/emma-thompson-audio",
+        "spotify": "https://open.spotify.com/artist/emmathompson",
+        "linkedin": "https://www.linkedin.com/in/emma-thompson-audio"
+      }
+    }
+  ]
+}

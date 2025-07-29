@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // - window.navigation : Système de navigation
     // - window.contactForm : Gestionnaire de formulaire de contact
     // - window.animationManager : Gestionnaire d'animations
+    // - window.teamManager : Gestionnaire d'équipe
     
     // Vérifier que tous les modules sont chargés
     const modules = [
@@ -20,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'newsModal',
         'navigation',
         'contactForm',
-        'animationManager'
+        'animationManager',
+        'teamManager'
     ];
     
     const loadedModules = modules.filter(module => window[module]);
