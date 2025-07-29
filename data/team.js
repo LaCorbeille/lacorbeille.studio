@@ -1,0 +1,36 @@
+// Données de l'équipe - Version JavaScript
+const teamData = {
+  "team": [
+    {
+      "id": "noa-second",
+      "name": "Noa Second",
+      "role": "Fondateur & Game Designer",
+      "bio": "Fondateur de LaCorbeille STUDIO, game designer passionné et créateur de tous les projets du studio. Gestion d'équipe et vision créative.",
+      "avatar": "assets/team/noa-second.jpg",
+      "socials": {
+        "portfolio": "https://www.noasecond.com/",
+        "linkedin": "https://www.linkedin.com/in/noa-second/",
+        "github": "https://github.com/NoaSecond",
+        "instagram": "https://instagram.com/noa.second"
+      }
+    },
+    {
+      "id": "romain-varene-rebuffat",
+      "name": "Romain VARENE-REBUFFAT",
+      "role": "Testeur QA & Développement Réseau",
+      "bio": "Testeur QA spécialisé dans l'assurance qualité des jeux vidéo. Apporte également son expertise sur la partie réseau du développement.",
+      "avatar": "assets/team/romain-varene-rebuffat.jpg",
+      "socials": {
+        "portfolio": "https://www.root3301.fr/",
+        "linkedin": "https://www.linkedin.com/in/romain-varene-rebuffat-328782186"
+      }
+    }
+  ]
+};
+
+// Export pour utilisation dans d'autres modules
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = teamData;
+} else if (typeof window !== 'undefined') {
+    window.teamData = teamData;
+}
