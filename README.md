@@ -1,6 +1,6 @@
 # LaCorbeille STUDIO - Site Web
 
-Site web officiel de LaCorbeille STUDIO avec système de modales interactives, gestion de contenu dynamique et architecture modulaire.
+Site web officiel de LaCorbeille STUDIO.
 
 ## 🎮 À propos
 
