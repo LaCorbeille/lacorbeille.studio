@@ -43,7 +43,8 @@ npx http-server -p 8080 -c-1
 │   ├── 📄 games.js               # Fallback JavaScript pour games.json
 │   ├── 📄 news.json              # Données des actualités
 │   ├── 📄 news.js                # Fallback JavaScript pour news.json
-│   └── 📄 team.json              # Données de l'équipe
+│   ├── 📄 team.json              # Données de l'équipe
+│   └── 📄 team.js                # Fallback JavaScript pour team.json
 ├── 📁 scripts/
 │   ├── 📄 main.js                # Point d'entrée principal
 │   ├── 📄 components.js          # Système de composants

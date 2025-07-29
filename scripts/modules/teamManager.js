@@ -11,20 +11,45 @@ class TeamManager {
             console.log('🔄 Chargement des données de l\'équipe...');
             const response = await fetch('data/team.json');
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`HTTP ${response.status}`);
             }
             this.teamData = await response.json();
             console.log('✅ Données de l\'équipe chargées:', this.teamData);
             this.renderTeam();
         } catch (error) {
-            console.error('❌ Erreur lors du chargement des données de l\'équipe:', error);
-            // Fallback avec des données par défaut
-            this.loadFallbackData();
+            console.warn('Impossible de charger team.json, utilisation du fallback JavaScript:', error);
+            // Fallback : charger le fichier JavaScript
+            try {
+                await this.loadJavaScriptFallback();
+            } catch (jsError) {
+                console.error('❌ Erreur lors du chargement des données de l\'équipe:', jsError);
+                // Ultime fallback avec données hardcodées
+                this.loadHardcodedFallback();
+            }
         }
     }
 
-    loadFallbackData() {
-        console.log('🔄 Chargement des données de fallback...');
+    async loadJavaScriptFallback() {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'data/team.js';
+            script.onload = () => {
+                if (window.teamData) {
+                    this.teamData = window.teamData;
+                    console.log('✅ Données de l\'équipe chargées depuis le fallback JS');
+                    this.renderTeam();
+                    resolve();
+                } else {
+                    reject(new Error('teamData non disponible après chargement du script'));
+                }
+            };
+            script.onerror = () => reject(new Error('Impossible de charger team.js'));
+            document.head.appendChild(script);
+        });
+    }
+
+    loadHardcodedFallback() {
+        console.log('🔄 Chargement des données de fallback hardcodées...');
         this.teamData = {
             "team": [
                 {
@@ -32,6 +57,7 @@ class TeamManager {
                     "name": "Noa Second",
                     "role": "Fondateur & Game Designer",
                     "bio": "Fondateur de LaCorbeille STUDIO, game designer passionné, à l'origine des projets du studio. Gestion d'équipe et vision créative.",
+                    "avatar": "assets/team/noa-second.jpg",
                     "socials": {
                         "portfolio": "https://www.noasecond.com/",
                         "linkedin": "https://www.linkedin.com/in/noa-second/",
@@ -44,6 +70,7 @@ class TeamManager {
                     "name": "Romain VARENE-REBUFFAT",
                     "role": "Testeur QA & Développement Réseau",
                     "bio": "Testeur QA spécialisé dans l'assurance qualité des jeux vidéo. Apporte également son expertise sur la partie réseau du développement.",
+                    "avatar": "assets/team/romain-varene-rebuffat.jpg",
                     "socials": {
                         "portfolio": "https://www.root3301.fr/",
                         "linkedin": "https://www.linkedin.com/in/romain-varene-rebuffat-328782186"
@@ -51,6 +78,7 @@ class TeamManager {
                 }
             ]
         };
+        console.log('✅ Données de fallback hardcodées chargées');
         this.renderTeam();
     }
 
