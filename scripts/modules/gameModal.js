@@ -5,6 +5,7 @@ class GameModal {
         this.modalContent = document.getElementById('gameModalContent');
         this.gameData = null;
         this.init();
+        console.log('%c🎮 GameModal initialisé', 'color: #E91E63; font-weight: bold;');
     }
 
     async init() {
@@ -12,7 +13,7 @@ class GameModal {
         try {
             await this.loadJavaScriptData();
         } catch (error) {
-            console.error('❌ Erreur lors du chargement des données des jeux:', error);
+            console.error('%c❌ Erreur lors du chargement des données des jeux:', 'color: #f44336; font-weight: bold;', error);
         }
 
         // Enregistrer la modale dans le gestionnaire
@@ -30,7 +31,9 @@ class GameModal {
             script.onload = () => {
                 if (window.gamesData) {
                     this.gameData = window.gamesData;
-                    console.log('✅ Données des jeux chargées depuis games.js');
+                    const gameCount = Object.keys(this.gameData).length;
+                    console.log(`%c✅ Données des jeux chargées: %c${gameCount} jeux disponibles`, 
+                              'color: #4CAF50; font-weight: bold;', 'color: #2196F3;');
                     resolve();
                 } else {
                     reject(new Error('gamesData non disponible après chargement du script'));
@@ -43,6 +46,8 @@ class GameModal {
 
     attachEventListeners() {
         const gameCards = document.querySelectorAll('.game-card');
+        console.log(`%c🔗 Événements attachés à %c${gameCards.length} cartes de jeux`, 
+                   'color: #E91E63;', 'color: #2196F3; font-weight: bold;');
         
         gameCards.forEach(card => {
             card.addEventListener('click', () => {
@@ -64,11 +69,14 @@ class GameModal {
 
     openGameModal(gameId) {
         if (!this.gameData || !this.gameData[gameId]) {
-            console.error('Données du jeu non trouvées:', gameId);
+            console.error(`%c❌ Données du jeu non trouvées: %c${gameId}`, 
+                         'color: #f44336; font-weight: bold;', 'color: #ff5722;');
             return;
         }
 
         const game = this.gameData[gameId];
+        console.log(`%c🎯 Ouverture modale du jeu: %c${game.title}`, 
+                   'color: #E91E63; font-weight: bold;', 'color: #2196F3;');
         this.renderModalContent(game);
         window.modalManager.openModal('gameModal');
     }

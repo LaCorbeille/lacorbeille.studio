@@ -1,6 +1,6 @@
 // Main Application - Point d'entrée principal
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('🎮 LaCorbeille STUDIO - Site web chargé');
+    console.log('%c🚀 LaCorbeille STUDIO - Site web chargé', 'color: #4CAF50; font-weight: bold; font-size: 16px;');
     
     // Note: Tous les modules sont chargés automatiquement via leurs propres fichiers
     // et s'initialisent dans leurs constructeurs respectifs.
@@ -26,10 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     
     const loadedModules = modules.filter(module => window[module]);
-    console.log(`✅ Modules chargés: ${loadedModules.join(', ')}`);
+    console.log(`%c✅ Modules chargés (${loadedModules.length}/${modules.length}): %c${loadedModules.join(', ')}`, 
+                'color: #4CAF50; font-weight: bold;', 'color: #2196F3;');
     
     if (loadedModules.length !== modules.length) {
         const missingModules = modules.filter(module => !window[module]);
-        console.warn(`⚠️ Modules manquants: ${missingModules.join(', ')}`);
+        console.warn(`%c⚠️ Modules manquants: %c${missingModules.join(', ')}`, 
+                     'color: #FF9800; font-weight: bold;', 'color: #f44336;');
+    } else {
+        console.log('%c🎯 Tous les modules sont opérationnels !', 'color: #4CAF50; font-weight: bold;');
     }
 });

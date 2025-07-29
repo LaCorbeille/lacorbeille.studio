@@ -3,6 +3,7 @@ class TeamManager {
     constructor() {
         this.teamData = null;
         this.init();
+        console.log('%c👥 TeamManager initialisé', 'color: #607D8B; font-weight: bold;');
     }
 
     async init() {
@@ -10,7 +11,7 @@ class TeamManager {
         try {
             await this.loadJavaScriptData();
         } catch (error) {
-            console.warn('Impossible de charger team.js, utilisation du fallback hardcodé:', error);
+            console.warn('%c⚠️ Impossible de charger team.js, utilisation du fallback hardcodé:', 'color: #FF9800; font-weight: bold;', error);
             // Fallback ultime avec données hardcodées
             this.loadHardcodedFallback();
         }
@@ -23,7 +24,9 @@ class TeamManager {
             script.onload = () => {
                 if (window.teamData) {
                     this.teamData = window.teamData;
-                    console.log('✅ Données de l\'équipe chargées depuis team.js');
+                    const memberCount = this.teamData.team.length;
+                    console.log(`%c✅ Données de l'équipe chargées: %c${memberCount} membres`, 
+                              'color: #4CAF50; font-weight: bold;', 'color: #2196F3;');
                     this.renderTeam();
                     resolve();
                 } else {
@@ -36,7 +39,7 @@ class TeamManager {
     }
 
     loadHardcodedFallback() {
-        console.log('🔄 Chargement des données de fallback hardcodées...');
+        console.log('%c🔄 Chargement des données de fallback hardcodées...', 'color: #607D8B; font-weight: bold;');
         this.teamData = {
             "team": [
                 {
@@ -65,18 +68,18 @@ class TeamManager {
                 }
             ]
         };
-        console.log('✅ Données de fallback hardcodées chargées');
+        console.log('%c✅ Données de fallback hardcodées chargées (2 membres)', 'color: #4CAF50; font-weight: bold;');
         this.renderTeam();
     }
 
     renderTeam() {
         const teamContainer = document.querySelector('.team-list');
         if (!teamContainer || !this.teamData) {
-            console.warn('⚠️ Conteneur d\'équipe ou données manquants');
+            console.warn('%c⚠️ Conteneur d\'équipe ou données manquants', 'color: #FF9800; font-weight: bold;');
             return;
         }
 
-        console.log('🎨 Rendu de l\'équipe...');
+        console.log('%c🎨 Rendu de l\'équipe en cours...', 'color: #607D8B; font-weight: bold;');
         
         // Vider le conteneur existant
         teamContainer.innerHTML = '';
@@ -85,9 +88,10 @@ class TeamManager {
         this.teamData.team.forEach(member => {
             const memberElement = this.createTeamMemberElement(member);
             teamContainer.appendChild(memberElement);
+            console.log(`%c👤 Membre ajouté: %c${member.name}`, 'color: #607D8B;', 'color: #2196F3; font-weight: bold;');
         });
         
-        console.log('✅ Équipe rendue avec succès');
+        console.log('%c✅ Équipe rendue avec succès', 'color: #4CAF50; font-weight: bold;');
     }
 
     createTeamMemberElement(member) {

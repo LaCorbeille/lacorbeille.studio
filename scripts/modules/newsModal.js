@@ -4,6 +4,7 @@ class NewsModal {
         this.modal = document.getElementById('newsModal') || this.createNewsModal();
         this.newsData = null;
         this.init();
+        console.log('%c📰 NewsModal initialisé', 'color: #FF5722; font-weight: bold;');
     }
 
     async init() {
@@ -11,7 +12,7 @@ class NewsModal {
         try {
             await this.loadJavaScriptData();
         } catch (error) {
-            console.error('❌ Erreur lors du chargement des données des actualités:', error);
+            console.error('%c❌ Erreur lors du chargement des données des actualités:', 'color: #f44336; font-weight: bold;', error);
         }
 
         // Enregistrer la modale dans le gestionnaire
@@ -29,7 +30,9 @@ class NewsModal {
             script.onload = () => {
                 if (window.newsData) {
                     this.newsData = window.newsData;
-                    console.log('✅ Données des actualités chargées depuis news.js');
+                    const newsCount = Object.keys(this.newsData).length;
+                    console.log(`%c✅ Données des actualités chargées: %c${newsCount} articles disponibles`, 
+                              'color: #4CAF50; font-weight: bold;', 'color: #2196F3;');
                     resolve();
                 } else {
                     reject(new Error('newsData non disponible après chargement du script'));
@@ -56,6 +59,8 @@ class NewsModal {
 
     attachEventListeners() {
         const newsCards = document.querySelectorAll('.news-card');
+        console.log(`%c🔗 Événements attachés à %c${newsCards.length} cartes d'actualités`, 
+                   'color: #FF5722;', 'color: #2196F3; font-weight: bold;');
         
         newsCards.forEach(card => {
             card.addEventListener('click', () => {
@@ -96,11 +101,14 @@ class NewsModal {
 
     openNewsModal(newsId) {
         if (!this.newsData || !this.newsData[newsId]) {
-            console.error('Données de l\'actualité non trouvées:', newsId);
+            console.error(`%c❌ Données de l'actualité non trouvées: %c${newsId}`, 
+                         'color: #f44336; font-weight: bold;', 'color: #ff5722;');
             return;
         }
 
         const news = this.newsData[newsId];
+        console.log(`%c📖 Ouverture actualité: %c${news.title}`, 
+                   'color: #FF5722; font-weight: bold;', 'color: #2196F3;');
         this.renderModalContent(news);
         window.modalManager.openModal('newsModal');
     }
@@ -142,6 +150,7 @@ class NewsModal {
 
 // Fonction globale pour scroll vers les jeux
 window.scrollToGame = function(gameId) {
+    console.log(`%c🎯 Navigation vers le jeu: %c${gameId}`, 'color: #FF5722; font-weight: bold;', 'color: #2196F3;');
     window.modalManager.closeModal('newsModal');
     
     setTimeout(() => {
@@ -151,6 +160,7 @@ window.scrollToGame = function(gameId) {
             const headerHeight = header ? header.offsetHeight : 0;
             const targetPosition = gameCard.offsetTop - headerHeight - 100;
             
+            console.log(`%c📍 Scroll vers la carte du jeu`, 'color: #4CAF50;');
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -164,6 +174,8 @@ window.scrollToGame = function(gameId) {
                 gameCard.style.transform = '';
                 gameCard.style.boxShadow = '';
             }, 2000);
+        } else {
+            console.warn(`%c⚠️ Carte de jeu non trouvée: %c${gameId}`, 'color: #FF9800;', 'color: #ff5722;');
         }
     }, 300);
 };

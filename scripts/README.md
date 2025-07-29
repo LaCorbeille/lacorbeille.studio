@@ -5,13 +5,13 @@
 ```
 scripts/
 ├── main.js                          # Point d'entrée principal
-├── components.js                     # Composants réutilisables
 ├── modules/                          # Modules fonctionnels
 │   ├── modalManager.js              # Gestionnaire centralisé des modales
 │   ├── navigation.js                # Système de navigation et menu mobile
 │   ├── gameModal.js                 # Système de modales de jeux
 │   ├── newsModal.js                 # Système de modales d'actualités
 │   ├── contactForm.js               # Gestionnaire de formulaire de contact
+│   ├── teamManager.js               # Gestionnaire d'équipe (page press)
 │   └── animations.js                # Gestionnaire d'animations et effets visuels
 
 data/
@@ -71,9 +71,9 @@ data/
   - Animations d'apparition progressive
 - **API** : `window.animationManager`
 
-## 📄 Fichiers de données JSON
+## 📄 Fichiers de données JavaScript
 
-### **games.json**
+### **games.js**
 Contient toutes les informations des jeux :
 - Métadonnées (titre, statut, plateformes)
 - Descriptions détaillées
@@ -81,11 +81,17 @@ Contient toutes les informations des jeux :
 - Images et captures d'écran
 - Dates de sortie et genres
 
-### **news.json**
+### **news.js**
 Contient toutes les actualités :
 - Contenu riche en HTML
 - Images et métadonnées
 - Actions personnalisées (liens, navigation)
+
+### **team.js**
+Contient les informations de l'équipe :
+- Profils des membres
+- Rôles et responsabilités
+- Liens sociaux et portfolios
 
 ## 🚀 Avantages de cette architecture
 
@@ -113,7 +119,7 @@ Contient toutes les actualités :
 
 La nouvelle architecture apporte :
 
-1. **Utilise du JavaScript natif** pour les données
+1. **Utilise du JavaScript natif** pour les données (plus de JSON)
 2. **Modularise le code** en modules spécialisés
 3. **Centralise la gestion** des modales
 4. **Améliore la lisibilité** et la maintenabilité
@@ -131,7 +137,7 @@ Tous les modules s'initialisent automatiquement au chargement de la page. L'ordr
 
 Cette architecture permet facilement :
 - **Ajout de nouveaux modules** dans `/modules/`
-- **Extension des données** via les fichiers JSON
+- **Extension des données** via les fichiers JavaScript natifs
 - **Intégration d'APIs externes** pour le contenu dynamique
 - **Tests unitaires** par module
 - **Optimisation du chargement** (lazy loading, bundling)

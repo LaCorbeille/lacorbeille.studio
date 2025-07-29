@@ -44,7 +44,6 @@ npx http-server -p 8080 -c-1
 ├── 📄 schemas.json               # Données structurées SEO (JSON-LD requis)
 ├── 📁 scripts/
 │   ├── 📄 main.js                # Point d'entrée principal
-│   ├── 📄 components.js          # Système de composants
 │   └── 📁 modules/
 │       ├── 📄 animations.js      # Gestion des animations
 │       ├── 📄 contactForm.js     # Formulaire de contact

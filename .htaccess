@@ -1,31 +1,35 @@
-# LaCorbeille STUDIO - Configuration Apache pour SEO et Performance
+# 🚀 LaCorbeille STUDIO - Configuration Apache pour Production Optimisée
+# ================================================================================
+# Fichier de configuration Apache optimisé pour la production
+# Compatible avec LWS et la plupart des hébergeurs Apache
+# ================================================================================
 
 # ----------------------------------------------------------------------
-# | Headers de sécurité et SEO                                        |
+# | 🔐 Headers de sécurité et SEO                                     |
 # ----------------------------------------------------------------------
 
 <IfModule mod_headers.c>
-    # Security headers
+    # 🛡️ Security headers
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
     
-    # SEO and performance headers
+    # 🚀 SEO and performance headers
     Header set Cache-Control "public, max-age=31536000" env=IS_CSS
     Header set Cache-Control "public, max-age=31536000" env=IS_JS
     Header set Cache-Control "public, max-age=31536000" env=IS_IMAGE
     
-    # HSTS pour HTTPS
+    # 🔒 HSTS pour HTTPS
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
 # ----------------------------------------------------------------------
-# | Redirections et URL canoniques                                    |
+# | 🔄 Redirections et URL canoniques                                 |
 # ----------------------------------------------------------------------
 
-# Redirection www vers non-www
+# ↪️ Redirection www vers non-www
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{HTTP_HOST} ^www\.lacorbeille\.studio$ [NC]
