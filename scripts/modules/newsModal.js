@@ -10,9 +10,18 @@ class NewsModal {
         // Charger les données des actualités
         try {
             const response = await fetch('data/news.json');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
             this.newsData = await response.json();
         } catch (error) {
-            console.error('Erreur lors du chargement des données des actualités:', error);
+            console.warn('Impossible de charger news.json, utilisation du fallback JavaScript:', error);
+            // Fallback : charger le fichier JavaScript
+            try {
+                await this.loadJavaScriptFallback();
+            } catch (jsError) {
+                console.error('Erreur lors du chargement des données des actualités:', jsError);
+            }
         }
 
         // Enregistrer la modale dans le gestionnaire
@@ -21,6 +30,23 @@ class NewsModal {
         }
 
         this.attachEventListeners();
+    }
+
+    async loadJavaScriptFallback() {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'data/news.js';
+            script.onload = () => {
+                if (window.newsData) {
+                    this.newsData = window.newsData;
+                    resolve();
+                } else {
+                    reject(new Error('newsData non disponible après chargement du script'));
+                }
+            };
+            script.onerror = () => reject(new Error('Impossible de charger news.js'));
+            document.head.appendChild(script);
+        });
     }
 
     createNewsModal() {

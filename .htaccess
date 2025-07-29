@@ -138,17 +138,31 @@ ErrorDocument 500 /index.html
 # | Sécurité des fichiers                                            |
 # ----------------------------------------------------------------------
 
-# Bloquer l'accès aux fichiers sensibles
-<FilesMatch "\.(env|log|json)$">
+# Bloquer l'accès aux fichiers sensibles (env et log seulement)
+<FilesMatch "\.(env|log)$">
     Order allow,deny
     Deny from all
 </FilesMatch>
 
-# Autoriser schemas.json pour le SEO
+# Autoriser les fichiers JSON nécessaires
 <Files "schemas.json">
     Order allow,deny
     Allow from all
 </Files>
+
+<Files "manifest.json">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# Autoriser les fichiers JSON dans le dossier data
+<Directory "data">
+    <Files "*.json">
+        Order allow,deny
+        Allow from all
+        Header set Content-Type "application/json"
+    </Files>
+</Directory>
 
 # Bloquer l'accès aux dossiers système
 RedirectMatch 404 /\.git

@@ -11,9 +11,18 @@ class GameModal {
         // Charger les données des jeux
         try {
             const response = await fetch('data/games.json');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
             this.gameData = await response.json();
         } catch (error) {
-            console.error('Erreur lors du chargement des données des jeux:', error);
+            console.warn('Impossible de charger games.json, utilisation du fallback JavaScript:', error);
+            // Fallback : charger le fichier JavaScript
+            try {
+                await this.loadJavaScriptFallback();
+            } catch (jsError) {
+                console.error('Erreur lors du chargement des données des jeux:', jsError);
+            }
         }
 
         // Enregistrer la modale dans le gestionnaire
@@ -22,6 +31,23 @@ class GameModal {
         }
 
         this.attachEventListeners();
+    }
+
+    async loadJavaScriptFallback() {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'data/games.js';
+            script.onload = () => {
+                if (window.gamesData) {
+                    this.gameData = window.gamesData;
+                    resolve();
+                } else {
+                    reject(new Error('gamesData non disponible après chargement du script'));
+                }
+            };
+            script.onerror = () => reject(new Error('Impossible de charger games.js'));
+            document.head.appendChild(script);
+        });
     }
 
     attachEventListeners() {
