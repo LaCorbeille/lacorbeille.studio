@@ -1,5 +1,10 @@
 
 
+/* 📱 Reset global pour éviter les débordements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -847,6 +852,21 @@ section {
         padding: 60px 0;
     }
     
+    /* 📱 Contact optimisations tablette */
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .contact-content {
+        gap: 2rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        box-sizing: border-box;
+    }
+    
     .modal-content {
         margin: 10% auto;
         width: 95%;
@@ -975,6 +995,56 @@ section {
     
     .game-modal-meta {
         grid-template-columns: 1fr;
+    }
+    
+    /* 📱 Contact Section - Optimisations mobile */
+    .contact-content {
+        gap: 1.5rem;
+    }
+    
+    .contact-form {
+        padding: 1rem;
+        margin: 0 -8px; /* Compenser le padding du conteneur si nécessaire */
+    }
+    
+    .contact-info {
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        padding: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        font-size: 16px; /* Évite le zoom sur iOS */
+        padding: 12px 12px;
+    }
+    
+    .form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+    
+    .form-group .btn {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Assurer qu'aucun élément ne déborde */
+    .form-group {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
     }
 }
 
