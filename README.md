@@ -2,6 +2,8 @@
 
 Site web officiel de LaCorbeille STUDIO.
 
+<img src="https://img.shields.io/github/actions/workflow/status/LaCorbeille/lacorbeille.studio/deploy.yml?label=Deploy" />
+
 ## 🎮 À propos
 
 LaCorbeille STUDIO développe des jeux vidéo innovants incluant :
