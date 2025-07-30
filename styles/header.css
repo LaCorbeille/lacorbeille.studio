@@ -42,6 +42,13 @@
     align-items: center;
 }
 
+/* 📱 Sur mobile, cacher le menu par défaut */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+}
+
 .nav-link {
     color: #a1a1aa;
     text-decoration: none;
@@ -107,7 +114,9 @@
         display: flex;
     }
     
+    /* ✨ Cacher le menu desktop sur mobile par défaut */
     .nav-list {
+        display: none; /* Caché par défaut sur mobile */
         position: fixed;
         top: 70px;
         left: 0;
@@ -122,10 +131,13 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        z-index: 999; /* S'assurer qu'il s'affiche au-dessus de tout */
+        z-index: 9999; /* Z-index très élevé pour éviter les conflits */
+        width: 100vw; /* Force la largeur complète */
+        box-sizing: border-box;
     }
     
     .nav-list.active {
+        display: flex; /* Forcer l'affichage quand actif */
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
