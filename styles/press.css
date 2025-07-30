@@ -400,6 +400,14 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* 📱 Styles pour le bouton retour sur mobile */
+    .header .btn-outline {
+        padding: 6px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+        min-width: auto;
+    }
+    
     .press-content {
         padding: 2rem 0;
     }
@@ -426,6 +434,23 @@
 }
 
 @media (max-width: 480px) {
+    /* 📱 Bouton retour très compact sur très petits écrans */
+    .header .btn-outline {
+        padding: 4px 8px;
+        font-size: 10px;
+        border-width: 1px;
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    /* 📱 Réduire la taille du logo sur très petits écrans */
+    .logo img {
+        width: 140px !important;
+        height: 28px !important;
+    }
+    
     .press-hero {
         min-height: 30vh;
         padding: 2rem 0;
