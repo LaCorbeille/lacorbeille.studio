@@ -656,21 +656,20 @@ section {
     position: absolute;
     left: 0;
     right: 0;
-    height: 20px;
+    height: 12px;
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
     transition: opacity 0.3s ease;
 }
 
 .modal-content::before {
     top: 0;
-    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.8), transparent);
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.4), transparent);
     opacity: 0;
 }
 
 .modal-content::after {
     bottom: 0;
-    background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent);
     opacity: 0;
 }
 
