@@ -1,6 +1,6 @@
 # LaCorbeille STUDIO - Site Web
 
-Site web officiel de LaCorbeille STUDIO.
+Site web officiel de [LaCorbeille STUDIO](https://lacorbeille.studio).
 
 <img src="https://img.shields.io/github/actions/workflow/status/LaCorbeille/lacorbeille.studio/deploy.yml?label=Deploy" />
 
